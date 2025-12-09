@@ -1,27 +1,27 @@
 {
   "accountAssociation": {
     "header": "eyJmaWQiOjY1MzQ3OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDBjMDkwNjQzOUM2YTZiRDVmNzI0MDkyZjdCZWNlZDkyY2ZhNDI4QTEifQ",
-    "payload": "eyJkb21haW4iOiJjb250ZW50aHVicy52ZXJjZWwuYXBwIn0",
+    "payload": "eyJkb21haW4iOiJjb250ZW50aHViLnZlcmNlbC5hcHAifQ",
     "signature": "qI9REMqowGPLXqtMudh3g5ctSIk0LPtvh3Mwa+gENhRJwexBgN7TcA7TydpPNJEVb69Txt+NICilVYfUxIysfRw="
   },
   "frame": {
     "version": "next",
     "name": "ContentHub",
-    "iconUrl": "https://contenthubs.vercel.app/icon-512.svg",
-    "homeUrl": "https://contenthubs.vercel.app",
-    "imageUrl": "https://contenthubs.vercel.app/og-image.png",
+    "iconUrl": "https://contenthub.vercel.app/icon-512.svg",
+    "homeUrl": "https://contenthub.vercel.app",
+    "imageUrl": "https://contenthub.vercel.app/og-image.png",
     "buttonTitle": "Launch App",
-    "splashImageUrl": "https://contenthubs.vercel.app/splash.svg",
+    "splashImageUrl": "https://contenthub.vercel.app/splash.svg",
     "splashBackgroundColor": "#0a0a0a",
     "subtitle": "Community Content Platform",
     "description": "Upload content, vote on favorites, and mint NFTs on Base and Celo. Automatic IPFS uploads with micropayments directly to creators.",
     "primaryCategory": "social",
     "tags": ["content", "nft", "base", "celo", "web3"],
-    "heroImageUrl": "https://contenthubs.vercel.app/og-image.png",
+    "heroImageUrl": "https://contenthub.vercel.app/og-image.png",
     "tagline": "Share, Vote, Earn on Base Celo",
     "ogTitle": "ContentHub Platform",
     "ogDescription": "Upload and share content with the community. Vote on favorites and mint achievement NFTs.",
-    "ogImageUrl": "https://contenthubs.vercel.app/og-image.png",
-    "castShareUrl": "https://contenthubs.vercel.app"
+    "ogImageUrl": "https://contenthub.vercel.app/og-image.png",
+    "castShareUrl": "https://contenthub.vercel.app"
   }
 }

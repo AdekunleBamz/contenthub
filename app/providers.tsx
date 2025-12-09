@@ -6,7 +6,7 @@ import { WagmiProvider } from 'wagmi';
 import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { config } from '@/lib/wagmi';
 import { useEffect, useState } from 'react';
-import sdk from '@farcaster/frame-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 import { base, celo } from 'wagmi/chains';
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -23,9 +23,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const load = async () => {
       try {
-        await sdk.actions.ready();
+        // Check if we're in a Mini App environment
+        const isMiniApp = await sdk.isInMiniApp();
+        
+        if (isMiniApp) {
+          await sdk.actions.ready();
+        }
       } catch (error) {
-        console.log('Not in Farcaster Frame context');
+        console.log('Not in Farcaster Mini App context:', error);
       } finally {
         setIsSDKLoaded(true);
       }

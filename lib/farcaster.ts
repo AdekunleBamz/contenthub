@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import sdk from '@farcaster/frame-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 
 export function useFarcasterContext() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
@@ -10,11 +10,16 @@ export function useFarcasterContext() {
   useEffect(() => {
     const load = async () => {
       try {
-        const ctx = await sdk.context;
-        setContext(ctx);
-        sdk.actions.ready();
+        // Check if we're in a Mini App environment
+        const isMiniApp = await sdk.isInMiniApp();
+        
+        if (isMiniApp) {
+          const ctx = sdk.context;
+          setContext(ctx);
+          await sdk.actions.ready();
+        }
       } catch (error) {
-        console.log('Not running in Farcaster Frame');
+        console.log('Not running in Farcaster Mini App:', error);
       } finally {
         setIsSDKLoaded(true);
       }
