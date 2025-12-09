@@ -4,7 +4,8 @@ Community-driven content platform built on Base and Celo chains.
 
 ## Features
 
-- 🎨 Upload content (images, videos, achievements)
+- 🎨 Upload content with automatic IPFS storage (no manual hash needed!)
+- 📤 Drag-and-drop file uploads (images, videos, achievements)
 - 🗳️ Community voting system
 - 🏆 Mint achievement NFTs
 - 💰 Micro-payments (0.00002 ETH on Base, 0.4 CELO on Celo)
@@ -27,6 +28,13 @@ Community-driven content platform built on Base and Celo chains.
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env.local
+
+# Add your Pinata JWT for IPFS uploads
+# Get it from: https://app.pinata.cloud/developers/api-keys
+echo "PINATA_JWT=your_jwt_here" >> .env.local
+
 # Run development server
 npm run dev
 
@@ -39,6 +47,8 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000)
 
+For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
+
 ## Tech Stack
 
 - Next.js 14
@@ -48,3 +58,4 @@ Open [http://localhost:3000](http://localhost:3000)
 - Wagmi
 - Viem
 - Farcaster Frame SDK
+- Pinata (IPFS storage)

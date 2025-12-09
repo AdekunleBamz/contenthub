@@ -10,36 +10,89 @@ export default function UploadPage() {
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
 
-  const [contentHash, setContentHash] = useState('');
+  const [file, setFile] = useState<File | null>(null);
   const [contentType, setContentType] = useState('image');
-  const [metadata, setMetadata] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState('');
+  const [previewUrl, setPreviewUrl] = useState('');
 
   const currentChain = chain?.id === 8453 ? 'base' : chain?.id === 42220 ? 'celo' : null;
   const contract = currentChain ? CONTRACTS[currentChain].communityContentHub : null;
   const uploadFee = currentChain ? CONTRACTS[currentChain].uploadFee : '0';
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      
+      // Auto-detect content type
+      if (selectedFile.type.startsWith('image/')) {
+        setContentType('image');
+      } else if (selectedFile.type.startsWith('video/')) {
+        setContentType('video');
+      } else {
+        setContentType('score');
+      }
+
+      // Create preview URL
+      if (selectedFile.type.startsWith('image/')) {
+        const url = URL.createObjectURL(selectedFile);
+        setPreviewUrl(url);
+      }
+    }
+  };
+
   const handleUpload = async () => {
     if (!isConnected || !contract || !currentChain) return;
-
-    const meta = JSON.stringify({
-      title,
-      description,
-      contentType,
-      timestamp: Date.now(),
-    });
+    if (!file || !title) {
+      alert('Please select a file and enter a title');
+      return;
+    }
 
     try {
+      setIsUploading(true);
+      setUploadProgress('Uploading to IPFS...');
+
+      // Upload file to IPFS
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const uploadRes = await fetch('/api/upload-ipfs', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!uploadRes.ok) {
+        throw new Error('IPFS upload failed');
+      }
+
+      const { ipfsHash } = await uploadRes.json();
+      setUploadProgress('Saving to blockchain...');
+
+      const meta = JSON.stringify({
+        title,
+        description,
+        contentType,
+        filename: file.name,
+        size: file.size,
+        timestamp: Date.now(),
+      });
+
       writeContract({
         address: contract.address,
         abi: contract.abi,
         functionName: 'uploadContent',
-        args: [contentHash, contentType, metadata || meta],
+        args: [ipfsHash, contentType, meta],
         value: BigInt(uploadFee),
       } as any);
     } catch (error) {
       console.error('Upload error:', error);
+      alert('Upload failed. Please try again.');
+    } finally {
+      setIsUploading(false);
+      setUploadProgress('');
     }
   };
 
@@ -98,7 +151,32 @@ export default function UploadPage() {
             </div>
           )}
 
+          {uploadProgress && (
+            <div className="mb-6 p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
+              <p className="text-blue-400">⏳ {uploadProgress}</p>
+            </div>
+          )}
+
           <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">Upload File</label>
+              <input
+                type="file"
+                onChange={handleFileChange}
+                accept="image/*,video/*"
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-purple-600 file:text-white hover:file:bg-purple-700"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Select an image or video file. We'll upload it to IPFS automatically.
+              </p>
+            </div>
+
+            {previewUrl && (
+              <div className="border border-gray-700 rounded-lg overflow-hidden">
+                <img src={previewUrl} alt="Preview" className="w-full max-h-64 object-contain bg-gray-800" />
+              </div>
+            )}
+
             <div>
               <label className="block text-sm font-medium mb-2">Title</label>
               <input
@@ -135,22 +213,6 @@ export default function UploadPage() {
               </select>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Content Hash (IPFS)
-              </label>
-              <input
-                type="text"
-                value={contentHash}
-                onChange={(e) => setContentHash(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500"
-                placeholder="QmXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-              />
-              <p className="text-xs text-gray-500 mt-1">
-                Upload your file to IPFS first and paste the hash here
-              </p>
-            </div>
-
             <div className="pt-4 border-t border-gray-800">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-400">Upload Fee:</span>
@@ -161,10 +223,10 @@ export default function UploadPage() {
 
               <button
                 onClick={handleUpload}
-                disabled={isPending || isConfirming || !contentHash || !title}
+                disabled={isPending || isConfirming || isUploading || !file || !title}
                 className="w-full py-4 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-700 disabled:cursor-not-allowed rounded-lg font-semibold transition-colors"
               >
-                {isPending || isConfirming ? 'Processing...' : 'Upload Content'}
+                {isUploading ? uploadProgress || 'Uploading...' : isPending || isConfirming ? 'Processing...' : 'Upload Content'}
               </button>
             </div>
           </div>
