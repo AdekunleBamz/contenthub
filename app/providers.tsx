@@ -7,11 +7,18 @@ import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { config } from '@/lib/wagmi';
 import { useEffect, useState } from 'react';
 import sdk from '@farcaster/frame-sdk';
-
-const queryClient = new QueryClient();
+import { base, celo } from 'wagmi/chains';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
+  const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+        retry: 1,
+      },
+    },
+  }));
 
   useEffect(() => {
     const load = async () => {
@@ -37,7 +44,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={darkTheme()}>
+        <RainbowKitProvider 
+          theme={darkTheme()}
+          initialChain={base}
+        >
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>
