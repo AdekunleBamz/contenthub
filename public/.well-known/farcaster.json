@@ -21,6 +21,7 @@
     "tagline": "Share, Vote, Earn - Community-driven content on Base & Celo",
     "ogTitle": "ContentHub - Community Content Platform",
     "ogDescription": "Upload and share content with the community. Vote on favorites and mint achievement NFTs. Cross-chain support for Base and Celo.",
-    "ogImageUrl": "https://contenthubs.vercel.app/og-image.svg"
+    "ogImageUrl": "https://contenthubs.vercel.app/og-image.svg",
+    "castShareUrl": "https://contenthubs.vercel.app"
   }
 }

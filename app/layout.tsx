@@ -10,6 +10,27 @@ export const metadata: Metadata = {
     icon: '/favicon.svg',
     apple: '/apple-touch-icon.svg',
   },
+  openGraph: {
+    title: 'ContentHub - Community Content Platform',
+    description: 'Upload content, vote on favorites, and mint NFTs on Base and Celo',
+    url: 'https://contenthubs.vercel.app',
+    siteName: 'ContentHub',
+    images: [
+      {
+        url: 'https://contenthubs.vercel.app/og-image.svg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ContentHub - Community Content Platform',
+    description: 'Upload content, vote on favorites, and mint NFTs on Base and Celo',
+    images: ['https://contenthubs.vercel.app/og-image.svg'],
+  },
   other: {
     'fc:frame': 'vNext',
     'fc:frame:image': 'https://contenthubs.vercel.app/og-image.svg',
