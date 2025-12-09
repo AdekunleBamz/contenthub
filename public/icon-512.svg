@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#grad2)" rx="80"/>
+  
+  <!-- Content cube/box icon (larger) -->
+  <path d="M256 130 L375 200 L375 340 L256 410 L137 340 L137 200 Z" fill="none" stroke="white" stroke-width="8" opacity="0.3"/>
+  <path d="M256 130 L375 200 L256 270 L137 200 Z" fill="url(#accent3)" opacity="0.8"/>
+  <path d="M137 200 L137 340 L256 410 L256 270 Z" fill="url(#accent4)" opacity="0.8"/>
+  <path d="M256 270 L256 410 L375 340 L375 200 Z" fill="white" opacity="0.9"/>
+  
+  <!-- Sparkle elements -->
+  <circle cx="430" cy="150" r="10" fill="#f5576c"/>
+  <circle cx="460" cy="210" r="8" fill="#00f2fe"/>
+  <circle cx="90" cy="180" r="8" fill="#f093fb"/>
+  <circle cx="60" cy="250" r="10" fill="#4facfe"/>
+  <circle cx="450" cy="330" r="7" fill="#f093fb"/>
+  <circle cx="80" cy="370" r="9" fill="#f5576c"/>
+</svg>

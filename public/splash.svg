@@ -1,0 +1,55 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent11" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent12" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:white;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#grad4)"/>
+  
+  <!-- Glowing background circle -->
+  <circle cx="600" cy="450" r="350" fill="url(#glow)"/>
+  
+  <!-- Large 3D content cube logo -->
+  <path d="M600 250 L800 370 L800 610 L600 730 L400 610 L400 370 Z" fill="none" stroke="white" stroke-width="10" opacity="0.3"/>
+  <path d="M600 250 L800 370 L600 490 L400 370 Z" fill="url(#accent11)" opacity="0.85"/>
+  <path d="M400 370 L400 610 L600 730 L600 490 Z" fill="url(#accent12)" opacity="0.85"/>
+  <path d="M600 490 L600 730 L800 610 L800 370 Z" fill="white" opacity="0.95"/>
+  
+  <!-- Floating sparkle decorations -->
+  <circle cx="850" cy="300" r="12" fill="#f5576c" opacity="0.8">
+    <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="920" cy="420" r="10" fill="#00f2fe" opacity="0.8">
+    <animate attributeName="cy" values="420;440;420" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="340" r="10" fill="#f093fb" opacity="0.8">
+    <animate attributeName="cy" values="340;320;340" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="480" r="12" fill="#4facfe" opacity="0.8">
+    <animate attributeName="cy" values="480;500;480" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="880" cy="580" r="8" fill="#f093fb" opacity="0.7">
+    <animate attributeName="cy" values="580;560;580" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="320" cy="620" r="9" fill="#f5576c" opacity="0.7">
+    <animate attributeName="cy" values="620;640;620" dur="2.9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Text content -->
+  <text x="600" y="850" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">ContentHub</text>
+  <text x="600" y="920" font-family="Arial, sans-serif" font-size="36" fill="rgba(255,255,255,0.9)" text-anchor="middle">Community Content Platform</text>
+  <text x="600" y="980" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.7)" text-anchor="middle">Base • Celo</text>
+</svg>
