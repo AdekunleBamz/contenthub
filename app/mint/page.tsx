@@ -1,14 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
 import { CONTRACTS } from '@/lib/contracts';
+import { getDivviReferralTag, submitDivviReferral } from '@/lib/divvi';
 
 export default function MintPage() {
   const { address, chain, isConnected } = useAccount();
   const { switchChain } = useSwitchChain();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+
+  // Submit to Divvi when mint transaction is confirmed
+  useEffect(() => {
+    if (isSuccess && hash && chain?.id) {
+      submitDivviReferral(hash, chain.id);
+    }
+  }, [isSuccess, hash, chain]);
 
   const [metadataURI, setMetadataURI] = useState('');
   const [nftType, setNftType] = useState('achievement');
@@ -23,12 +31,15 @@ export default function MintPage() {
     if (!isConnected || !contract || !currentChain) return;
 
     try {
+      const referralTag = address ? getDivviReferralTag(address) : '0x';
+      
       writeContract({
         address: contract.address,
         abi: contract.abi,
         functionName: 'mintNFT',
         args: [metadataURI, nftType],
         value: BigInt(mintFee),
+        data: referralTag, // Add Divvi tracking
       } as any);
     } catch (error) {
       console.error('Mint error:', error);

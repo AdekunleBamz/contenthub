@@ -1,14 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
 import { CONTRACTS } from '@/lib/contracts';
+import { getDivviReferralTag, submitDivviReferral } from '@/lib/divvi';
 
 export default function UploadPage() {
   const { address, chain, isConnected } = useAccount();
   const { switchChain } = useSwitchChain();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+
+  // Submit to Divvi when transaction is confirmed
+  useEffect(() => {
+    if (isSuccess && hash && chain?.id) {
+      submitDivviReferral(hash, chain.id);
+    }
+  }, [isSuccess, hash, chain]);
 
   const [file, setFile] = useState<File | null>(null);
   const [contentType, setContentType] = useState('image');
@@ -80,12 +88,16 @@ export default function UploadPage() {
         timestamp: Date.now(),
       });
 
+      // Get Divvi referral tag for tracking
+      const referralTag = address ? getDivviReferralTag(address) : '0x';
+
       writeContract({
         address: contract.address,
         abi: contract.abi,
         functionName: 'uploadContent',
         args: [ipfsHash, contentType, meta],
         value: BigInt(uploadFee),
+        data: referralTag, // Add Divvi tracking
       } as any);
     } catch (error) {
       console.error('Upload error:', error);

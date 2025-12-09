@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { CONTRACTS } from '@/lib/contracts';
+import { getDivviReferralTag, submitDivviReferral } from '@/lib/divvi';
 
 interface Content {
   id: number;
@@ -64,16 +65,26 @@ export default function GalleryPage() {
     if (!contract || !currentChain || currentChain !== selectedChain) return;
 
     try {
+      const referralTag = address ? getDivviReferralTag(address) : '0x';
+      
       writeContract({
         address: contract.address,
         abi: contract.abi,
         functionName: 'voteContent',
         args: [BigInt(contentId)],
+        data: referralTag, // Add Divvi tracking
       } as any);
     } catch (error) {
       console.error('Vote error:', error);
     }
   };
+
+  // Submit to Divvi when vote transaction is confirmed
+  useEffect(() => {
+    if (isSuccess && hash && chain?.id) {
+      submitDivviReferral(hash, chain.id);
+    }
+  }, [isSuccess, hash, chain]);
 
   return (
     <div className="container mx-auto px-4 py-12">

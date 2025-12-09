@@ -11,6 +11,7 @@ Community-driven content platform built on Base and Celo chains.
 - 💰 Micro-payments (0.00002 ETH on Base, 0.4 CELO on Celo)
 - 🌐 Cross-chain support (Base + Celo)
 - 📱 Farcaster Frame integration
+- 🎯 Divvi referral tracking - earn rewards for driving on-chain activity!
 
 ## Deployed Contracts
 
@@ -59,3 +60,4 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 - Viem
 - Farcaster Frame SDK
 - Pinata (IPFS storage)
+- Divvi Referral SDK (on-chain attribution & rewards)
