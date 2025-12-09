@@ -22,6 +22,20 @@ export default function UploadPage() {
   const contract = currentChain ? CONTRACTS[currentChain].communityContentHub : null;
   const uploadFee = currentChain ? CONTRACTS[currentChain].uploadFee : '0';
 
+  // Reset form when upload is successful
+  useEffect(() => {
+    if (isSuccess) {
+      setFile(null);
+      setTitle('');
+      setDescription('');
+      setContentType('image');
+      setPreviewUrl('');
+      // Clear file input
+      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+      if (fileInput) fileInput.value = '';
+    }
+  }, [isSuccess]);
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
