@@ -6,17 +6,12 @@
   },
   "frame": {
     "version": "next",
+    "name": "ContentHub",
+    "iconUrl": "https://contenthubs.vercel.app/icon-512.svg",
+    "homeUrl": "https://contenthubs.vercel.app",
     "imageUrl": "https://contenthubs.vercel.app/og-image.svg",
-    "button": {
-      "title": "Launch ContentHub",
-      "action": {
-        "type": "launch_frame",
-        "name": "ContentHub",
-        "url": "https://contenthubs.vercel.app",
-        "splashImageUrl": "https://contenthubs.vercel.app/splash.svg",
-        "splashBackgroundColor": "#0a0a0a"
-      }
-    },
-    "homeUrl": "https://contenthubs.vercel.app"
+    "buttonTitle": "Launch App",
+    "splashImageUrl": "https://contenthubs.vercel.app/splash.svg",
+    "splashBackgroundColor": "#0a0a0a"
   }
 }
