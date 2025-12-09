@@ -217,7 +217,7 @@ export default function UploadPage() {
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-400">Upload Fee:</span>
                 <span className="font-semibold">
-                  {currentChain === 'base' ? '0.00002 ETH' : '0.4 CELO'}
+                  {currentChain === 'base' ? '0.00002 ETH' : '0.00002 CELO'}
                 </span>
               </div>
 

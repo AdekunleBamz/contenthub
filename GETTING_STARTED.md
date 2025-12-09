@@ -39,7 +39,7 @@ npm start
 ## 📱 Features Built
 
 ✅ **Home Page** - Landing page with feature overview
-✅ **Upload Content** - Upload content with payment (0.00002 ETH / 0.4 CELO)
+✅ **Upload Content** - Upload content with payment (0.00002 ETH / 0.00002 CELO)
 ✅ **Gallery** - Browse and vote on community content
 ✅ **Mint NFT** - Create achievement NFTs on-chain
 ✅ **Profile** - View your uploads and NFTs
@@ -71,7 +71,7 @@ npm start
 ### Celo Mainnet (Chain ID: 42220)
 - **CommunityContentHub**: `0x0bac169738f89689F8932A3E2663F1874D7CB92d`
 - **ContentNFT**: `0x11E07A42989212622306A0F293829888fe004828`
-- **Upload Fee**: 0.4 CELO
+- **Upload Fee**: 0.00002 CELO
 
 ---
 
@@ -145,7 +145,7 @@ npm start
 **"Incorrect upload fee" error**:
 - Make sure you're on the correct network
 - Base: 0.00002 ETH
-- Celo: 0.4 CELO
+- Celo: 0.00002 CELO
 
 **Wallet not connecting**:
 - Try refreshing the page

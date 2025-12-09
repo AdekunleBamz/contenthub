@@ -39,7 +39,7 @@ export default function Home() {
           <h3 className="text-xl font-bold mb-2">Upload Content</h3>
           <p className="text-gray-400">
             Share your gaming achievements, artwork, or content. 
-            Pay just 0.00002 ETH on Base or 0.4 CELO.
+            Pay just 0.00002 ETH on Base or 0.00002 CELO.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className="font-semibold text-yellow-400 mb-2">Celo Mainnet</h4>
-            <p className="text-sm text-gray-400">Fee: 0.4 CELO per upload</p>
+            <p className="text-sm text-gray-400">Fee: 0.00002 CELO per upload</p>
             <p className="text-sm text-gray-400">Mobile-first blockchain</p>
           </div>
         </div>

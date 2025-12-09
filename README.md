@@ -8,7 +8,7 @@ Community-driven content platform built on Base and Celo chains.
 - 📤 Drag-and-drop file uploads (images, videos, achievements)
 - 🗳️ Community voting system
 - 🏆 Mint achievement NFTs
-- 💰 Micro-payments (0.00002 ETH on Base, 0.4 CELO on Celo)
+- 💰 Micro-payments (0.00002 ETH on Base, 0.00002 CELO on Celo)
 - 🌐 Cross-chain support (Base + Celo)
 - 📱 Farcaster Frame integration
 - 🎯 Divvi referral tracking - earn rewards for driving on-chain activity!

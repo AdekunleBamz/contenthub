@@ -23,8 +23,8 @@ export const CONTRACTS = {
       address: '0x11E07A42989212622306A0F293829888fe004828' as `0x${string}`,
       abi: CONTENT_NFT_ABI,
     },
-    uploadFee: '400000000000000000', // 0.4 CELO in wei
-    mintFee: '400000000000000000', // 0.4 CELO in wei
+    uploadFee: '20000000000000', // 0.00002 CELO in wei (same as Base)
+    mintFee: '20000000000000', // 0.00002 CELO in wei (same as Base)
   },
 } as const;
 

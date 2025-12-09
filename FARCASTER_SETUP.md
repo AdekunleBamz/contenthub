@@ -56,7 +56,7 @@ npm start
 
 - **Launch Button** - Opens ContentHub mini app in Farcaster
 - **Wallet Integration** - RainbowKit for Base & Celo
-- **Upload Content** - Pay 0.00002 ETH (Base) or 0.4 CELO
+- **Upload Content** - Pay 0.00002 ETH (Base) or 0.00002 CELO
 - **Vote & Earn** - Community voting system
 - **Mint NFTs** - Achievement NFTs on-chain
 
