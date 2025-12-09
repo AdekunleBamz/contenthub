@@ -16,11 +16,11 @@
     "subtitle": "Community Content Platform",
     "description": "Upload content, vote on favorites, and mint NFTs on Base and Celo. Automatic IPFS uploads with micropayments directly to creators.",
     "primaryCategory": "social",
-    "tags": ["content", "nft", "community", "base", "celo", "web3"],
+    "tags": ["content", "nft", "base", "celo", "web3"],
     "heroImageUrl": "https://contenthubs.vercel.app/og-image.svg",
-    "tagline": "Share, Vote, Earn - Community-driven content on Base & Celo",
-    "ogTitle": "ContentHub - Community Content Platform",
-    "ogDescription": "Upload and share content with the community. Vote on favorites and mint achievement NFTs. Cross-chain support for Base and Celo.",
+    "tagline": "Share, Vote, Earn on Base Celo",
+    "ogTitle": "ContentHub Platform",
+    "ogDescription": "Upload and share content with the community. Vote on favorites and mint achievement NFTs.",
     "ogImageUrl": "https://contenthubs.vercel.app/og-image.svg",
     "castShareUrl": "https://contenthubs.vercel.app"
   }
