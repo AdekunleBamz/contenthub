@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://contenthubs.vercel.app'),
   title: "ContentHub - Community Content Platform",
   description: "Upload, share, and earn on Base and Celo",
   icons: {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'ContentHub',
     images: [
       {
-        url: 'https://contenthubs.vercel.app/og-image.svg',
+        url: 'https://contenthubs.vercel.app/opengraph-image',
         width: 1200,
         height: 630,
       },
@@ -29,11 +30,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ContentHub - Community Content Platform',
     description: 'Upload content, vote on favorites, and mint NFTs on Base and Celo',
-    images: ['https://contenthubs.vercel.app/og-image.svg'],
+    images: ['https://contenthubs.vercel.app/opengraph-image'],
   },
   other: {
     'fc:frame': 'vNext',
-    'fc:frame:image': 'https://contenthubs.vercel.app/og-image.svg',
+    'fc:frame:image': 'https://contenthubs.vercel.app/opengraph-image',
     'fc:frame:button:1': 'Launch App',
     'fc:frame:button:1:action': 'launch_frame',
     'fc:frame:button:1:target': 'https://contenthubs.vercel.app',

@@ -1,4 +1,33 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://contenthubs.vercel.app'),
+  title: 'ContentHub - Share, Vote, Earn',
+  description: 'Community content platform on Base and Celo. Upload content, vote on favorites, mint NFTs.',
+  openGraph: {
+    title: 'ContentHub',
+    description: 'Share content, vote, and earn on Base & Celo',
+    url: 'https://contenthubs.vercel.app',
+    siteName: 'ContentHub',
+    images: [
+      {
+        url: 'https://contenthubs.vercel.app/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'ContentHub Platform',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ContentHub',
+    description: 'Share content, vote, and earn on Base & Celo',
+    images: ['https://contenthubs.vercel.app/opengraph-image'],
+  },
+};
 
 export default function Home() {
   return (
