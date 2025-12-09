@@ -11,7 +11,7 @@ const DIVVI_CONSUMER = '0x7C98ab80D060cA57DD067712d0eD084A58f69c49';
 export function getDivviReferralTag(userAddress: string): string {
   try {
     return getReferralTag({
-      user: userAddress,
+      user: userAddress as `0x${string}`,
       consumer: DIVVI_CONSUMER,
     });
   } catch (error) {
@@ -28,7 +28,7 @@ export function getDivviReferralTag(userAddress: string): string {
 export async function submitDivviReferral(txHash: string, chainId: number): Promise<void> {
   try {
     await submitReferral({
-      txHash,
+      txHash: txHash as any,
       chainId,
     });
     console.log('✅ Divvi referral submitted:', txHash);
