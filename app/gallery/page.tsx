@@ -92,7 +92,7 @@ export default function GalleryPage() {
                 : 'bg-gray-800 hover:bg-gray-700'
             }`}
           >
-            Base ({totalUploads?.toString() || '0'} uploads)
+            Base {selectedChain === 'base' && `(${totalUploads?.toString() || '0'} uploads)`}
           </button>
           <button
             onClick={() => setSelectedChain('celo')}
@@ -102,7 +102,7 @@ export default function GalleryPage() {
                 : 'bg-gray-800 hover:bg-gray-700'
             }`}
           >
-            Celo
+            Celo {selectedChain === 'celo' && `(${totalUploads?.toString() || '0'} uploads)`}
           </button>
         </div>
       </div>

@@ -1,22 +1,22 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjEyMzQ1LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4ZjE4OWI4NTc0ZjQxMDNkNjhiMzY3YzBiOGU5ZGEwNzlhYTk3ZGRhZCJ9",
-    "payload": "eyJkb21haW4iOiJjb250ZW50aHViLmFwcCJ9",
-    "signature": "MHg..."
+    "header": "eyJmaWQiOjY1MzQ3OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDBjMDkwNjQzOUM2YTZiRDVmNzI0MDkyZjdCZWNlZDkyY2ZhNDI4QTEifQ",
+    "payload": "eyJkb21haW4iOiJjb250ZW50aHVicy52ZXJjZWwuYXBwIn0",
+    "signature": "qI9REMqowGPLXqtMudh3g5ctSIk0LPtvh3Mwa+gENhRJwexBgN7TcA7TydpPNJEVb69Txt+NICilVYfUxIysfRw="
   },
   "frame": {
     "version": "next",
-    "imageUrl": "/og-image.svg",
+    "imageUrl": "https://contenthubs.vercel.app/og-image.svg",
     "button": {
       "title": "Launch ContentHub",
       "action": {
         "type": "launch_frame",
         "name": "ContentHub",
-        "url": "https://contenthub.app",
-        "splashImageUrl": "/splash.svg",
+        "url": "https://contenthubs.vercel.app",
+        "splashImageUrl": "https://contenthubs.vercel.app/splash.svg",
         "splashBackgroundColor": "#0a0a0a"
       }
     },
-    "homeUrl": "https://contenthub.app"
+    "homeUrl": "https://contenthubs.vercel.app"
   }
 }

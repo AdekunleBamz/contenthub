@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   },
   other: {
     'fc:frame': 'vNext',
-    'fc:frame:image': '/og-image.svg',
+    'fc:frame:image': 'https://contenthubs.vercel.app/og-image.svg',
     'fc:frame:button:1': 'Launch App',
     'fc:frame:button:1:action': 'launch_frame',
-    'fc:frame:button:1:target': 'https://contenthub.app',
+    'fc:frame:button:1:target': 'https://contenthubs.vercel.app',
   },
 };
 
