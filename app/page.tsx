@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-16">
-        <h1 className="text-6xl font-bold mb-6 gradient-bg bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
           Welcome to ContentHub
         </h1>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
