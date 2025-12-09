@@ -33,11 +33,34 @@ export const metadata: Metadata = {
     images: ['https://contenthubs.vercel.app/og-image.png'],
   },
   other: {
-    'fc:frame': 'vNext',
-    'fc:frame:image': 'https://contenthubs.vercel.app/og-image.png',
-    'fc:frame:button:1': 'Launch App',
-    'fc:frame:button:1:action': 'launch_frame',
-    'fc:frame:button:1:target': 'https://contenthubs.vercel.app',
+    'fc:miniapp': JSON.stringify({
+      version: '1',
+      imageUrl: 'https://contenthubs.vercel.app/og-image.png',
+      button: {
+        title: 'Launch App',
+        action: {
+          type: 'launch_frame',
+          name: 'ContentHub',
+          url: 'https://contenthubs.vercel.app',
+          splashImageUrl: 'https://contenthubs.vercel.app/splash.svg',
+          splashBackgroundColor: '#0a0a0a'
+        }
+      }
+    }),
+    'fc:frame': JSON.stringify({
+      version: '1',
+      imageUrl: 'https://contenthubs.vercel.app/og-image.png',
+      button: {
+        title: 'Launch App',
+        action: {
+          type: 'launch_frame',
+          name: 'ContentHub',
+          url: 'https://contenthubs.vercel.app',
+          splashImageUrl: 'https://contenthubs.vercel.app/splash.svg',
+          splashBackgroundColor: '#0a0a0a'
+        }
+      }
+    })
   },
 };
 
