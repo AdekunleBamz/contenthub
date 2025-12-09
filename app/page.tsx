@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'ContentHub',
     images: [
       {
-        url: 'https://contenthubs.vercel.app/opengraph-image',
+        url: 'https://contenthubs.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'ContentHub Platform',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ContentHub',
     description: 'Share content, vote, and earn on Base & Celo',
-    images: ['https://contenthubs.vercel.app/opengraph-image'],
+    images: ['https://contenthubs.vercel.app/og-image.png'],
   },
 };
 

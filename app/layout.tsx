@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'ContentHub',
     images: [
       {
-        url: 'https://contenthubs.vercel.app/opengraph-image',
+        url: 'https://contenthubs.vercel.app/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ContentHub - Community Content Platform',
     description: 'Upload content, vote on favorites, and mint NFTs on Base and Celo',
-    images: ['https://contenthubs.vercel.app/opengraph-image'],
+    images: ['https://contenthubs.vercel.app/og-image.png'],
   },
   other: {
     'fc:frame': 'vNext',
-    'fc:frame:image': 'https://contenthubs.vercel.app/opengraph-image',
+    'fc:frame:image': 'https://contenthubs.vercel.app/og-image.png',
     'fc:frame:button:1': 'Launch App',
     'fc:frame:button:1:action': 'launch_frame',
     'fc:frame:button:1:target': 'https://contenthubs.vercel.app',
