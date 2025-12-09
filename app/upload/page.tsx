@@ -181,7 +181,7 @@ export default function UploadPage() {
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-purple-600 file:text-white hover:file:bg-purple-700"
               />
               <p className="text-xs text-gray-500 mt-1">
-                Select an image or video file. We'll upload it to IPFS automatically.
+                Select an image or video file. We&apos;ll upload it to IPFS automatically.
               </p>
             </div>
 
