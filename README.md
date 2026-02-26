@@ -61,3 +61,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 - Farcaster Frame SDK
 - Pinata (IPFS storage)
 - Divvi Referral SDK (on-chain attribution & rewards)
+
+## Contributing
+
+Contributions welcome!
