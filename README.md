@@ -84,5 +84,7 @@ For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operat
 - Farcaster Mini App SDK
 - Pinata (IPFS storage)
 - Divvi Referral SDK (on-chain attribution & rewards)
-- Next.js Route Handlers (upload + metadata APIs)
-- Vitest (unit testing)
+
+## Contributing
+
+Contributions welcome!
