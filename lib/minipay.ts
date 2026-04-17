@@ -68,14 +68,14 @@ export function getMiniPayChain() {
 
 // ─── Client factories ─────────────────────────────────────────────────────────
 
-export function createMiniPayPublicClient(testnet = false): PublicClient {
+export function createMiniPayPublicClient(testnet = false) {
   return createPublicClient({
     chain: testnet ? celoSepolia : celo,
     transport: http(),
   });
 }
 
-export function createMiniPayWalletClient(testnet = false): WalletClient {
+export function createMiniPayWalletClient(testnet = false) {
   if (typeof window === 'undefined' || !window.ethereum) {
     throw new Error('MiniPay wallet not available');
   }
