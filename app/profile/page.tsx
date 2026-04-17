@@ -11,9 +11,9 @@ export default function ProfilePage() {
   const { data: userProfile } = useReadContract({
     address: CONTRACTS[selectedChain].communityContentHub.address,
     abi: CONTRACTS[selectedChain].communityContentHub.abi,
-    functionName: 'getPlatformStats',
+    functionName: 'getUserProfile',
     args: address ? [address] : undefined,
-  } as any);
+  });
 
   const { data: userContents } = useReadContract({
     address: CONTRACTS[selectedChain].communityContentHub.address,

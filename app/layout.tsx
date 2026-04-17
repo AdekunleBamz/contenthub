@@ -73,6 +73,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="talentapp:project_verification" content="218e3a82a786ac8b5e1777f9afaccbf35db8262ee96d6d07a88f3a0cf25292d1fa4c1972d77678c9a7aecc45f5d9b69d100b5161f00889784f90fc9041085d0f" />
       </head>
       <body>
         <Providers>

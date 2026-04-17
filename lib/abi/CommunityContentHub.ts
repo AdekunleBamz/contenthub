@@ -89,6 +89,32 @@ export const COMMUNITY_CONTENT_HUB_ABI = [
   },
   {
     "inputs": [],
+    "name": "totalFeesCollected",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{"internalType": "address", "name": "", "type": "address"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "_user", "type": "address"}],
+    "name": "getUserProfile",
+    "outputs": [
+      {"internalType": "uint256", "name": "totalUserUploads", "type": "uint256"},
+      {"internalType": "uint256", "name": "totalUserVotes", "type": "uint256"},
+      {"internalType": "uint256", "name": "rewardsEarned", "type": "uint256"},
+      {"internalType": "bool", "name": "isActive", "type": "bool"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getPlatformStats",
     "outputs": [
       {"internalType": "uint256", "name": "uploads", "type": "uint256"},

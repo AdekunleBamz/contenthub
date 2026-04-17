@@ -11,6 +11,7 @@ import { base, celo } from 'wagmi/chains';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
+  const [isMiniPay, setIsMiniPay] = useState(false);
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
       queries: {
@@ -22,11 +23,16 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const load = async () => {
+      // Detect MiniPay before any SDK calls
+      if (typeof window !== 'undefined' && window.ethereum && (window.ethereum as any).isMiniPay) {
+        setIsMiniPay(true);
+      }
+
       try {
-        // Check if we're in a Mini App environment
-        const isMiniApp = await sdk.isInMiniApp();
-        
-        if (isMiniApp) {
+        // Check if we're in a Farcaster Mini App environment
+        const isInMiniApp = await sdk.isInMiniApp();
+
+        if (isInMiniApp) {
           await sdk.actions.ready();
         }
       } catch (error) {
@@ -49,9 +55,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider 
+        {/* When inside MiniPay, default to Celo chain; otherwise use Base */}
+        <RainbowKitProvider
           theme={darkTheme()}
-          initialChain={base}
+          initialChain={isMiniPay ? celo : base}
         >
           {children}
         </RainbowKitProvider>
