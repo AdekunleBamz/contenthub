@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useAccount, useChainId, useSwitchChain } from 'wagmi';
 import { celo, celoSepolia } from 'viem/chains';
+import type { Address } from 'viem';
 import {
   isMiniPay,
   getMiniPayAddress,
@@ -14,7 +15,6 @@ import {
   USDM_ADDRESS,
   USDC_ADDRESS,
   USDT_ADDRESS,
-  type Address,
 } from '@/lib/minipay';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
