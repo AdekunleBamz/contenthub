@@ -3,13 +3,10 @@ import {
   createWalletClient,
   custom,
   http,
-  getContract,
   formatEther,
   encodeFunctionData,
   parseUnits,
   fromHex,
-  type PublicClient,
-  type WalletClient,
   type Address,
 } from 'viem';
 import { celo, celoSepolia } from 'viem/chains';
@@ -101,32 +98,35 @@ export async function getMiniPayAddress(): Promise<Address | null> {
 
 /** Returns the USDm balance (in ether units) for a given address. */
 export async function getUSDmBalance(
-  publicClient: PublicClient,
+  publicClient: any,
   address: Address,
 ): Promise<string> {
-  const contract = getContract({
+  const raw = await publicClient.readContract({
     abi: ERC20_ABI,
     address: USDM_ADDRESS,
-    client: publicClient,
+    functionName: 'balanceOf',
+    args: [address],
   });
-  const raw = await contract.read.balanceOf([address]);
   return formatEther(raw);
 }
 
 /** Returns the balance (in ether units) for any ERC-20 on Celo. */
 export async function getTokenBalance(
-  publicClient: PublicClient,
+  publicClient: any,
   tokenAddress: Address,
   walletAddress: Address,
 ): Promise<string> {
-  const contract = getContract({
+  const raw: bigint = await publicClient.readContract({
     abi: ERC20_ABI,
     address: tokenAddress,
-    client: publicClient,
+    functionName: 'balanceOf',
+    args: [walletAddress],
   });
-  const raw = await contract.read.balanceOf([walletAddress]);
-  const decimals = await contract.read.decimals();
-  // formatEther assumes 18 decimals – use parseUnits for other decimals
+  const decimals: number = await publicClient.readContract({
+    abi: ERC20_ABI,
+    address: tokenAddress,
+    functionName: 'decimals',
+  });
   const divisor = BigInt(10) ** BigInt(decimals);
   const whole = raw / divisor;
   const fraction = raw % divisor;
@@ -136,7 +136,7 @@ export async function getTokenBalance(
 // ─── Gas estimation ───────────────────────────────────────────────────────────
 
 export async function estimateGas(
-  publicClient: PublicClient,
+  publicClient: any,
   transaction: {
     account: Address;
     to: Address;
@@ -152,7 +152,7 @@ export async function estimateGas(
 }
 
 export async function estimateGasPrice(
-  publicClient: PublicClient,
+  publicClient: any,
   feeCurrency?: Address,
 ): Promise<`0x${string}`> {
   return publicClient.request({
@@ -163,7 +163,7 @@ export async function estimateGasPrice(
 
 /** Returns the estimated transaction fee in USDm (string). */
 export async function estimateFeesInUSDm(
-  publicClient: PublicClient,
+  publicClient: any,
   transaction: { account: Address; to: Address; value?: `0x${string}`; data?: `0x${string}` },
 ): Promise<string> {
   const gasLimit = await estimateGas(publicClient, transaction, USDM_ADDRESS);
@@ -186,8 +186,8 @@ export async function estimateFeesInUSDm(
  * @returns             - transaction receipt
  */
 export async function sendTokenTransfer(
-  walletClient: WalletClient,
-  publicClient: PublicClient,
+  walletClient: any,
+  publicClient: any,
   tokenAddress: Address,
   receiver: Address,
   amount: string,
@@ -214,7 +214,7 @@ export async function sendTokenTransfer(
 // ─── Transaction status ───────────────────────────────────────────────────────
 
 export async function checkTransactionSuccess(
-  publicClient: PublicClient,
+  publicClient: any,
   txHash: `0x${string}`,
 ): Promise<boolean> {
   const receipt = await publicClient.getTransactionReceipt({ hash: txHash });
