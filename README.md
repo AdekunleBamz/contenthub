@@ -62,6 +62,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 
 - If uploads fail, verify `PINATA_JWT` is set and restart the dev server.
 - If transactions fail, confirm your wallet network matches the selected contract chain.
+- If the Farcaster Mini App context is missing, make sure you are opening the app inside a compatible Farcaster client.
 
 ## Tech Stack
 
