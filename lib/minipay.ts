@@ -91,6 +91,11 @@ export function normalizeAddress(address: string): string {
   return address.trim().toLowerCase();
 }
 
+/** Returns true when the address is syntactically valid (42-char hex, 0x-prefixed). */
+export function isValidAddress(address: string): boolean {
+  return /^0x[a-fA-F0-9]{40}$/.test(address.trim());
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
