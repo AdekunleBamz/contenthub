@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Community-driven content platform on Base and Celo",
   "private": true,
+  "homepage": "https://github.com/AdekunleBamz/contenthub#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
