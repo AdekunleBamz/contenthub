@@ -60,6 +60,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 ## Troubleshooting
 
 - If uploads fail, verify `PINATA_JWT` is set and restart the dev server.
+- If transactions fail, confirm your wallet network matches the selected contract chain.
 
 ## Tech Stack
 
