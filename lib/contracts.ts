@@ -1,6 +1,9 @@
 import { COMMUNITY_CONTENT_HUB_ABI } from './abi/CommunityContentHub';
 import { CONTENT_NFT_ABI } from './abi/ContentNFT';
 
+/** Upload and mint fee in wei (0.00002 ETH / CELO). */
+export const CONTENT_FEE_WEI = '20000000000000';
+
 export const CONTRACTS = {
   base: {
     communityContentHub: {
@@ -11,8 +14,8 @@ export const CONTRACTS = {
       address: '0xeE5Dd28E440A5cb51587fDbcb29b4b367fe87334' as `0x${string}`,
       abi: CONTENT_NFT_ABI,
     },
-    uploadFee: '20000000000000', // 0.00002 ETH in wei
-    mintFee: '20000000000000', // 0.00002 ETH in wei
+    uploadFee: CONTENT_FEE_WEI,
+    mintFee: CONTENT_FEE_WEI,
   },
   celo: {
     communityContentHub: {
@@ -23,8 +26,8 @@ export const CONTRACTS = {
       address: '0x11E07A42989212622306A0F293829888fe004828' as `0x${string}`,
       abi: CONTENT_NFT_ABI,
     },
-    uploadFee: '20000000000000', // 0.00002 CELO in wei (same as Base)
-    mintFee: '20000000000000', // 0.00002 CELO in wei (same as Base)
+    uploadFee: CONTENT_FEE_WEI,
+    mintFee: CONTENT_FEE_WEI,
   },
 } as const;
 
