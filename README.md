@@ -72,7 +72,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 - RainbowKit
 - Wagmi
 - Viem
-- Farcaster Frame SDK
+- Farcaster Mini App SDK
 - Pinata (IPFS storage)
 - Divvi Referral SDK (on-chain attribution & rewards)
 - Next.js Route Handlers (upload + metadata APIs)
