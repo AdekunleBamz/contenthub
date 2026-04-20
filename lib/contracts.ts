@@ -41,3 +41,6 @@ export const NETWORK_NAMES = {
   [BASE_CHAIN_ID]: 'Base',
   [CELO_CHAIN_ID]: 'Celo',
 } as const;
+
+/** Chain ID for Celo Alfajores (Sepolia) testnet. */
+export const CELO_SEPOLIA_CHAIN_ID = 44787;
