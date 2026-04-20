@@ -14,6 +14,10 @@ const config: Config = {
         "celo-green": "#35D07F",
         "celo-gold": "#FBCC5C",
       },
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem",
+      },
     },
   },
   plugins: [],
