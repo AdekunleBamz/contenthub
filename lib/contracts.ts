@@ -68,3 +68,13 @@ export function getExplorerUrl(chainId: number): string {
   if (chainId === CELO_CHAIN_ID) return 'https://celoscan.io';
   return 'https://celoscan.io';
 }
+
+/** Returns a link to a transaction on the appropriate block explorer. */
+export function getTxExplorerUrl(chainId: number, txHash: string): string {
+  return `${getExplorerUrl(chainId)}/tx/${txHash.trim()}`;
+}
+
+/** Returns a link to a contract address on the appropriate block explorer. */
+export function getAddressExplorerUrl(chainId: number, address: string): string {
+  return `${getExplorerUrl(chainId)}/address/${address.trim()}`;
+}
