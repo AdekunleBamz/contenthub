@@ -20,6 +20,12 @@ export const USDC_ADDRESS: Address = '0xcebA9300f2b948710d2653dD7B07f33A8B32118C
 /** USDT on Celo mainnet */
 export const USDT_ADDRESS: Address = '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e';
 
+/** Default number of decimals for ERC-20 tokens (e.g. USDm, USDT). */
+export const ERC20_DEFAULT_DECIMALS = 18;
+
+/** Number of fractional digits to display in formatted token balances. */
+export const ERC20_FRACTION_DISPLAY_DECIMALS = 6;
+
 // Minimal ERC-20 ABI for balance + transfer (avoids @celo/abis import at runtime)
 export const ERC20_ABI = [
   {
@@ -130,7 +136,7 @@ export async function getTokenBalance(
   const divisor = BigInt(10) ** BigInt(decimals);
   const whole = raw / divisor;
   const fraction = raw % divisor;
-  return `${whole}.${fraction.toString().padStart(Number(decimals), '0').slice(0, 6)}`;
+  return `${whole}.${fraction.toString().padStart(Number(decimals), '0').slice(0, ERC20_FRACTION_DISPLAY_DECIMALS)}`;
 }
 
 // ─── Gas estimation ───────────────────────────────────────────────────────────
@@ -191,7 +197,7 @@ export async function sendTokenTransfer(
   tokenAddress: Address,
   receiver: Address,
   amount: string,
-  decimals = 18,
+  decimals = ERC20_DEFAULT_DECIMALS,
   /** When running inside MiniPay, pass USDM_ADDRESS to pay gas in USDm (fee abstraction). */
   feeCurrency?: Address,
 ) {
