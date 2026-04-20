@@ -39,3 +39,4 @@
 ## Recovery
 
 - [ ] Keep a known-good rollback commit SHA available for emergency redeploy.
+- [ ] Ensure `.env.example` remains in sync with required runtime variables after hotfixes.
