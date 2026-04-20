@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Community-driven content platform on Base and Celo",
   "private": true,
+  "author": "AdekunleBamz",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
