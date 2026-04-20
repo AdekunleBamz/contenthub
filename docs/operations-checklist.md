@@ -22,3 +22,7 @@
 - [ ] Open `/minipay` route and verify wallet bootstrap succeeds inside MiniPay webview.
 - [ ] Confirm Divvi referral attribution still fires on at least one write transaction.
 - [ ] Confirm `/profile` reflects latest uploads and minted achievements after refresh.
+
+## Post-Deploy
+
+- [ ] Verify production domain metadata (manifest, OG image, splash) resolves correctly.
