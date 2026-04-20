@@ -69,6 +69,12 @@ export function getMiniPayChain() {
   return celo;
 }
 
+/** Returns a shortened display version of an address, e.g. "0x1234...5678" */
+export function formatAddress(address: string, start = 6, end = 4): string {
+  if (!address || address.length < start + end) return address;
+  return `${address.slice(0, start)}...${address.slice(-end)}`;
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
