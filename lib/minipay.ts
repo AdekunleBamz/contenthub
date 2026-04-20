@@ -86,6 +86,11 @@ export function isZeroAddress(address: string): boolean {
   return address.trim().toLowerCase() === ('0x' + '0'.repeat(40));
 }
 
+/** Returns a normalised (lowercase + trimmed) copy of an EVM address. */
+export function normalizeAddress(address: string): string {
+  return address.trim().toLowerCase();
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
