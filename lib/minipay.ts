@@ -101,6 +101,13 @@ export function isUsableAddress(address: string): boolean {
   return isValidAddress(address) && !isZeroAddress(address);
 }
 
+/** Returns the label string for the current wallet environment. */
+export function getWalletEnvLabel(): string {
+  return typeof window !== 'undefined' && (window.ethereum as any)?.isMiniPay
+    ? 'MiniPay'
+    : 'Browser Wallet';
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
