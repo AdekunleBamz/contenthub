@@ -61,3 +61,10 @@ export function getContractsForChain(chainId: number) {
   if (chainId === CELO_CHAIN_ID) return CONTRACTS.celo;
   throw new Error(`Unsupported chain ID: ${chainId}`);
 }
+
+/** Returns the block explorer base URL for the given chain ID. */
+export function getExplorerUrl(chainId: number): string {
+  if (chainId === BASE_CHAIN_ID) return 'https://basescan.org';
+  if (chainId === CELO_CHAIN_ID) return 'https://celoscan.io';
+  return 'https://celoscan.io';
+}
