@@ -28,7 +28,7 @@ Community-driven content platform built on Base and Celo chains.
 
 ```bash
 # Install dependencies
-npm install
+npm ci
 
 # Set up environment variables
 cp .env.example .env.local
