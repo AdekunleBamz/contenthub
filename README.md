@@ -57,6 +57,10 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 
 - Keep `.env.local` private and never commit Pinata JWTs.
 
+## Troubleshooting
+
+- If uploads fail, verify `PINATA_JWT` is set and restart the dev server.
+
 ## Tech Stack
 
 - Next.js 14
