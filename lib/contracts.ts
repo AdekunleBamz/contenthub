@@ -49,3 +49,8 @@ export const CELO_SEPOLIA_CHAIN_ID = 44787;
 export function getNetworkName(chainId: number): string {
   return (NETWORK_NAMES as Record<number, string>)[chainId] ?? 'Unknown';
 }
+
+/** Returns true when chainId is one of the supported networks. */
+export function isSupportedChain(chainId: number): boolean {
+  return chainId === BASE_CHAIN_ID || chainId === CELO_CHAIN_ID;
+}
