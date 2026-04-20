@@ -96,6 +96,11 @@ export function isValidAddress(address: string): boolean {
   return /^0x[a-fA-F0-9]{40}$/.test(address.trim());
 }
 
+/** Returns true when the address is syntactically valid and not the zero address. */
+export function isUsableAddress(address: string): boolean {
+  return isValidAddress(address) && !isZeroAddress(address);
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
