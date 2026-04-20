@@ -75,6 +75,12 @@ export function formatAddress(address: string, start = 6, end = 4): string {
   return `${address.slice(0, start)}...${address.slice(-end)}`;
 }
 
+/** Returns true when two addresses are the same (case-insensitive). */
+export function isSameAddress(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  return a.trim().toLowerCase() === b.trim().toLowerCase();
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
