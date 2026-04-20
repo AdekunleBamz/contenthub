@@ -81,6 +81,11 @@ export function isSameAddress(a: string, b: string): boolean {
   return a.trim().toLowerCase() === b.trim().toLowerCase();
 }
 
+/** Returns true when address is the EVM zero address. */
+export function isZeroAddress(address: string): boolean {
+  return address.trim().toLowerCase() === ('0x' + '0'.repeat(40));
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
