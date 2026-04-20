@@ -7,3 +7,4 @@ Use this quick setup for local IPFS uploads.
 1. Create a Pinata API key with upload permissions.
 2. Add `PINATA_JWT` to `.env.local`.
 3. Restart the Next.js dev server after updating env vars.
+4. Hit `/api/upload-ipfs` from local UI once to confirm authentication works.
