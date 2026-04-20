@@ -47,3 +47,8 @@ export const APP_NAME = 'ContentHub';
 export function getChainById(chainId: number) {
   return [base, celo, celoSepolia].find((c) => c.id === chainId);
 }
+
+/** Returns the human-readable name for the given chainId, or 'Unknown'. */
+export function getChainName(chainId: number): string {
+  return getChainById(chainId)?.name ?? 'Unknown';
+}
