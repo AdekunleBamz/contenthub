@@ -116,6 +116,16 @@ export function clampDecimals(amount: string, decimals = ERC20_FRACTION_DISPLAY_
     : whole;
 }
 
+/** Returns the USDC token address on Celo mainnet. */
+export function getUSDCAddress(): Address {
+  return USDC_ADDRESS;
+}
+
+/** Returns the USDT token address on Celo mainnet. */
+export function getUSDTAddress(): Address {
+  return USDT_ADDRESS;
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
