@@ -37,3 +37,8 @@ export async function submitDivviReferral(txHash: string, chainId: number): Prom
     // Don't throw - we don't want to disrupt user experience if Divvi tracking fails
   }
 }
+
+/** Returns the Divvi consumer address used for this app. */
+export function getDivviConsumerAddress(): string {
+  return DIVVI_CONSUMER;
+}
