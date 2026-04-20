@@ -21,3 +21,4 @@
 - [ ] Complete one NFT mint flow and confirm token metadata route returns valid JSON.
 - [ ] Open `/minipay` route and verify wallet bootstrap succeeds inside MiniPay webview.
 - [ ] Confirm Divvi referral attribution still fires on at least one write transaction.
+- [ ] Confirm `/profile` reflects latest uploads and minted achievements after refresh.
