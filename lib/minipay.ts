@@ -126,6 +126,11 @@ export function getUSDTAddress(): Address {
   return USDT_ADDRESS;
 }
 
+/** Returns the USDm (cUSD) token address on Celo mainnet. */
+export function getUSDmAddress(): Address {
+  return USDM_ADDRESS;
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
