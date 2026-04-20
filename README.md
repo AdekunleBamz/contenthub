@@ -12,6 +12,7 @@ Community-driven content platform built on Base and Celo chains.
 - 🌐 Cross-chain support (Base + Celo)
 - 📱 Farcaster Frame integration
 - 🎯 Divvi referral tracking - earn rewards for driving on-chain activity!
+- 🔄 Unified content browsing across Base and Celo deployments
 
 ## Deployed Contracts
 
