@@ -26,3 +26,4 @@
 ## Post-Deploy
 
 - [ ] Verify production domain metadata (manifest, OG image, splash) resolves correctly.
+- [ ] Capture successful upload and mint transaction hashes for release logs.
