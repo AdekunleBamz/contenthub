@@ -17,3 +17,4 @@
 ## Runtime Checks
 
 - [ ] Upload one image and confirm IPFS CID is returned and persisted in content records.
+- [ ] Open `/gallery` and verify newly uploaded content appears without stale cache issues.
