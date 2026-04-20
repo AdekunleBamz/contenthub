@@ -42,3 +42,8 @@ export async function submitDivviReferral(txHash: string, chainId: number): Prom
 export function getDivviConsumerAddress(): string {
   return DIVVI_CONSUMER;
 }
+
+/** Returns true when txHash is a non-empty hex string. */
+export function isValidTxHash(txHash: string): boolean {
+  return /^0x[a-fA-F0-9]{64}$/.test(txHash.trim());
+}
