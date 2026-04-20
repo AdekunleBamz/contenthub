@@ -31,3 +31,6 @@ declare module 'wagmi' {
     config: typeof config;
   }
 }
+
+/** Supported chain IDs in this wagmi config. */
+export const SUPPORTED_CHAIN_IDS = [base.id, celo.id, celoSepolia.id] as const;
