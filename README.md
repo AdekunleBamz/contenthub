@@ -56,7 +56,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 
 ## Security Notes
 
-- Keep `.env.local` private and never commit Pinata JWTs.
+- Keep `.env.local` private, never commit Pinata JWTs, and avoid sharing JWT values in screenshots or logs.
 
 ## Troubleshooting
 
