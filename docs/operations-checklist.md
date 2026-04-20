@@ -27,3 +27,4 @@
 
 - [ ] Verify production domain metadata (manifest, OG image, splash) resolves correctly.
 - [ ] Capture successful upload and mint transaction hashes for release logs.
+- [ ] Validate chain switch UX between Base and Celo without requiring full page reload.
