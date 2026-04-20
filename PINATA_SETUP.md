@@ -11,7 +11,7 @@ cp .env.example .env.local
 1. Create a Pinata API key with upload permissions.
 2. Add `PINATA_JWT` to `.env.local` (create the file from `.env.example` first if needed).
 3. Restart the Next.js dev server after updating env vars.
-4. Hit `/api/upload-ipfs` from local UI once to confirm authentication works.
+4. Hit `/api/upload-ipfs` once from the local UI to confirm authentication works on your current environment.
 
 Next.js reads env values at startup, so token updates require a restart to take effect.
 
