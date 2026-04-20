@@ -35,3 +35,7 @@
 - [ ] Track upload failure counts by route and chain for the first 24 hours after release.
 - [ ] Record average mint transaction confirmation latency on Base and Celo separately.
 - [ ] Verify referral attribution callbacks continue after route-level changes.
+
+## Recovery
+
+- [ ] Keep a known-good rollback commit SHA available for emergency redeploy.
