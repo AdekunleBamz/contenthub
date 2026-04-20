@@ -39,3 +39,6 @@ export const SUPPORTED_CHAIN_IDS = [base.id, celo.id, celoSepolia.id] as const;
 export function isSupportedChainId(chainId: number): boolean {
   return (SUPPORTED_CHAIN_IDS as readonly number[]).includes(chainId);
 }
+
+/** Application name exported for use outside of wagmi config (e.g. Coinbase Wallet). */
+export const APP_NAME = 'ContentHub';
