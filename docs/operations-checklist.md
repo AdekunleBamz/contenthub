@@ -11,3 +11,4 @@
 ## Security
 
 - [ ] Verify `.env.local` is ignored and never staged for commit.
+- [ ] Strip Pinata auth values from error logs before sharing support output.
