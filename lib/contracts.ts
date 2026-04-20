@@ -28,7 +28,13 @@ export const CONTRACTS = {
   },
 } as const;
 
+/** Chain ID for Base mainnet. */
+export const BASE_CHAIN_ID = 8453;
+
+/** Chain ID for Celo mainnet. */
+export const CELO_CHAIN_ID = 42220;
+
 export const NETWORK_NAMES = {
-  8453: 'Base',
-  42220: 'Celo',
+  [BASE_CHAIN_ID]: 'Base',
+  [CELO_CHAIN_ID]: 'Celo',
 } as const;
