@@ -2,14 +2,20 @@ import { http, createConfig } from 'wagmi';
 import { base, celo, celoSepolia } from 'wagmi/chains';
 import { coinbaseWallet, metaMask, walletConnect, injected } from 'wagmi/connectors';
 
-const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || '8b50179539f8beea2f4a0c070d058d77';
+/** Application name shown in wallet connection dialogs. */
+const CONTENTHUB_APP_NAME = 'ContentHub';
+
+/** Fallback WalletConnect project ID used when the env variable is absent. */
+const WC_DEFAULT_PROJECT_ID = '8b50179539f8beea2f4a0c070d058d77';
+
+const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || WC_DEFAULT_PROJECT_ID;
 
 export const config = createConfig({
   chains: [base, celo, celoSepolia],
   connectors: [
     injected(),
     metaMask(),
-    coinbaseWallet({ appName: 'ContentHub' }),
+    coinbaseWallet({ appName: CONTENTHUB_APP_NAME }),
     walletConnect({ projectId }),
   ],
   transports: {
