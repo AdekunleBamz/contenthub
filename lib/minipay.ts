@@ -108,6 +108,14 @@ export function getWalletEnvLabel(): string {
     : 'Browser Wallet';
 }
 
+/** Returns a token amount string clamped to the given decimal places. */
+export function clampDecimals(amount: string, decimals = ERC20_FRACTION_DISPLAY_DECIMALS): string {
+  const [whole, fraction = ''] = amount.split('.');
+  return fraction.length > 0
+    ? `${whole}.${fraction.slice(0, decimals)}`
+    : whole;
+}
+
 // ─── Client factories ─────────────────────────────────────────────────────────
 
 export function createMiniPayPublicClient(testnet = false) {
