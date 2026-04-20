@@ -7,3 +7,7 @@
 - [ ] Confirm `PINATA_JWT` is present and not using placeholder values.
 - [ ] Run `npm run lint` and resolve all build-time lint failures.
 - [ ] Run `npm run build` locally once before production deployment.
+
+## Security
+
+- [ ] Verify `.env.local` is ignored and never staged for commit.
