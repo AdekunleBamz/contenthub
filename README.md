@@ -63,8 +63,7 @@ For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operat
 
 ## Security Notes
 
-- Keep `.env.local` private and never commit Pinata JWTs.
-- Revoke and rotate the Pinata key immediately if a JWT is exposed.
+- Keep `.env.local` private, never commit Pinata JWTs, and avoid sharing JWT values in screenshots or logs.
 
 ## Troubleshooting
 
