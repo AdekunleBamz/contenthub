@@ -13,3 +13,7 @@
 - [ ] Verify `.env.local` is ignored and never staged for commit.
 - [ ] Strip Pinata auth values from error logs before sharing support output.
 - [ ] Confirm upload API responses never include raw JWT or secret metadata.
+
+## Runtime Checks
+
+- [ ] Upload one image and confirm IPFS CID is returned and persisted in content records.
