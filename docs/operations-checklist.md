@@ -19,3 +19,4 @@
 - [ ] Upload one image and confirm IPFS CID is returned and persisted in content records.
 - [ ] Open `/gallery` and verify newly uploaded content appears without stale cache issues.
 - [ ] Complete one NFT mint flow and confirm token metadata route returns valid JSON.
+- [ ] Open `/minipay` route and verify wallet bootstrap succeeds inside MiniPay webview.
