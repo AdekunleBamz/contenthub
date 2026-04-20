@@ -54,3 +54,10 @@ export function getNetworkName(chainId: number): string {
 export function isSupportedChain(chainId: number): boolean {
   return chainId === BASE_CHAIN_ID || chainId === CELO_CHAIN_ID;
 }
+
+/** Returns the CONTRACTS entry for the given chainId, or throws for unsupported chains. */
+export function getContractsForChain(chainId: number) {
+  if (chainId === BASE_CHAIN_ID) return CONTRACTS.base;
+  if (chainId === CELO_CHAIN_ID) return CONTRACTS.celo;
+  throw new Error(`Unsupported chain ID: ${chainId}`);
+}
