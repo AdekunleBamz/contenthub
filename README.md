@@ -53,6 +53,10 @@ Open [http://localhost:3000](http://localhost:3000)
 
 For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 
+## Security Notes
+
+- Keep `.env.local` private and never commit Pinata JWTs.
+
 ## Tech Stack
 
 - Next.js 14
