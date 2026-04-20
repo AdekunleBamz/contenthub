@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "celo-green": "#35D07F",
+        "celo-gold": "#FBCC5C",
       },
     },
   },
