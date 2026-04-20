@@ -34,3 +34,8 @@ declare module 'wagmi' {
 
 /** Supported chain IDs in this wagmi config. */
 export const SUPPORTED_CHAIN_IDS = [base.id, celo.id, celoSepolia.id] as const;
+
+/** Returns true when chainId is one of the configured wagmi chains. */
+export function isSupportedChainId(chainId: number): boolean {
+  return (SUPPORTED_CHAIN_IDS as readonly number[]).includes(chainId);
+}
