@@ -78,3 +78,13 @@ export function getTxExplorerUrl(chainId: number, txHash: string): string {
 export function getAddressExplorerUrl(chainId: number, address: string): string {
   return `${getExplorerUrl(chainId)}/address/${address.trim()}`;
 }
+
+/** Returns true when chainId is Base mainnet. */
+export function isBaseChain(chainId: number): boolean {
+  return chainId === BASE_CHAIN_ID;
+}
+
+/** Returns true when chainId is Celo mainnet. */
+export function isCeloChain(chainId: number): boolean {
+  return chainId === CELO_CHAIN_ID;
+}
