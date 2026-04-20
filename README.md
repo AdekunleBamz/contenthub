@@ -39,6 +39,9 @@ echo "PINATA_JWT=your_jwt_here" >> .env.local
 # Run development server
 npm run dev
 
+# Run lint checks
+npm run lint
+
 # Build for production
 npm run build
 
