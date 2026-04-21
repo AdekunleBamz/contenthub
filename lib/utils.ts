@@ -207,3 +207,16 @@ export function toSlug(str: string): string {
 export function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0
 }
+
+/**
+ * Safely parses a JSON string, returning `fallback` on any parse error.
+ * @param json - JSON string to parse.
+ * @param fallback - Value returned when parsing fails.
+ */
+export function safeJsonParse<T>(json: string, fallback: T): T {
+  try {
+    return JSON.parse(json) as T
+  } catch {
+    return fallback
+  }
+}
