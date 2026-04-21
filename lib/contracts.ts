@@ -67,7 +67,8 @@ export function getContractsForChain(chainId: number) {
 export function getExplorerUrl(chainId: number): string {
   if (chainId === BASE_CHAIN_ID) return 'https://basescan.org';
   if (chainId === CELO_CHAIN_ID) return 'https://celoscan.io';
-  return 'https://celoscan.io';
+  if (chainId === CELO_SEPOLIA_CHAIN_ID) return 'https://alfajores.celoscan.io';
+  return '';
 }
 
 /** Returns a link to a transaction on the appropriate block explorer. */
