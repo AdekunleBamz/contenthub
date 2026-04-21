@@ -28,6 +28,9 @@ export const MAX_DESCRIPTION_LENGTH = 500
 /** Maximum number of tags per content item. */
 export const MAX_TAGS = 10
 
+/** Minimum length for an individual tag in characters. */
+export const MIN_TAG_LENGTH = 2
+
 /** Maximum tag length in characters. */
 export const MAX_TAG_LENGTH = 30
 
