@@ -8,8 +8,12 @@ export async function GET(request: Request) {
   const chain = searchParams.get('chain') as 'base' | 'celo' | null;
   const id = searchParams.get('id');
 
-  if (!chain || !id) {
-    return NextResponse.json({ error: 'Missing parameters' }, { status: 400 });
+  if (!chain) {
+    return NextResponse.json({ error: 'Missing chain parameter' }, { status: 400 });
+  }
+
+  if (!id) {
+    return NextResponse.json({ error: 'Missing id parameter' }, { status: 400 });
   }
 
   if (chain !== 'base' && chain !== 'celo') {
