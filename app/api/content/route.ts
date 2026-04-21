@@ -16,6 +16,11 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Invalid chain parameter' }, { status: 400 });
   }
 
+  const numericId = Number(id);
+  if (!Number.isInteger(numericId) || numericId < 1) {
+    return NextResponse.json({ error: 'Invalid id parameter' }, { status: 400 });
+  }
+
   try {
     const client = createPublicClient({
       chain: chain === 'base' ? base : celo,
@@ -28,7 +33,7 @@ export async function GET(request: Request) {
       address: contract.address,
       abi: contract.abi,
       functionName: 'getContent',
-      args: [BigInt(id)],
+      args: [BigInt(numericId)],
     } as any);
 
     return NextResponse.json({
