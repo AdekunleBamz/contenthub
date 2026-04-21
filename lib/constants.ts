@@ -63,3 +63,6 @@ export const UPLOAD_STATUS = Object.freeze({
   SUCCESS: 'success',
   ERROR: 'error',
 } as const)
+
+/** Debounce delay in ms applied to search and input handlers. */
+export const INPUT_DEBOUNCE_MS = 300
