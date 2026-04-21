@@ -191,8 +191,11 @@ export function isPositiveInteger(n: unknown): n is number {
 }
 
 /**
- * Converts bytes to megabytes, rounded to two decimal places.
- * @param bytes - Size in bytes.
+ * Converts a size in bytes to its Megabyte (MB) equivalent, rounded to two decimal places.
+ * Ensures a consistent format for file size display across different components.
+ * 
+ * @param bytes - The number of bytes to convert.
+ * @returns The size in MB rounded to 2 decimals, or 0 if the input is non-positive.
  */
 export function bytesToMb(bytes: number): number {
   if (bytes <= 0) return 0
