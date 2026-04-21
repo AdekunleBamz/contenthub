@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { ALLOWED_MIME_TYPES } from '@/lib/constants';
 
 export const runtime = 'nodejs';
 
@@ -18,6 +19,10 @@ export async function POST(request: NextRequest) {
     const MAX_SIZE = 50 * 1024 * 1024; // 50 MB
     if (file.size > MAX_SIZE) {
       return NextResponse.json({ error: 'File exceeds 50 MB limit' }, { status: 413 });
+    }
+
+    if (!ALLOWED_MIME_TYPES.includes(file.type as (typeof ALLOWED_MIME_TYPES)[number])) {
+      return NextResponse.json({ error: 'File type is not supported' }, { status: 415 });
     }
 
     // Upload to Pinata
