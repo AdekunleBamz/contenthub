@@ -91,3 +91,12 @@ export function isValidDescription(desc: string): boolean {
 export function isValidTags(tags: string[]): boolean {
   return tags.length <= 10 && tags.every((t) => t.length > 0 && t.length <= 30)
 }
+
+/**
+ * Builds the full IPFS HTTP URL for a CID.
+ * @param cid - IPFS CID.
+ * @param gateway - Gateway base URL (default: ipfs.io).
+ */
+export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): string {
+  return `${gateway}${cid}`
+}
