@@ -75,8 +75,10 @@ export function formatFileSize(bytes: number): string {
 }
 
 /**
- * Returns true if the given MIME type is allowed for upload.
- * @param mimeType - MIME type string to check.
+ * Verifies if the provided MIME type is within the application's supported list.
+ * 
+ * @param mimeType - The MIME type string to be checked (e.g., 'image/png').
+ * @returns True if the MIME type is supported for uploads.
  */
 export function isAllowedMimeType(mimeType: string): boolean {
   return (ALLOWED_MIME_TYPES as readonly string[]).includes(mimeType)
