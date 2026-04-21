@@ -156,9 +156,11 @@ export function truncate(str: string, max: number): string {
 }
 
 /**
- * Formats a Unix timestamp in seconds as a locale date string.
- * Returns an empty string when the timestamp is not a valid positive number.
- * @param ts - Unix timestamp in seconds.
+ * Converts a Unix timestamp in seconds to a human-readable locale date string.
+ * This is the standard date formatting used for content item timestamps in the UI.
+ * 
+ * @param ts - The Unix timestamp to format (in seconds).
+ * @returns A locale-formatted date string or an empty string if the timestamp is invalid.
  */
 export function formatDate(ts: number): string {
   if (!Number.isFinite(ts) || ts <= 0) return ''
