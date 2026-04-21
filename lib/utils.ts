@@ -96,7 +96,7 @@ export function isValidTags(tags: string[]): boolean {
  * @param gateway - Gateway base URL (default: ipfs.io).
  */
 export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): string {
-  return `${gateway}${cid}`
+  return `${gateway}${cid.trim()}`
 }
 
 /**
