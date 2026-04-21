@@ -7,9 +7,7 @@
     "url": "git+https://github.com/AdekunleBamz/contenthub.git"
   },
   "private": true,
-  "bugs": {
-    "url": "https://github.com/AdekunleBamz/contenthub/issues"
-  },
+  "homepage": "https://contenthubs.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
