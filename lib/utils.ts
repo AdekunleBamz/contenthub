@@ -17,8 +17,10 @@ export function shortAddress(addr: string): string {
 }
 
 /**
- * Returns true if the given address is the EVM zero address.
- * @param addr - Address string.
+ * Checks if the provided address is the EVM zero address (0x0...0).
+ * 
+ * @param addr - The address string to check.
+ * @returns True if the address is the zero address, false otherwise.
  */
 export function isZeroAddress(addr: string): boolean {
   if (!addr) return false
