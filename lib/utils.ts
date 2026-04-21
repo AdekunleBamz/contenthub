@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB, ZERO_ADDRESS } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -17,7 +17,7 @@ export function shortAddress(addr: string): string {
  * @param addr - Address string.
  */
 export function isZeroAddress(addr: string): boolean {
-  return addr === '0x0000000000000000000000000000000000000000'
+  return addr === ZERO_ADDRESS
 }
 
 /**
