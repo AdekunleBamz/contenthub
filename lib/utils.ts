@@ -85,8 +85,10 @@ export function isAllowedMimeType(mimeType: string): boolean {
 }
 
 /**
- * Returns true if the description is within the max allowed length.
- * @param desc - Description string to check.
+ * Validates if the content description adheres to the maximum character length correctly.
+ * 
+ * @param desc - The description string to be validated.
+ * @returns True if the description is within the allowed character limit.
  */
 export function isValidDescription(desc: string): boolean {
   return desc.length <= MAX_DESCRIPTION_LENGTH
