@@ -89,6 +89,11 @@ export function isCeloChain(chainId: number): boolean {
   return chainId === CELO_CHAIN_ID;
 }
 
+/** Returns true when chainId is a supported testnet. */
+export function isTestnet(chainId: number): boolean {
+  return chainId === CELO_SEPOLIA_CHAIN_ID;
+}
+
 /** Upload and mint fee in ETH/CELO units (human-readable). */
 export const CONTENT_FEE_DISPLAY = '0.00002';
 
