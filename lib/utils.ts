@@ -115,7 +115,11 @@ export function isValidTitle(title: string): boolean {
  * @returns True if the entire tag list is compliant with all constraints.
  */
 export function isValidTags(tags: string[]): boolean {
-  return tags.length <= MAX_TAGS && tags.every((t) => t.length >= MIN_TAG_LENGTH && t.length <= MAX_TAG_LENGTH)
+  return tags.length <= MAX_TAGS
+    && tags.every((tag) => {
+      const normalizedTag = tag.trim()
+      return normalizedTag.length >= MIN_TAG_LENGTH && normalizedTag.length <= MAX_TAG_LENGTH
+    })
 }
 
 /**
