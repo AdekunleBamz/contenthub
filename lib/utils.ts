@@ -183,6 +183,17 @@ export function uniqueBy<T>(arr: T[], key: (item: T) => unknown): T[] {
 }
 
 /**
+ * Returns a copy of the object with the given keys removed.
+ * @param obj - Source object.
+ * @param keys - Keys to exclude.
+ */
+export function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
+  const result = { ...obj }
+  for (const k of keys) delete result[k]
+  return result as Omit<T, K>
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
