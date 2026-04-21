@@ -128,3 +128,11 @@ export function truncate(str: string, max: number): string {
 export function formatDate(ts: number): string {
   return new Date(ts * 1000).toLocaleDateString()
 }
+
+/**
+ * Returns true if the address is a valid non-zero EVM address.
+ * @param addr - Address string.
+ */
+export function isValidAddress(addr: string): boolean {
+  return /^0x[a-fA-F0-9]{40}$/.test(addr) && addr !== '0x0000000000000000000000000000000000000000'
+}
