@@ -12,6 +12,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Missing parameters' }, { status: 400 });
   }
 
+  if (chain !== 'base' && chain !== 'celo') {
+    return NextResponse.json({ error: 'Invalid chain parameter' }, { status: 400 });
+  }
+
   try {
     const client = createPublicClient({
       chain: chain === 'base' ? base : celo,
