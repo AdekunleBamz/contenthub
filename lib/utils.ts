@@ -167,6 +167,22 @@ export function range(start: number, end: number): number[] {
 }
 
 /**
+ * Deduplicates an array by a key derived from each element.
+ * The first occurrence of each key is kept.
+ * @param arr - Source array.
+ * @param key - Function that returns the deduplication key for an element.
+ */
+export function uniqueBy<T>(arr: T[], key: (item: T) => unknown): T[] {
+  const seen = new Set<unknown>()
+  return arr.filter((item) => {
+    const k = key(item)
+    if (seen.has(k)) return false
+    seen.add(k)
+    return true
+  })
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
