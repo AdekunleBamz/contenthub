@@ -11,8 +11,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, description, image, attributes, nftType } = body;
     const trimmedName = String(name ?? '').trim();
+    const trimmedImage = String(image ?? '').trim();
 
-    if (!trimmedName || !image) {
+    if (!trimmedName || !trimmedImage) {
       return NextResponse.json({ error: 'Name and image are required' }, { status: 400 });
     }
     const trimmedDescription = description ? String(description).trim() : '';
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
     const metadata = {
       name: trimmedName,
       description: trimmedDescription,
-      image, // IPFS hash or URL
+      image: trimmedImage, // IPFS hash or URL
       attributes: attributes || [
         {
           trait_type: 'Type',
