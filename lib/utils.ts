@@ -154,3 +154,16 @@ export function pluralize(count: number, singular: string, plural = `${singular}
 export function formatWei(wei: bigint): string {
   return (Number(wei) / 1e18).toFixed(4)
 }
+
+/**
+ * Returns a debounced wrapper around a function.
+ * @param fn - Function to debounce.
+ * @param delay - Delay in ms.
+ */
+export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: number): (...args: Parameters<T>) => void {
+  let timer: ReturnType<typeof setTimeout> | null = null
+  return (...args: Parameters<T>) => {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => fn(...args), delay)
+  }
+}
