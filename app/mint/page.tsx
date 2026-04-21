@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
 import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID, CONTENT_FEE_DISPLAY } from '@/lib/contracts';
+import { MAX_TITLE_LENGTH, MAX_DESCRIPTION_LENGTH } from '@/lib/constants';
 
 export default function MintPage() {
   const { address, chain, isConnected } = useAccount();
@@ -214,6 +215,7 @@ export default function MintPage() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                maxLength={MAX_TITLE_LENGTH}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-indigo-500"
                 placeholder="Enter NFT title"
               />
