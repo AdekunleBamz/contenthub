@@ -168,8 +168,11 @@ export function formatDate(ts: number): string {
 }
 
 /**
- * Formats a number with locale-appropriate thousands separators.
- * @param n - Number to format.
+ * Formats a number with locale-specific thousands separators (e.g., 1,000,000).
+ * Used for displaying vote counts and other large integers in the UI.
+ * 
+ * @param n - The numerical value to format.
+ * @returns A formatted string or '0' if the input is not a finite number.
  */
 export function formatNumber(n: number): string {
   if (!Number.isFinite(n)) return '0'
