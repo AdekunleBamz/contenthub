@@ -273,10 +273,13 @@ export function isValidAddress(addr: string): boolean {
 }
 
 /**
- * Pluralizes a word based on count.
- * @param count - The number.
- * @param singular - Singular form.
- * @param plural - Optional plural override.
+ * Returns either the singular or plural form of a word based on the provided count.
+ * Useful for building dynamic, grammatically correct UI strings.
+ * 
+ * @param count - The quantity used to determine the form.
+ * @param singular - The singular form of the word.
+ * @param plural - An optional plural override (defaults to singular + 's').
+ * @returns The appropriate word form for the given count.
  */
 export function pluralize(count: number, singular: string, plural = `${singular}s`): string {
   return count === 1 ? singular : plural
