@@ -28,9 +28,11 @@ export function isZeroAddress(addr: string): boolean {
 }
 
 /**
- * Returns true if the given string is a valid non-empty IPFS CID.
- * Supports both CIDv0 (Qm...) and CIDv1 (bafy...) formats.
- * @param cid - CID string to validate.
+ * Validates if the given string is a correctly formatted IPFS Content Identifier (CID).
+ * Supports both CIDv0 (starting with 'Qm') and CIDv1 (starting with 'bafy').
+ * 
+ * @param cid - The CID string to validate.
+ * @returns True if the string matches valid IPFS CID patterns.
  */
 export function isValidCid(cid: string): boolean {
   return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid.trim())
