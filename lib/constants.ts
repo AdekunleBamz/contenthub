@@ -66,3 +66,6 @@ export const UPLOAD_STATUS = Object.freeze({
 
 /** Debounce delay in ms applied to search and input handlers. */
 export const INPUT_DEBOUNCE_MS = 300
+
+/** Supported blockchain networks for content uploads. */
+export const SUPPORTED_CHAINS = Object.freeze(['base', 'celo'] as const)
