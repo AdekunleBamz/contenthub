@@ -217,10 +217,12 @@ export function range(start: number, end: number): number[] {
 }
 
 /**
- * Deduplicates an array by a key derived from each element.
- * The first occurrence of each key is kept.
- * @param arr - Source array.
- * @param key - Function that returns the deduplication key for an element.
+ * Deduplicates an array based on a unique key derived from each element.
+ * Only the first occurrence of each unique key is preserved in the resulting array.
+ * 
+ * @param arr - The source array to be deduplicated.
+ * @param key - A selector function that returns the deduplication key for each item.
+ * @returns A new array containing only unique elements based on the derived key.
  */
 export function uniqueBy<T>(arr: T[], key: (item: T) => unknown): T[] {
   const seen = new Set<unknown>()
