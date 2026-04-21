@@ -99,3 +99,11 @@ export const CONTENT_FEE_DISPLAY = '0.00002';
 export function isSupportedChain(key: string): key is keyof typeof CONTRACTS {
   return key in CONTRACTS
 }
+
+/**
+ * Returns the upload fee for a given chain as a bigint.
+ * @param chain - Chain key ('base' | 'celo').
+ */
+export function getUploadFee(chain: keyof typeof CONTRACTS): bigint {
+  return BigInt(CONTRACTS[chain].uploadFee)
+}
