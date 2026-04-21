@@ -156,6 +156,17 @@ export function bytesToMb(bytes: number): number {
 }
 
 /**
+ * Returns an array of integers from start (inclusive) to end (exclusive).
+ * @param start - Start of the range.
+ * @param end - End of the range (exclusive).
+ */
+export function range(start: number, end: number): number[] {
+  const result: number[] = []
+  for (let i = start; i < end; i++) result.push(i)
+  return result
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
