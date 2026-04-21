@@ -151,9 +151,9 @@ export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): st
  * @returns The clamped value.
  */
 export function clamp(value: number, min: number, max: number): number {
-  const lower = Math.min(min, max)
-  const upper = Math.max(min, max)
-  return Math.min(upper, Math.max(lower, value))
+  const normalizedMin = Math.min(min, max)
+  const normalizedMax = Math.max(min, max)
+  return Math.min(normalizedMax, Math.max(normalizedMin, value))
 }
 
 /**
