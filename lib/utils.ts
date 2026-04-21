@@ -325,8 +325,11 @@ export function sleep(ms: number): Promise<void> {
 }
 
 /**
- * Returns the string with its first character uppercased.
- * @param str - Input string.
+ * Capitalizes the first character of a string.
+ * Used for formatting UI labels and title case representations.
+ * 
+ * @param str - The input string to capitalize.
+ * @returns The string with its first letter uppercase, or the original string if empty.
  */
 export function capitalize(str: string): string {
   if (!str) return str
