@@ -235,9 +235,12 @@ export function uniqueBy<T>(arr: T[], key: (item: T) => unknown): T[] {
 }
 
 /**
- * Returns a copy of the object with the given keys removed.
- * @param obj - Source object.
- * @param keys - Keys to exclude.
+ * Creates a shallow copy of an object with the specified keys removed.
+ * Useful for filtering out sensitive or unnecessary properties before state updates.
+ * 
+ * @param obj - The source object.
+ * @param keys - An array of keys to be excluded from the new object.
+ * @returns A new object identical to the source but without the omitted keys.
  */
 export function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
   const result = { ...obj }
