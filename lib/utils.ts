@@ -27,3 +27,12 @@ export function isZeroAddress(addr: string): boolean {
 export function isValidCid(cid: string): boolean {
   return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid)
 }
+
+/**
+ * Formats an IPFS URI from a CID for use in image tags.
+ * Uses a public IPFS gateway.
+ * @param cid - IPFS CID string.
+ */
+export function ipfsToHttp(cid: string): string {
+  return `https://ipfs.io/ipfs/${cid}`
+}
