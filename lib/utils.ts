@@ -8,6 +8,7 @@ import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATE
  * @param addr - Full EVM address string.
  */
 export function shortAddress(addr: string): string {
+  if (!addr) return ''
   if (addr.length < 10) return addr
   return `${addr.slice(0, 6)}...${addr.slice(-4)}`
 }
