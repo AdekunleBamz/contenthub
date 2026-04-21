@@ -261,8 +261,11 @@ export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pi
 }
 
 /**
- * Returns true if the address is a valid non-zero EVM address.
- * @param addr - Address string.
+ * Validates if the given string is a correctly formatted, non-zero EVM address.
+ * Rigorously checks for the 0x prefix and hex-encoded 40-character body.
+ * 
+ * @param addr - The address string to validate.
+ * @returns True if the address is valid and is not the standard zero address.
  */
 export function isValidAddress(addr: string): boolean {
   if (!addr || typeof addr !== 'string') return false
