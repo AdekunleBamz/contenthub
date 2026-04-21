@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
-import { CONTRACTS } from '@/lib/contracts';
+import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID, CONTENT_FEE_DISPLAY } from '@/lib/contracts';
 
 export default function MintPage() {
   const { address, chain, isConnected } = useAccount();
@@ -18,7 +18,7 @@ export default function MintPage() {
   const [progress, setProgress] = useState('');
   const [previewUrl, setPreviewUrl] = useState('');
 
-  const currentChain = chain?.id === 8453 ? 'base' : chain?.id === 42220 ? 'celo' : null;
+  const currentChain = chain?.id === BASE_CHAIN_ID ? 'base' : chain?.id === CELO_CHAIN_ID ? 'celo' : null;
   const contract = currentChain ? CONTRACTS[currentChain].contentNFT : null;
   const mintFee = currentChain ? CONTRACTS[currentChain].mintFee : '0';
 
@@ -136,13 +136,13 @@ export default function MintPage() {
           </p>
           <div className="flex gap-4 justify-center">
             <button
-              onClick={() => switchChain?.({ chainId: 8453 })}
+              onClick={() => switchChain?.({ chainId: BASE_CHAIN_ID })}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg"
             >
               Switch to Base
             </button>
             <button
-              onClick={() => switchChain?.({ chainId: 42220 })}
+              onClick={() => switchChain?.({ chainId: CELO_CHAIN_ID })}
               className="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 rounded-lg"
             >
               Switch to Celo
