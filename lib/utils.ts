@@ -203,9 +203,12 @@ export function bytesToMb(bytes: number): number {
 }
 
 /**
- * Returns an array of integers from start (inclusive) to end (exclusive).
- * @param start - Start of the range.
- * @param end - End of the range (exclusive).
+ * Generates an array of sequential integers starting from 'start' up to (but not including) 'end'.
+ * Typically used for generating lists or controlling loops in UI components.
+ * 
+ * @param start - The inclusive start of the range.
+ * @param end - The exclusive end of the range.
+ * @returns An array containing the sequential range of integers.
  */
 export function range(start: number, end: number): number[] {
   const result: number[] = []
