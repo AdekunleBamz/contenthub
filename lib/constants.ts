@@ -105,3 +105,6 @@ export const CONTENT_TYPES = Object.freeze({
   SCORE: 'score',
   ACHIEVEMENT: 'achievement',
 } as const)
+
+/** Accept attribute string for file inputs that allow content uploads. */
+export const ACCEPTED_FILE_TYPES = ALLOWED_MIME_TYPES.join(',')
