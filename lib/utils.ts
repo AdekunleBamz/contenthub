@@ -35,6 +35,7 @@ export function isZeroAddress(addr: string): boolean {
  * @returns True if the string matches valid IPFS CID patterns.
  */
 export function isValidCid(cid: string): boolean {
+  if (!cid) return false
   return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid.trim())
 }
 
