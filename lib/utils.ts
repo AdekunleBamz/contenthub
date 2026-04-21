@@ -377,9 +377,12 @@ export function isNonEmptyString(value: unknown): value is string {
 }
 
 /**
- * Safely parses a JSON string, returning `fallback` on any parse error.
- * @param json - JSON string to parse.
- * @param fallback - Value returned when parsing fails.
+ * Safely parses a JSON-formatted string, returning a fallback value on failure.
+ * Prevents application crashes due to malformed metadata or API responses.
+ * 
+ * @param json - The JSON string to attempt to parse.
+ * @param fallback - The value to return if parsing fails (must match expected return type).
+ * @returns The parsed object or the fallback value.
  */
 export function safeJsonParse<T>(json: string, fallback: T): T {
   try {
