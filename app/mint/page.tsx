@@ -6,7 +6,7 @@ import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID, CONTENT_FEE_DISPLAY } from '@/
 import { MAX_TITLE_LENGTH, MAX_DESCRIPTION_LENGTH } from '@/lib/constants';
 
 export default function MintPage() {
-  const { address, chain, isConnected } = useAccount();
+  const { chain, isConnected } = useAccount();
   const { switchChain } = useSwitchChain();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
