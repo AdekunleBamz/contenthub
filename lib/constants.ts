@@ -54,3 +54,12 @@ export const APP_DISPLAY_NAME = 'ContentHub'
 
 /** Zero address sentinel. */
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000' as const
+
+/** Content upload status values for UI state management. */
+export const UPLOAD_STATUS = Object.freeze({
+  IDLE: 'idle',
+  UPLOADING: 'uploading',
+  MINTING: 'minting',
+  SUCCESS: 'success',
+  ERROR: 'error',
+} as const)
