@@ -2,6 +2,10 @@
   "name": "contenthub",
   "version": "1.0.0",
   "description": "Community-driven content platform on Base and Celo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdekunleBamz/contenthub.git"
+  },
   "private": true,
   "homepage": "https://github.com/AdekunleBamz/contenthub#readme",
   "scripts": {
