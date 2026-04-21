@@ -9,7 +9,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@bamzzstudio/contenthub-sdk": "^1.0.0",
