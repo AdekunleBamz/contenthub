@@ -4,6 +4,10 @@ export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.PINATA_JWT) {
+      return NextResponse.json({ error: 'Upload service not configured' }, { status: 503 });
+    }
+
     const formData = await request.formData();
     const file = formData.get('file') as File;
     
