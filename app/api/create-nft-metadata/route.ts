@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     pinataFormData.append('file', metadataFile);
 
     const pinataMetadata = JSON.stringify({
-      name: `${name}-metadata.json`,
+      name: `${trimmedName}-metadata.json`,
       keyvalues: {
         type: 'nft-metadata',
         uploadedAt: new Date().toISOString(),
