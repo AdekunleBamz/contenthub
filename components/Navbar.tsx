@@ -4,17 +4,24 @@ import Link from 'next/link';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useConnect } from 'wagmi';
 import { injected } from 'wagmi/connectors';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Navbar() {
   const { isConnected } = useAccount();
   const { connect } = useConnect();
   const [hideConnectBtn, setHideConnectBtn] = useState(false);
+  const hasAttemptedAutoConnect = useRef(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.ethereum && (window.ethereum as any).isMiniPay) {
+    if (
+      typeof window !== 'undefined'
+      && window.ethereum
+      && (window.ethereum as any).isMiniPay
+      && !hasAttemptedAutoConnect.current
+    ) {
       // Running inside MiniPay – auto-connect and hide the connect button
       setHideConnectBtn(true);
+      hasAttemptedAutoConnect.current = true;
       connect({ connector: injected({ target: 'metaMask' }) });
     }
   }, [connect]);
