@@ -59,7 +59,8 @@ export function ipfsToHttp(cid: string): string {
  * @returns True if the file size is positive and less than or equal to the limit.
  */
 export function isValidFileSize(sizeBytes: number, maxMb = MAX_FILE_SIZE_MB): boolean {
-  return sizeBytes > 0 && sizeBytes <= maxMb * 1024 * 1024
+  if (sizeBytes <= 0) return false
+  return sizeBytes <= maxMb * 1024 * 1024
 }
 
 /**
