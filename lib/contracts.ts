@@ -128,9 +128,10 @@ export function getUploadFee(chain: keyof typeof CONTRACTS): bigint {
 /**
  * Returns true if the fee amount is at least the required upload fee.
  * @param fee - Provided fee as bigint (in wei).
+ * @param chain - Chain key to look up the required fee.
  */
-export function isValidUploadFee(fee: bigint): boolean {
-  return fee >= BigInt(CONTENT_FEE_WEI)
+export function isValidUploadFee(fee: bigint, chain: keyof typeof CONTRACTS = 'celo'): boolean {
+  return fee >= getUploadFee(chain)
 }
 
 /**
