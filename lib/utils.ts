@@ -136,3 +136,13 @@ export function formatDate(ts: number): string {
 export function isValidAddress(addr: string): boolean {
   return /^0x[a-fA-F0-9]{40}$/.test(addr) && addr !== '0x0000000000000000000000000000000000000000'
 }
+
+/**
+ * Pluralizes a word based on count.
+ * @param count - The number.
+ * @param singular - Singular form.
+ * @param plural - Optional plural override.
+ */
+export function pluralize(count: number, singular: string, plural = `${singular}s`): string {
+  return count === 1 ? singular : plural
+}
