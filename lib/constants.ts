@@ -78,3 +78,11 @@ export const INPUT_DEBOUNCE_MS = 300
 
 /** Supported blockchain networks for content uploads. */
 export const SUPPORTED_CHAINS = Object.freeze(['base', 'celo'] as const)
+
+/** Recognised content type values used when uploading or displaying content. */
+export const CONTENT_TYPES = Object.freeze({
+  IMAGE: 'image',
+  VIDEO: 'video',
+  SCORE: 'score',
+  ACHIEVEMENT: 'achievement',
+} as const)
