@@ -228,6 +228,7 @@ export function pluralize(count: number, singular: string, plural = `${singular}
  * @param wei - Amount in wei (bigint).
  */
 export function formatWei(wei: bigint): string {
+  if (wei === 0n) return '0.0000'
   return (Number(wei) / 1e18).toFixed(4)
 }
 
