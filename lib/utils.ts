@@ -55,3 +55,15 @@ export function formatFileSize(bytes: number): string {
   if (bytes >= 1_024) return `${(bytes / 1_024).toFixed(1)} KB`
   return `${bytes} B`
 }
+
+/**
+ * Returns true if the given MIME type is allowed for upload.
+ * @param mimeType - MIME type string to check.
+ */
+export function isAllowedMimeType(mimeType: string): boolean {
+  const allowed = [
+    'image/jpeg', 'image/png', 'image/gif', 'image/webp',
+    'video/mp4', 'audio/mpeg', 'application/pdf',
+  ]
+  return allowed.includes(mimeType)
+}
