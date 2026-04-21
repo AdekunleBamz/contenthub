@@ -25,7 +25,7 @@ export function isZeroAddress(addr: string): boolean {
  * @param cid - CID string to validate.
  */
 export function isValidCid(cid: string): boolean {
-  return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid)
+  return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid.trim())
 }
 
 /**
