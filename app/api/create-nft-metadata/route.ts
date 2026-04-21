@@ -10,6 +10,13 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
     const { name, description, image, attributes, nftType } = body;
+
+    if (!name || !image) {
+      return NextResponse.json({ error: 'Name and image are required' }, { status: 400 });
+    }
+
+    const body = await request.json();
+    const { name, description, image, attributes, nftType } = body;
     const trimmedName = String(name).trim();
     const trimmedImage = typeof image === 'string' ? image.trim() : '';
     const trimmedDescription = description ? String(description).trim() : '';
