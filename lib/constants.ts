@@ -16,6 +16,9 @@ export const ALLOWED_MIME_TYPES = Object.freeze([
   'application/pdf',
 ] as const)
 
+/** Minimum length for content title in characters. */
+export const MIN_TITLE_LENGTH = 3
+
 /** Maximum length for content title in characters. */
 export const MAX_TITLE_LENGTH = 100
 
