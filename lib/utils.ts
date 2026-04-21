@@ -337,8 +337,11 @@ export function capitalize(str: string): string {
 }
 
 /**
- * Returns the initials of a name string (up to 2 characters).
- * @param name - Full name or title string.
+ * Extracts up to two initials from a name or title string.
+ * Commonly used for user avatar placeholders when no image is available.
+ * 
+ * @param name - The full name or title string.
+ * @returns A 1 or 2 character uppercase string of initials.
  */
 export function getInitials(name: string): string {
   const parts = name.trim().split(/\s+/)
