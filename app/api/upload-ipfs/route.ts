@@ -57,6 +57,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ 
       ipfsHash,
       ipfsUrl: `https://gateway.pinata.cloud/ipfs/${ipfsHash}`,
+      filename: file.name,
+      contentType: file.type || 'application/octet-stream',
     });
   } catch (error) {
     console.error('Upload error:', error);
