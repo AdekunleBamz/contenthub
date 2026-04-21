@@ -13,4 +13,4 @@ Next.js reads env values at startup, so token updates require a restart to take 
 
 Rotate the Pinata JWT periodically and after any accidental exposure.
 Never commit `.env.local` while it contains production Pinata credentials.
-Confirm the key has only required scopes (upload/read) to reduce blast radius.
+Confirm the key has only required scopes (pinFileToIPFS and read) to reduce blast radius.
