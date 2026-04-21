@@ -7,7 +7,9 @@
     "url": "git+https://github.com/AdekunleBamz/contenthub.git"
   },
   "private": true,
-  "homepage": "https://github.com/AdekunleBamz/contenthub#readme",
+  "bugs": {
+    "url": "https://github.com/AdekunleBamz/contenthub/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
