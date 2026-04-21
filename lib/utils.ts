@@ -142,9 +142,12 @@ export function clamp(value: number, min: number, max: number): number {
 }
 
 /**
- * Truncates a string to max length with ellipsis.
- * @param str - String to truncate.
- * @param max - Maximum character count (must be at least 1).
+ * Truncates a string to match a maximum character count, adding an ellipsis if necessary.
+ * Useful for UI elements with limited display space.
+ * 
+ * @param str - The string to truncate.
+ * @param max - Maximum character count allowed (including the ellipsis).
+ * @returns The truncated string or an empty string if max is 0 or less.
  */
 export function truncate(str: string, max: number): string {
   if (max <= 0) return ''
