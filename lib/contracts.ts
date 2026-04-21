@@ -107,3 +107,11 @@ export function isSupportedChain(key: string): key is keyof typeof CONTRACTS {
 export function getUploadFee(chain: keyof typeof CONTRACTS): bigint {
   return BigInt(CONTRACTS[chain].uploadFee)
 }
+
+/**
+ * Returns true if the fee amount is at least the required upload fee.
+ * @param fee - Provided fee as bigint (in wei).
+ */
+export function isValidUploadFee(fee: bigint): boolean {
+  return fee >= BigInt(CONTENT_FEE_WEI)
+}
