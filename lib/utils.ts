@@ -140,6 +140,14 @@ export function formatNumber(n: number): string {
 }
 
 /**
+ * Returns true when n is a finite integer greater than zero.
+ * @param n - Value to check.
+ */
+export function isPositiveInteger(n: unknown): n is number {
+  return typeof n === 'number' && Number.isFinite(n) && Number.isInteger(n) && n > 0
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
