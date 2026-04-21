@@ -239,6 +239,16 @@ export function capitalize(str: string): string {
 }
 
 /**
+ * Returns the initials of a name string (up to 2 characters).
+ * @param name - Full name or title string.
+ */
+export function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/)
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase()
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase()
+}
+
+/**
  * Converts a title string to a URL-safe slug.
  * @param str - Input string (e.g. a content title).
  */
