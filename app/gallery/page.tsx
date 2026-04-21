@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { CONTRACTS } from '@/lib/contracts';
-import { BASE_CHAIN_ID, CELO_CHAIN_ID } from '@/lib/contracts';
+import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID } from '@/lib/contracts';
+import { GALLERY_FETCH_LIMIT } from '@/lib/constants';
 
 interface Content {
   id: number;
@@ -36,7 +36,7 @@ export default function GalleryPage() {
     address: CONTRACTS[selectedChain].communityContentHub.address,
     abi: CONTRACTS[selectedChain].communityContentHub.abi,
     functionName: 'getLatestContents',
-    args: [10n],
+    args: [BigInt(GALLERY_FETCH_LIMIT)],
   });
 
   useEffect(() => {
