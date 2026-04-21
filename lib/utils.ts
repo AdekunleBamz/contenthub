@@ -95,8 +95,10 @@ export function isValidDescription(desc: string): boolean {
 }
 
 /**
- * Returns true if the content title is valid (non-empty, within max length).
- * @param title - Title string to validate.
+ * Validates a content title to ensure it is not empty and fits within character limits.
+ * 
+ * @param title - The title string to validate.
+ * @returns True if the title is valid and within length constraints.
  */
 export function isValidTitle(title: string): boolean {
   return title.trim().length > 0 && title.trim().length <= MAX_TITLE_LENGTH
