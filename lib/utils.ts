@@ -84,7 +84,8 @@ export function formatFileSize(bytes: number): string {
  * @returns True if the MIME type is supported for uploads.
  */
 export function isAllowedMimeType(mimeType: string): boolean {
-  return (ALLOWED_MIME_TYPES as readonly string[]).includes(mimeType)
+  const normalizedMimeType = mimeType.trim().toLowerCase()
+  return (ALLOWED_MIME_TYPES as readonly string[]).includes(normalizedMimeType)
 }
 
 /**
