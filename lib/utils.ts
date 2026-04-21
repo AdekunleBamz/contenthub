@@ -148,6 +148,14 @@ export function isPositiveInteger(n: unknown): n is number {
 }
 
 /**
+ * Converts bytes to megabytes, rounded to two decimal places.
+ * @param bytes - Size in bytes.
+ */
+export function bytesToMb(bytes: number): number {
+  return Math.round((bytes / 1_048_576) * 100) / 100
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
