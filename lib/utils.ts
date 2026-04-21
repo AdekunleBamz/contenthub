@@ -146,3 +146,11 @@ export function isValidAddress(addr: string): boolean {
 export function pluralize(count: number, singular: string, plural = `${singular}s`): string {
   return count === 1 ? singular : plural
 }
+
+/**
+ * Formats a wei amount as a CELO string with 4 decimal places.
+ * @param wei - Amount in wei (bigint).
+ */
+export function formatWei(wei: bigint): string {
+  return (Number(wei) / 1e18).toFixed(4)
+}
