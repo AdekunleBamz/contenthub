@@ -233,7 +233,7 @@ export default function MintPage() {
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-400">Mint Fee:</span>
                 <span className="font-semibold">
-                  {currentChain === 'base' ? '0.00002 ETH' : '0.00002 CELO'}
+                  {currentChain === 'base' ? `${CONTENT_FEE_DISPLAY} ETH` : `${CONTENT_FEE_DISPLAY} CELO`}
                 </span>
               </div>
 
