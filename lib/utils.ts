@@ -120,3 +120,11 @@ export function truncate(str: string, max: number): string {
   if (str.length <= max) return str
   return `${str.slice(0, max - 1)}\u2026`
 }
+
+/**
+ * Formats a Unix timestamp in seconds as a locale date string.
+ * @param ts - Unix timestamp in seconds.
+ */
+export function formatDate(ts: number): string {
+  return new Date(ts * 1000).toLocaleDateString()
+}
