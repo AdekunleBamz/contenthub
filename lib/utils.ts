@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -35,7 +35,7 @@ export function isValidCid(cid: string): boolean {
  * @param cid - IPFS CID string.
  */
 export function ipfsToHttp(cid: string): string {
-  return `https://ipfs.io/ipfs/${cid}`
+  return `${IPFS_GATEWAY}${cid.trim()}`
 }
 
 /**
