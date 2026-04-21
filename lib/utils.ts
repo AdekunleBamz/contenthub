@@ -39,9 +39,11 @@ export function isValidCid(cid: string): boolean {
 }
 
 /**
- * Formats an IPFS URI from a CID for use in image tags.
- * Uses a public IPFS gateway.
- * @param cid - IPFS CID string.
+ * Formats a full HTTP URL for an IPFS CID using the standard gateway.
+ * Used for displaying IPFS-hosted images or media in the UI.
+ * 
+ * @param cid - The IPFS Content Identifier string.
+ * @returns A complete URL string pointing to the IPFS gateway.
  */
 export function ipfsToHttp(cid: string): string {
   return `${IPFS_GATEWAY}${cid.trim()}`
