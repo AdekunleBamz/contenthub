@@ -110,3 +110,13 @@ export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): st
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value))
 }
+
+/**
+ * Truncates a string to max length with ellipsis.
+ * @param str - String to truncate.
+ * @param max - Maximum character count.
+ */
+export function truncate(str: string, max: number): string {
+  if (str.length <= max) return str
+  return `${str.slice(0, max - 1)}\u2026`
+}
