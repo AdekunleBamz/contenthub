@@ -249,9 +249,12 @@ export function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Om
 }
 
 /**
- * Returns a new object containing only the specified keys.
- * @param obj - Source object.
- * @param keys - Keys to keep.
+ * Extracts a specific subset of properties from an object into a new object.
+ * Provides a type-safe way to create partial objects from a larger source.
+ * 
+ * @param obj - The source object.
+ * @param keys - An array of keys to include in the resulting object.
+ * @returns A new object containing only the requested properties from the source.
  */
 export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
   return Object.fromEntries(keys.map((k) => [k, obj[k]])) as Pick<T, K>
