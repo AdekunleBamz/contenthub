@@ -23,9 +23,12 @@ export function getDivviReferralTag(userAddress: string): string {
 }
 
 /**
- * Submit a transaction to Divvi for referral tracking
- * @param txHash - The transaction hash
- * @param chainId - The chain ID where the transaction was sent
+ * Submits a transaction hash to the Divvi service for referral tracking and indexing.
+ * This process is non-blocking to ensure the user experience remains smooth even if tracking fails.
+ * 
+ * @param txHash - The unique hash of the transaction to track.
+ * @param chainId - The blockchain network ID where the transaction occurred.
+ * @returns A Promise that resolves when the submission attempt is complete.
  */
 export async function submitDivviReferral(txHash: string, chainId: number): Promise<void> {
   try {
