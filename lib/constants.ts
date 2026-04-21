@@ -67,6 +67,16 @@ export const APP_DISPLAY_NAME = 'ContentHub'
 /** Semantic version string for the current app release. */
 export const APP_VERSION = '1.0.0'
 
+/** Standard user-facing error messages. */
+export const ERROR_MESSAGES = Object.freeze({
+  WALLET_NOT_CONNECTED: 'Please connect your wallet to continue.',
+  WRONG_NETWORK: 'Please switch to Base or Celo network.',
+  UPLOAD_FAILED: 'Upload failed. Please try again.',
+  VOTE_FAILED: 'Could not record your vote. Please try again.',
+  INVALID_FILE: 'The selected file is not supported.',
+  FILE_TOO_LARGE: 'File exceeds the 50 MB upload limit.',
+} as const)
+
 /** Zero address sentinel. */
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000' as const
 
