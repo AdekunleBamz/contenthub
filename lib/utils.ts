@@ -298,9 +298,12 @@ export function formatWei(wei: bigint): string {
 }
 
 /**
- * Returns a debounced wrapper around a function.
- * @param fn - Function to debounce.
- * @param delay - Delay in ms.
+ * Returns a debounced version of the provided function.
+ * Ensures the function only executes after 'delay' milliseconds have elapsed since the last call.
+ * 
+ * @param fn - The function to be debounced.
+ * @param delay - The delay in milliseconds.
+ * @returns A debounced function that accepts the same parameters as the original.
  */
 export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: number): (...args: Parameters<T>) => void {
   let timer: ReturnType<typeof setTimeout> | null = null
