@@ -115,3 +115,18 @@ export function getUploadFee(chain: keyof typeof CONTRACTS): bigint {
 export function isValidUploadFee(fee: bigint): boolean {
   return fee >= BigInt(CONTENT_FEE_WEI)
 }
+
+/**
+ * Returns the full contract addresses for both communityContentHub and contentNFT
+ * for a given chain key.
+ * @param chain - Chain key ('base' | 'celo').
+ */
+export function getContractAddresses(chain: keyof typeof CONTRACTS): {
+  communityContentHub: `0x${string}`
+  contentNFT: `0x${string}`
+} {
+  return {
+    communityContentHub: CONTRACTS[chain].communityContentHub.address,
+    contentNFT: CONTRACTS[chain].contentNFT.address,
+  }
+}
