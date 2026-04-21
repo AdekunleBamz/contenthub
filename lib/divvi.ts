@@ -43,7 +43,12 @@ export async function submitDivviReferral(txHash: string, chainId: number): Prom
   }
 }
 
-/** Returns the Divvi consumer address used for this app. */
+/**
+ * Retrieves the constant Divvi consumer address configured for ContentHub.
+ * This address is used to identify the application in the Divvi ecosystem.
+ * 
+ * @returns The EVM address string of the configured consumer.
+ */
 export function getDivviConsumerAddress(): string {
   return DIVVI_CONSUMER;
 }
