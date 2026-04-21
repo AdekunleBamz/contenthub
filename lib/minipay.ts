@@ -183,6 +183,7 @@ export function createMiniPayWalletClient(testnet = false) {
 /** Requests and returns the connected MiniPay address. */
 export async function getMiniPayAddress(): Promise<Address | null> {
   if (!isMiniPay()) return null;
+  if (typeof window === 'undefined' || !window.ethereum) return null;
   const accounts = (await (window.ethereum as any).request({
     method: 'eth_requestAccounts',
     params: [],
