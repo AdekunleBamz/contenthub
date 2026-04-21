@@ -4,10 +4,6 @@ export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!process.env.PINATA_JWT) {
-      return NextResponse.json({ error: 'Metadata service not configured' }, { status: 503 });
-    }
-
     const body = await request.json();
     const { name, description, image, attributes, nftType } = body;
     const trimmedName = String(name).trim();
