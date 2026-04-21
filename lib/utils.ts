@@ -83,3 +83,11 @@ export function isValidTitle(title: string): boolean {
 export function isValidDescription(desc: string): boolean {
   return desc.length <= 500
 }
+
+/**
+ * Returns true if the tag list is within allowed count and each tag within length.
+ * @param tags - Array of tag strings.
+ */
+export function isValidTags(tags: string[]): boolean {
+  return tags.length <= 10 && tags.every((t) => t.length > 0 && t.length <= 30)
+}
