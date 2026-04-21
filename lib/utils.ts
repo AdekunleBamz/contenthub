@@ -314,8 +314,11 @@ export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: n
 }
 
 /**
- * Sleeps for a given number of milliseconds.
- * @param ms - Duration in milliseconds.
+ * Returns a Promise that resolves after a specified duration.
+ * Useful for introducing artificial delays or managing retry logic in async workflows.
+ * 
+ * @param ms - The duration to sleep in milliseconds.
+ * @returns A Promise that resolves after the timeout.
  */
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms))
