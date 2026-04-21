@@ -288,3 +288,14 @@ export async function checkTransactionSuccess(
   const receipt = await publicClient.getTransactionReceipt({ hash: txHash });
   return receipt.status === 'success';
 }
+
+/**
+ * Returns true if the MiniPay provider is available in the current window context.
+ */
+export function isMiniPayAvailable(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    typeof window.ethereum !== 'undefined' &&
+    !!(window.ethereum as { isMiniPay?: boolean }).isMiniPay
+  )
+}
