@@ -4,8 +4,11 @@
 import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB, ZERO_ADDRESS } from './constants'
 
 /**
- * Truncates an EVM address to short form: 0xabcd...1234
- * @param addr - Full EVM address string.
+ * Truncates an EVM address to a readable short form.
+ * Example: 0x1234567890abcdef1234567890abcdef12345678 -> 0x1234...5678
+ * 
+ * @param addr - The full EVM address string to be truncated.
+ * @returns The truncated address string (0xabcd...1234) or an empty string if input is invalid.
  */
 export function shortAddress(addr: string): string {
   if (!addr) return ''
