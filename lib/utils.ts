@@ -18,3 +18,12 @@ export function shortAddress(addr: string): string {
 export function isZeroAddress(addr: string): boolean {
   return addr === '0x0000000000000000000000000000000000000000'
 }
+
+/**
+ * Returns true if the given string is a valid non-empty IPFS CID.
+ * Supports both CIDv0 (Qm...) and CIDv1 (bafy...) formats.
+ * @param cid - CID string to validate.
+ */
+export function isValidCid(cid: string): boolean {
+  return /^(Qm[1-9A-HJ-NP-Za-km-z]{44}|bafy[a-z2-7]{55,})$/.test(cid)
+}
