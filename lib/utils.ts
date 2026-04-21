@@ -155,6 +155,7 @@ export function isPositiveInteger(n: unknown): n is number {
  * @param bytes - Size in bytes.
  */
 export function bytesToMb(bytes: number): number {
+  if (bytes <= 0) return 0
   return Math.round((bytes / 1_048_576) * 100) / 100
 }
 
