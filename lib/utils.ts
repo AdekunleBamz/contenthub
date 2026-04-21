@@ -51,6 +51,7 @@ export function isValidFileSize(sizeBytes: number, maxMb = 50): boolean {
  * @param bytes - File size in bytes.
  */
 export function formatFileSize(bytes: number): string {
+  if (bytes === 0) return '0 B'
   if (bytes >= 1_048_576) return `${(bytes / 1_048_576).toFixed(1)} MB`
   if (bytes >= 1_024) return `${(bytes / 1_024).toFixed(1)} KB`
   return `${bytes} B`
