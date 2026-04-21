@@ -39,6 +39,11 @@ export default function MintPage() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        setPreviewUrl('');
+      }
+
       setFile(selectedFile);
       if (selectedFile.type.startsWith('image/')) {
         const url = URL.createObjectURL(selectedFile);
