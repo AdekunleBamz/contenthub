@@ -67,3 +67,11 @@ export function isAllowedMimeType(mimeType: string): boolean {
   ]
   return allowed.includes(mimeType)
 }
+
+/**
+ * Returns true if the content title is valid (non-empty, within max length).
+ * @param title - Title string to validate.
+ */
+export function isValidTitle(title: string): boolean {
+  return title.trim().length > 0 && title.trim().length <= 100
+}
