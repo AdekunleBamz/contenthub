@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -41,9 +41,9 @@ export function ipfsToHttp(cid: string): string {
 /**
  * Returns true if the file size is within the allowed upload limit.
  * @param sizeBytes - File size in bytes.
- * @param maxMb - Maximum allowed size in megabytes (default 50).
+ * @param maxMb - Maximum allowed size in megabytes (default MAX_FILE_SIZE_MB).
  */
-export function isValidFileSize(sizeBytes: number, maxMb = 50): boolean {
+export function isValidFileSize(sizeBytes: number, maxMb = MAX_FILE_SIZE_MB): boolean {
   return sizeBytes > 0 && sizeBytes <= maxMb * 1024 * 1024
 }
 
