@@ -286,8 +286,11 @@ export function pluralize(count: number, singular: string, plural = `${singular}
 }
 
 /**
- * Formats a wei amount as a CELO string with 4 decimal places.
- * @param wei - Amount in wei (bigint).
+ * Converts an amount in Wei (bigint) to a human-readable decimal string with 4-place precision.
+ * This is primarily used for displaying token balances and transaction fees in the UI.
+ * 
+ * @param wei - The amount in Wei to be converted.
+ * @returns A formatted string representation of the amount in full tokens.
  */
 export function formatWei(wei: bigint): string {
   if (wei === 0n) return '0.0000'
