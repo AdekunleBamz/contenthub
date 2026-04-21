@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { CONTRACTS } from '@/lib/contracts';
+import { BASE_CHAIN_ID, CELO_CHAIN_ID } from '@/lib/contracts';
 
 interface Content {
   id: number;
@@ -19,7 +20,7 @@ export default function GalleryPage() {
   const { writeContract, data: hash } = useWriteContract();
   const { isSuccess } = useWaitForTransactionReceipt({ hash });
 
-  const currentChain = chain?.id === 8453 ? 'base' : chain?.id === 42220 ? 'celo' : null;
+  const currentChain = chain?.id === BASE_CHAIN_ID ? 'base' : chain?.id === CELO_CHAIN_ID ? 'celo' : null;
   const contract = currentChain ? CONTRACTS[currentChain].communityContentHub : null;
 
   const [contents, setContents] = useState<Content[]>([]);
