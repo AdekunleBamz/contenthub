@@ -75,3 +75,11 @@ export function isAllowedMimeType(mimeType: string): boolean {
 export function isValidTitle(title: string): boolean {
   return title.trim().length > 0 && title.trim().length <= 100
 }
+
+/**
+ * Returns true if the description is within the max allowed length.
+ * @param desc - Description string to check.
+ */
+export function isValidDescription(desc: string): boolean {
+  return desc.length <= 500
+}
