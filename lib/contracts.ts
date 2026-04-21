@@ -96,7 +96,7 @@ export const CONTENT_FEE_DISPLAY = '0.00002';
  * Returns true if the given chain key is supported by CONTRACTS.
  * @param key - Chain key to check.
  */
-export function isSupportedChain(key: string): key is keyof typeof CONTRACTS {
+export function isSupportedChainKey(key: string): key is keyof typeof CONTRACTS {
   return key in CONTRACTS
 }
 
