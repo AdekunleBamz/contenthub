@@ -206,6 +206,7 @@ export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pi
  * @param addr - Address string.
  */
 export function isValidAddress(addr: string): boolean {
+  if (!addr || typeof addr !== 'string') return false
   return /^0x[a-fA-F0-9]{40}$/.test(addr) && addr !== '0x0000000000000000000000000000000000000000'
 }
 
