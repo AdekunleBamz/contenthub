@@ -167,3 +167,11 @@ export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: n
     timer = setTimeout(() => fn(...args), delay)
   }
 }
+
+/**
+ * Sleeps for a given number of milliseconds.
+ * @param ms - Duration in milliseconds.
+ */
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
