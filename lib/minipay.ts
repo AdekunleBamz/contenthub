@@ -96,6 +96,13 @@ export function isCeloTestnet(chainId: number): boolean {
   return chainId === celoSepolia.id;
 }
 
+/** Returns a human-readable name for a known Celo chain ID. */
+export function getChainName(chainId: number): string {
+  if (chainId === celo.id) return 'Celo';
+  if (chainId === celoSepolia.id) return 'Celo Alfajores';
+  return 'Unknown';
+}
+
 /** Returns a normalised (lowercase + trimmed) copy of an EVM address. */
 export function normalizeAddress(address: string): string {
   return address.trim().toLowerCase();
