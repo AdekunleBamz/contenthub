@@ -194,6 +194,15 @@ export function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Om
 }
 
 /**
+ * Returns a new object containing only the specified keys.
+ * @param obj - Source object.
+ * @param keys - Keys to keep.
+ */
+export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+  return Object.fromEntries(keys.map((k) => [k, obj[k]])) as Pick<T, K>
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
