@@ -34,6 +34,9 @@ export const MAX_TAG_LENGTH = 30
 /** How many items to display per page in the gallery. */
 export const GALLERY_PAGE_SIZE = 20
 
+/** How many content IDs to fetch in a single gallery request. */
+export const GALLERY_FETCH_LIMIT = 10
+
 /** IPFS gateway URL used for resolving CIDs. */
 export const IPFS_GATEWAY = 'https://ipfs.io/ipfs/'
 
