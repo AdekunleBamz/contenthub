@@ -50,9 +50,11 @@ export function ipfsToHttp(cid: string): string {
 }
 
 /**
- * Returns true if the file size is within the allowed upload limit.
- * @param sizeBytes - File size in bytes.
- * @param maxMb - Maximum allowed size in megabytes (default MAX_FILE_SIZE_MB).
+ * Checks if a file's size is within the acceptable maximum limit.
+ * 
+ * @param sizeBytes - The size of the file in bytes.
+ * @param maxMb - The maximum allowed size in Megabytes (defaults to MAX_FILE_SIZE_MB).
+ * @returns True if the file size is positive and less than or equal to the limit.
  */
 export function isValidFileSize(sizeBytes: number, maxMb = MAX_FILE_SIZE_MB): boolean {
   return sizeBytes > 0 && sizeBytes <= maxMb * 1024 * 1024
