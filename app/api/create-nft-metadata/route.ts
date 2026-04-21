@@ -6,19 +6,19 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { name, description, image, attributes, nftType } = body;
+    const trimmedName = String(name).trim();
+    const trimmedImage = typeof image === 'string' ? image.trim() : '';
+    const trimmedDescription = description ? String(description).trim() : '';
 
-    if (!name || !image) {
+    if (!trimmedName || !trimmedImage) {
       return NextResponse.json({ error: 'Name and image are required' }, { status: 400 });
     }
-
-    const trimmedName = String(name).trim();
-    const trimmedDescription = description ? String(description).trim() : '';
 
     // Create NFT metadata following OpenSea standard
     const metadata = {
       name: trimmedName,
       description: trimmedDescription,
-      image, // IPFS hash or URL
+      image: trimmedImage, // IPFS hash or URL
       attributes: attributes || [
         {
           trait_type: 'Type',
