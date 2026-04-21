@@ -4,9 +4,11 @@ import { getReferralTag, submitReferral } from '@divvi/referral-sdk';
 const DIVVI_CONSUMER = '0x7C98ab80D060cA57DD067712d0eD084A58f69c49';
 
 /**
- * Generate a referral tag for tracking user activity
- * @param userAddress - The wallet address of the user
- * @returns The referral tag to append to transaction calldata
+ * Generates a unique referral tag used for tracking user activity through Divvi.
+ * The tag is designed to be appended to transaction calldata for on-chain attribution.
+ * 
+ * @param userAddress - The wallet address of the user initiating the action.
+ * @returns A referral tag string, or '0x' if generation fails.
  */
 export function getDivviReferralTag(userAddress: string): string {
   try {
