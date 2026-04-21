@@ -46,6 +46,9 @@ export const NETWORK_NAMES = {
 /** Chain ID for Celo Alfajores (Sepolia) testnet. */
 export const CELO_SEPOLIA_CHAIN_ID = 44787;
 
+/** Alias for CELO_SEPOLIA_CHAIN_ID kept for backwards compatibility. */
+export const CELO_ALFAJORES_CHAIN_ID = CELO_SEPOLIA_CHAIN_ID;
+
 /** Returns the human-readable network name for a given chain ID, or 'Unknown'. */
 export function getNetworkName(chainId: number): string {
   return (NETWORK_NAMES as Record<number, string>)[chainId] ?? 'Unknown';
