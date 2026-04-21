@@ -133,6 +133,17 @@ export function clampDecimals(amount: string, decimals = ERC20_FRACTION_DISPLAY_
     : whole;
 }
 
+/**
+ * Parses a human-readable token amount string to a bigint in the smallest unit.
+ * @param amount  - Amount string (e.g. "1.5").
+ * @param decimals - Token decimals (default 18).
+ */
+export function parseTokenAmount(amount: string, decimals = ERC20_DEFAULT_DECIMALS): bigint {
+  const [whole, fraction = ''] = amount.split('.');
+  const padded = fraction.padEnd(decimals, '0').slice(0, decimals);
+  return BigInt(whole) * BigInt(10) ** BigInt(decimals) + BigInt(padded);
+}
+
 /** Returns the USDC token address on Celo mainnet. */
 export function getUSDCAddress(): Address {
   return USDC_ADDRESS;
