@@ -37,14 +37,14 @@ export const BASE_CHAIN_ID = 8453;
 /** Chain ID for Celo mainnet. */
 export const CELO_CHAIN_ID = 42220;
 
+/** Chain ID for Celo Alfajores (Sepolia) testnet. */
+export const CELO_SEPOLIA_CHAIN_ID = 44787;
+
 export const NETWORK_NAMES = {
   [BASE_CHAIN_ID]: 'Base',
   [CELO_CHAIN_ID]: 'Celo',
   [CELO_SEPOLIA_CHAIN_ID]: 'Celo Alfajores',
 } as const;
-
-/** Chain ID for Celo Alfajores (Sepolia) testnet. */
-export const CELO_SEPOLIA_CHAIN_ID = 44787;
 
 /** Alias for CELO_SEPOLIA_CHAIN_ID kept for backwards compatibility. */
 export const CELO_ALFAJORES_CHAIN_ID = CELO_SEPOLIA_CHAIN_ID;
