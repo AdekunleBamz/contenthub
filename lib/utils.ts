@@ -1,6 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -90,7 +91,7 @@ export function isValidDescription(desc: string): boolean {
  * @param tags - Array of tag strings.
  */
 export function isValidTags(tags: string[]): boolean {
-  return tags.length <= 10 && tags.every((t) => t.length > 0 && t.length <= 30)
+  return tags.length <= MAX_TAGS && tags.every((t) => t.length >= MIN_TAG_LENGTH && t.length <= MAX_TAG_LENGTH)
 }
 
 /**
