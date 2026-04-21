@@ -2,6 +2,7 @@
 
 import { useAccount, useReadContract } from 'wagmi';
 import { CONTRACTS } from '@/lib/contracts';
+import { shortAddress } from '@/lib/utils';
 import { useState } from 'react';
 
 export default function ProfilePage() {
@@ -80,7 +81,7 @@ export default function ProfilePage() {
               👤
             </div>
             <div>
-              <h2 className="text-2xl font-bold">{address}</h2>
+              <h2 className="text-2xl font-bold">{address ? shortAddress(address) : ''}</h2>
               <p className="text-gray-400">
                 {selectedChain === 'base' ? 'Base Mainnet' : 'Celo Mainnet'}
               </p>
