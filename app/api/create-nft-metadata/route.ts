@@ -4,19 +4,15 @@ export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!process.env.PINATA_JWT) {
-      return NextResponse.json({ error: 'Metadata service not configured' }, { status: 503 });
-    }
-
     const body = await request.json();
     const { name, description, image, attributes, nftType } = body;
-    const trimmedName = String(name ?? '').trim();
-    const trimmedImage = String(image ?? '').trim();
+    const trimmedName = String(name).trim();
+    const trimmedImage = typeof image === 'string' ? image.trim() : '';
+    const trimmedDescription = description ? String(description).trim() : '';
 
     if (!trimmedName || !trimmedImage) {
       return NextResponse.json({ error: 'Name and image are required' }, { status: 400 });
     }
-    const trimmedDescription = description ? String(description).trim() : '';
 
     // Create NFT metadata following OpenSea standard
     const metadata = {
