@@ -132,6 +132,14 @@ export function formatDate(ts: number): string {
 }
 
 /**
+ * Formats a number with locale-appropriate thousands separators.
+ * @param n - Number to format.
+ */
+export function formatNumber(n: number): string {
+  return n.toLocaleString()
+}
+
+/**
  * Returns true if the address is a valid non-zero EVM address.
  * @param addr - Address string.
  */
