@@ -199,3 +199,11 @@ export function toSlug(str: string): string {
     .replace(/[\s_]+/g, '-')
     .replace(/^-+|-+$/g, '')
 }
+
+/**
+ * Returns true when the value is a string with at least one non-whitespace character.
+ * @param value - Value to check.
+ */
+export function isNonEmptyString(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0
+}
