@@ -86,6 +86,16 @@ export function isZeroAddress(address: string): boolean {
   return address.trim().toLowerCase() === ('0x' + '0'.repeat(40));
 }
 
+/** Returns true when the given chain ID is Celo mainnet. */
+export function isCeloMainnet(chainId: number): boolean {
+  return chainId === celo.id;
+}
+
+/** Returns true when the given chain ID is Celo Alfajores testnet. */
+export function isCeloTestnet(chainId: number): boolean {
+  return chainId === celoSepolia.id;
+}
+
 /** Returns a normalised (lowercase + trimmed) copy of an EVM address. */
 export function normalizeAddress(address: string): string {
   return address.trim().toLowerCase();
