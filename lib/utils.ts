@@ -45,3 +45,13 @@ export function ipfsToHttp(cid: string): string {
 export function isValidFileSize(sizeBytes: number, maxMb = 50): boolean {
   return sizeBytes > 0 && sizeBytes <= maxMb * 1024 * 1024
 }
+
+/**
+ * Formats a file size in bytes to a human-readable string.
+ * @param bytes - File size in bytes.
+ */
+export function formatFileSize(bytes: number): string {
+  if (bytes >= 1_048_576) return `${(bytes / 1_048_576).toFixed(1)} MB`
+  if (bytes >= 1_024) return `${(bytes / 1_024).toFixed(1)} KB`
+  return `${bytes} B`
+}
