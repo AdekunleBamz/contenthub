@@ -36,3 +36,12 @@ export function isValidCid(cid: string): boolean {
 export function ipfsToHttp(cid: string): string {
   return `https://ipfs.io/ipfs/${cid}`
 }
+
+/**
+ * Returns true if the file size is within the allowed upload limit.
+ * @param sizeBytes - File size in bytes.
+ * @param maxMb - Maximum allowed size in megabytes (default 50).
+ */
+export function isValidFileSize(sizeBytes: number, maxMb = 50): boolean {
+  return sizeBytes > 0 && sizeBytes <= maxMb * 1024 * 1024
+}
