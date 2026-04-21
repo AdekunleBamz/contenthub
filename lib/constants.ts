@@ -40,6 +40,12 @@ export const IPFS_GATEWAY = 'https://ipfs.io/ipfs/'
 /** Pinata IPFS gateway for faster pin resolution. */
 export const PINATA_GATEWAY = 'https://gateway.pinata.cloud/ipfs/'
 
+/** Public RPC endpoint for Base mainnet. */
+export const BASE_RPC_URL = 'https://mainnet.base.org'
+
+/** Public RPC endpoint for Celo mainnet. */
+export const CELO_RPC_URL = 'https://forno.celo.org'
+
 /** Timeout (ms) for IPFS upload requests. */
 export const IPFS_UPLOAD_TIMEOUT_MS = 60_000
 
