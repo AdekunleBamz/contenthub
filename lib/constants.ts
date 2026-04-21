@@ -48,3 +48,6 @@ export const TOAST_SUCCESS_DURATION_MS = 4_000
 
 /** Duration (ms) for error toast notifications. */
 export const TOAST_ERROR_DURATION_MS = 7_000
+
+/** App display name shown in the UI. */
+export const APP_DISPLAY_NAME = 'ContentHub'
