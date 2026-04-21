@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -63,11 +63,7 @@ export function formatFileSize(bytes: number): string {
  * @param mimeType - MIME type string to check.
  */
 export function isAllowedMimeType(mimeType: string): boolean {
-  const allowed = [
-    'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-    'video/mp4', 'audio/mpeg', 'application/pdf',
-  ]
-  return allowed.includes(mimeType)
+  return (ALLOWED_MIME_TYPES as readonly string[]).includes(mimeType)
 }
 
 /**
