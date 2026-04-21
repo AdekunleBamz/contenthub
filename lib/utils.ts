@@ -366,8 +366,11 @@ export function toSlug(str: string): string {
 }
 
 /**
- * Returns true when the value is a string with at least one non-whitespace character.
- * @param value - Value to check.
+ * Determines if a value is a string that contains at least one non-whitespace character.
+ * Acts as a TypeScript type guard for identifying meaningful string inputs.
+ * 
+ * @param value - The value to check (of unknown type).
+ * @returns True if the value is a string with visible content.
  */
 export function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0
