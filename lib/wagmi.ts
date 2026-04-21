@@ -1,9 +1,10 @@
 import { http, createConfig } from 'wagmi';
 import { base, celo, celoSepolia } from 'wagmi/chains';
 import { coinbaseWallet, metaMask, walletConnect, injected } from 'wagmi/connectors';
+import { APP_DISPLAY_NAME } from './constants';
 
 /** Application name shown in wallet connection dialogs. */
-const CONTENTHUB_APP_NAME = 'ContentHub';
+const CONTENTHUB_APP_NAME = APP_DISPLAY_NAME;
 
 /** Fallback WalletConnect project ID used when the env variable is absent. */
 const WC_DEFAULT_PROJECT_ID = '8b50179539f8beea2f4a0c070d058d77';
@@ -41,7 +42,7 @@ export function isSupportedChainId(chainId: number): boolean {
 }
 
 /** Application name exported for use outside of wagmi config (e.g. Coinbase Wallet). */
-export const APP_NAME = 'ContentHub';
+export const APP_NAME = APP_DISPLAY_NAME;
 
 /** Returns the wagmi chain object for the given chainId, or undefined if not configured. */
 export function getChainById(chainId: number) {
