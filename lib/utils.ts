@@ -125,9 +125,11 @@ export function truncate(str: string, max: number): string {
 
 /**
  * Formats a Unix timestamp in seconds as a locale date string.
+ * Returns an empty string when the timestamp is not a valid positive number.
  * @param ts - Unix timestamp in seconds.
  */
 export function formatDate(ts: number): string {
+  if (!Number.isFinite(ts) || ts <= 0) return ''
   return new Date(ts * 1000).toLocaleDateString()
 }
 
