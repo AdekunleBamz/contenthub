@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH } from './constants'
 
 /**
  * Truncates an EVM address to short form: 0xabcd...1234
@@ -67,19 +67,19 @@ export function isAllowedMimeType(mimeType: string): boolean {
 }
 
 /**
- * Returns true if the content title is valid (non-empty, within max length).
- * @param title - Title string to validate.
- */
-export function isValidTitle(title: string): boolean {
-  return title.trim().length > 0 && title.trim().length <= 100
-}
-
-/**
  * Returns true if the description is within the max allowed length.
  * @param desc - Description string to check.
  */
 export function isValidDescription(desc: string): boolean {
-  return desc.length <= 500
+  return desc.length <= MAX_DESCRIPTION_LENGTH
+}
+
+/**
+ * Returns true if the content title is valid (non-empty, within max length).
+ * @param title - Title string to validate.
+ */
+export function isValidTitle(title: string): boolean {
+  return title.trim().length > 0 && title.trim().length <= MAX_TITLE_LENGTH
 }
 
 /**
