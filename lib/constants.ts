@@ -64,6 +64,9 @@ export const TOAST_ERROR_DURATION_MS = 7_000
 /** App display name shown in the UI. */
 export const APP_DISPLAY_NAME = 'ContentHub'
 
+/** Semantic version string for the current app release. */
+export const APP_VERSION = '1.0.0'
+
 /** Zero address sentinel. */
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000' as const
 
