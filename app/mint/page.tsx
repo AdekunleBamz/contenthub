@@ -226,6 +226,7 @@ export default function MintPage() {
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                maxLength={MAX_DESCRIPTION_LENGTH}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-indigo-500"
                 placeholder="Describe this achievement"
                 rows={4}
