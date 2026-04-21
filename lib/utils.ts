@@ -116,9 +116,12 @@ export function isValidTags(tags: string[]): boolean {
 }
 
 /**
- * Builds the full IPFS HTTP URL for a CID.
- * @param cid - IPFS CID.
- * @param gateway - Gateway base URL (default: ipfs.io).
+ * Constructs a full URL for an IPFS CID using a customizable gateway.
+ * Provides a flexible alternative to standard IPFS resolution with a default fallback.
+ * 
+ * @param cid - The IPFS Content Identifier string.
+ * @param gateway - The base gateway URL (defaults to 'https://ipfs.io/ipfs/').
+ * @returns A fully qualified IPFS URL string.
  */
 export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): string {
   return `${gateway}${cid.trim()}`
