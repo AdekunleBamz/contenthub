@@ -184,3 +184,16 @@ export function capitalize(str: string): string {
   if (!str) return str
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+/**
+ * Converts a title string to a URL-safe slug.
+ * @param str - Input string (e.g. a content title).
+ */
+export function toSlug(str: string): string {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
