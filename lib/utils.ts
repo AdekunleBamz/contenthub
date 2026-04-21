@@ -105,8 +105,11 @@ export function isValidTitle(title: string): boolean {
 }
 
 /**
- * Returns true if the tag list is within allowed count and each tag within length.
- * @param tags - Array of tag strings.
+ * Validates a list of tags against length and count constraints.
+ * Ensures the total number of tags and each tag's character count are within limits.
+ * 
+ * @param tags - An array of tag strings to validate.
+ * @returns True if the entire tag list is compliant with all constraints.
  */
 export function isValidTags(tags: string[]): boolean {
   return tags.length <= MAX_TAGS && tags.every((t) => t.length >= MIN_TAG_LENGTH && t.length <= MAX_TAG_LENGTH)
