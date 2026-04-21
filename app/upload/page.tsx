@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
-import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID } from '@/lib/contracts';
+import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID, CONTENT_FEE_DISPLAY } from '@/lib/contracts';
 
 export default function UploadPage() {
   const { address, chain, isConnected } = useAccount();
@@ -231,7 +231,7 @@ export default function UploadPage() {
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-400">Upload Fee:</span>
                 <span className="font-semibold">
-                  {currentChain === 'base' ? '0.00002 ETH' : '0.00002 CELO'}
+                  {currentChain === 'base' ? `${CONTENT_FEE_DISPLAY} ETH` : `${CONTENT_FEE_DISPLAY} CELO`}
                 </span>
               </div>
 
