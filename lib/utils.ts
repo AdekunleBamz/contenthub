@@ -175,3 +175,12 @@ export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: n
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
+
+/**
+ * Returns the string with its first character uppercased.
+ * @param str - Input string.
+ */
+export function capitalize(str: string): string {
+  if (!str) return str
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
