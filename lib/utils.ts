@@ -61,8 +61,11 @@ export function isValidFileSize(sizeBytes: number, maxMb = MAX_FILE_SIZE_MB): bo
 }
 
 /**
- * Formats a file size in bytes to a human-readable string.
- * @param bytes - File size in bytes.
+ * Converts a raw file size in bytes to a formatted, human-readable string.
+ * Automatically chooses the best unit (B, KB, or MB) for readability.
+ * 
+ * @param bytes - The number of bytes to format.
+ * @returns A formatted string with the appropriate unit.
  */
 export function formatFileSize(bytes: number): string {
   if (bytes === 0) return '0 B'
