@@ -11,10 +11,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Name and image are required' }, { status: 400 });
     }
 
+    const trimmedName = String(name).trim();
+    const trimmedDescription = description ? String(description).trim() : '';
+
     // Create NFT metadata following OpenSea standard
     const metadata = {
-      name,
-      description: description || '',
+      name: trimmedName,
+      description: trimmedDescription,
       image, // IPFS hash or URL
       attributes: attributes || [
         {
