@@ -180,8 +180,11 @@ export function formatNumber(n: number): string {
 }
 
 /**
- * Returns true when n is a finite integer greater than zero.
- * @param n - Value to check.
+ * Validates if the given value is a finite integer strictly greater than zero.
+ * Acts as a TypeScript type guard to ensure the value is a positive number.
+ * 
+ * @param n - The unknown value to check.
+ * @returns True if n is a positive finite integer.
  */
 export function isPositiveInteger(n: unknown): n is number {
   return typeof n === 'number' && Number.isFinite(n) && Number.isInteger(n) && n > 0
