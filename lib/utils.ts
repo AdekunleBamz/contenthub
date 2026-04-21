@@ -128,11 +128,13 @@ export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): st
 }
 
 /**
- * Clamps a number between min and max (inclusive).
- * When min exceeds max, min is returned.
- * @param value - Number to clamp.
- * @param min - Minimum value.
- * @param max - Maximum value.
+ * Constrains a number to be within a specific range [min, max].
+ * If the value is outside the range, it is moved to the nearest boundary.
+ * 
+ * @param value - The numerical value to be clamped.
+ * @param min - The lower bound.
+ * @param max - The upper bound.
+ * @returns The clamped value.
  */
 export function clamp(value: number, min: number, max: number): number {
   if (min > max) return min
