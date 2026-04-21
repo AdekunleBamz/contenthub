@@ -350,8 +350,11 @@ export function getInitials(name: string): string {
 }
 
 /**
- * Converts a title string to a URL-safe slug.
- * @param str - Input string (e.g. a content title).
+ * Converts a raw string into a URL-safe slug format.
+ * Lowercases, removes special characters, and replaces spaces with hyphens.
+ * 
+ * @param str - The input string (e.g., a content title) to be slugified.
+ * @returns A URL-safe slug string.
  */
 export function toSlug(str: string): string {
   return str
