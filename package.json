@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Community-driven content platform on Base and Celo",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
