@@ -1,5 +1,6 @@
 import { COMMUNITY_CONTENT_HUB_ABI } from './abi/CommunityContentHub';
 import { CONTENT_NFT_ABI } from './abi/ContentNFT';
+import { CONTENT_HUB_TREASURY_ABI } from './abi/ContentHubTreasury';
 
 /** Upload and mint fee in wei (0.00002 ETH / CELO). */
 export const CONTENT_FEE_WEI = '20000000000000';
@@ -14,6 +15,11 @@ export const CONTRACTS = {
       address: '0xeE5Dd28E440A5cb51587fDbcb29b4b367fe87334' as `0x${string}`,
       abi: CONTENT_NFT_ABI,
     },
+    contentHubTreasury: {
+      // Deploy ContentHubTreasury.sol manually, then replace null with the Base address.
+      address: null as `0x${string}` | null,
+      abi: CONTENT_HUB_TREASURY_ABI,
+    },
     uploadFee: CONTENT_FEE_WEI,
     mintFee: CONTENT_FEE_WEI,
   },
@@ -25,6 +31,10 @@ export const CONTRACTS = {
     contentNFT: {
       address: '0x11E07A42989212622306A0F293829888fe004828' as `0x${string}`,
       abi: CONTENT_NFT_ABI,
+    },
+    contentHubTreasury: {
+      address: '0x2ff169744a28fE867aa52f29E8eF5080b7f45061' as `0x${string}`,
+      abi: CONTENT_HUB_TREASURY_ABI,
     },
     uploadFee: CONTENT_FEE_WEI,
     mintFee: CONTENT_FEE_WEI,
@@ -106,6 +116,16 @@ export function getChainKey(chainId: number): keyof typeof CONTRACTS | null {
   return null;
 }
 
+/** Returns true when a ContentHubTreasury address has been configured for the chain. */
+export function isTreasuryConfigured(chain: keyof typeof CONTRACTS): boolean {
+  return CONTRACTS[chain].contentHubTreasury.address !== null;
+}
+
+/** Returns the configured ContentHubTreasury address for a chain, or null if not deployed yet. */
+export function getTreasuryAddress(chain: keyof typeof CONTRACTS): `0x${string}` | null {
+  return CONTRACTS[chain].contentHubTreasury.address;
+}
+
 /** Upload and mint fee in ETH/CELO units (human-readable). */
 export const CONTENT_FEE_DISPLAY = '0.00002';
 
@@ -142,9 +162,11 @@ export function isValidUploadFee(fee: bigint, chain: keyof typeof CONTRACTS = 'c
 export function getContractAddresses(chain: keyof typeof CONTRACTS): {
   communityContentHub: `0x${string}`
   contentNFT: `0x${string}`
+  contentHubTreasury: `0x${string}` | null
 } {
   return {
     communityContentHub: CONTRACTS[chain].communityContentHub.address,
     contentNFT: CONTRACTS[chain].contentNFT.address,
+    contentHubTreasury: CONTRACTS[chain].contentHubTreasury.address,
   }
 }

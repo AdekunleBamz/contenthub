@@ -23,6 +23,12 @@ Community-driven content platform built on Base and Celo chains.
 ### Celo Mainnet
 - CommunityContentHub: `0x0bac169738f89689F8932A3E2663F1874D7CB92d`
 - ContentNFT: `0x11E07A42989212622306A0F293829888fe004828`
+- ContentHubTreasury: `0x2ff169744a28fE867aa52f29E8eF5080b7f45061`
+
+### Treasury
+- `ContentHubTreasury.sol` is ready for manual Remix deployment.
+- Celo treasury is configured. After a Base deployment, paste the Base treasury address into `lib/contracts.ts`.
+- Remix deployment notes: [`docs/treasury-remix-deployment.md`](./docs/treasury-remix-deployment.md)
 
 ## Getting Started
 
