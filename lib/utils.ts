@@ -11,9 +11,10 @@ import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATE
  * @returns The truncated address string (0xabcd...1234) or an empty string if input is invalid.
  */
 export function shortAddress(addr: string): string {
-  if (!addr) return ''
-  if (addr.length < 10) return addr
-  return `${addr.slice(0, 6)}...${addr.slice(-4)}`
+  const normalized = addr.trim()
+  if (!normalized) return ''
+  if (normalized.length < 10) return normalized
+  return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`
 }
 
 /**

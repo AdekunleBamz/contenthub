@@ -40,6 +40,10 @@ test('shortAddress leaves short values unchanged', () => {
   assert.equal(shortAddress('0x1234'), '0x1234')
 })
 
+test('shortAddress trims values before truncating', () => {
+  assert.equal(shortAddress('  0x1234567890abcdef1234567890abcdef12345678  '), '0x1234...5678')
+})
+
 test('isZeroAddress detects the configured zero address', () => {
   assert.equal(isZeroAddress('0x0000000000000000000000000000000000000000'), true)
 })
