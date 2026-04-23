@@ -39,3 +39,7 @@ test('shortAddress truncates long addresses', () => {
 test('shortAddress leaves short values unchanged', () => {
   assert.equal(shortAddress('0x1234'), '0x1234')
 })
+
+test('isZeroAddress detects the configured zero address', () => {
+  assert.equal(isZeroAddress('0x0000000000000000000000000000000000000000'), true)
+})
