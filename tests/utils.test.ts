@@ -151,3 +151,7 @@ test('formatNumber adds locale separators', () => {
 test('isPositiveInteger accepts positive integers', () => {
   assert.equal(isPositiveInteger(3), true)
 })
+
+test('isPositiveInteger rejects decimals', () => {
+  assert.equal(isPositiveInteger(3.5), false)
+})
