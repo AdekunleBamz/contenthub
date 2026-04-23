@@ -260,6 +260,10 @@ test('bytesToMb returns zero for zero bytes', () => {
   assert.equal(bytesToMb(0), 0)
 })
 
+test('bytesToMb returns zero for negative bytes', () => {
+  assert.equal(bytesToMb(-1), 0)
+})
+
 test('range builds half-open integer ranges', () => {
   assert.deepEqual(range(2, 5), [2, 3, 4])
 })
