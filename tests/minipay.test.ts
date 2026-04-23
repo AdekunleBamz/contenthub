@@ -60,3 +60,7 @@ test('getChainName labels unknown chains', () => {
 test('normalizeAddress trims and lowercases values', () => {
   assert.equal(normalizeAddress('  0xABCDEFabcdefABCDEFabcdefABCDEFabcdefabcd  '), '0xabcdefabcdefabcdefabcdefabcdefabcdefabcd')
 })
+
+test('isValidAddress accepts MiniPay EVM addresses', () => {
+  assert.equal(isValidAddress('0x1234567890abcdef1234567890abcdef12345678'), true)
+})
