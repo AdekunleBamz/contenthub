@@ -68,3 +68,7 @@ test('isValidAddress accepts MiniPay EVM addresses', () => {
 test('isValidAddress rejects malformed MiniPay addresses', () => {
   assert.equal(isValidAddress('0x1234'), false)
 })
+
+test('isUsableAddress rejects zero MiniPay addresses', () => {
+  assert.equal(isUsableAddress('0x0000000000000000000000000000000000000000'), false)
+})
