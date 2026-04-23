@@ -139,3 +139,7 @@ test('truncate adds an ellipsis for long strings', () => {
 test('formatDate returns blank output for invalid timestamps', () => {
   assert.equal(formatDate(0), '')
 })
+
+test('formatNumber falls back to zero for non-finite values', () => {
+  assert.equal(formatNumber(Number.POSITIVE_INFINITY), '0')
+})
