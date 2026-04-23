@@ -70,3 +70,7 @@ test('isTestnet detects Celo Sepolia ids', () => {
 test('getChainKey resolves Base chain keys', () => {
   assert.equal(getChainKey(BASE_CHAIN_ID), 'base')
 })
+
+test('getChainKey returns null for unknown chains', () => {
+  assert.equal(getChainKey(1), null)
+})
