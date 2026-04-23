@@ -152,6 +152,10 @@ test('isValidTags accepts bounded tag lists', () => {
   assert.equal(isValidTags(['art', 'music']), true)
 })
 
+test('isValidTags accepts the maximum tag count', () => {
+  assert.equal(isValidTags(Array.from({ length: 10 }, (_, i) => `tag${i}`)), true)
+})
+
 test('isValidTags rejects short tags', () => {
   assert.equal(isValidTags(['a']), false)
 })
