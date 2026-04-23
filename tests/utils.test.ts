@@ -140,6 +140,10 @@ test('isValidTitle accepts titles at the length limit', () => {
   assert.equal(isValidTitle('x'.repeat(100)), true)
 })
 
+test('isValidTitle rejects titles over the length limit', () => {
+  assert.equal(isValidTitle('x'.repeat(101)), false)
+})
+
 test('isValidTitle rejects blank titles', () => {
   assert.equal(isValidTitle('   '), false)
 })
