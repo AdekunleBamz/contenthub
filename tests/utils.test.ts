@@ -167,3 +167,7 @@ test('range builds half-open integer ranges', () => {
 test('uniqueBy keeps first matching items by key', () => {
   assert.deepEqual(uniqueBy([{ id: 1, name: 'a' }, { id: 1, name: 'b' }], (item) => item.id), [{ id: 1, name: 'a' }])
 })
+
+test('omit removes requested object keys', () => {
+  assert.deepEqual(omit({ id: 1, secret: 'x' }, ['secret']), { id: 1 })
+})
