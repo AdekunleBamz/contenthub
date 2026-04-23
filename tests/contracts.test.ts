@@ -54,3 +54,7 @@ test('getTxExplorerUrl trims transaction hashes', () => {
 test('getAddressExplorerUrl trims contract addresses', () => {
   assert.equal(getAddressExplorerUrl(BASE_CHAIN_ID, '  0x123  '), 'https://basescan.org/address/0x123')
 })
+
+test('isBaseChain detects Base mainnet ids', () => {
+  assert.equal(isBaseChain(BASE_CHAIN_ID), true)
+})
