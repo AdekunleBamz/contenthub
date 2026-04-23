@@ -164,6 +164,10 @@ test('isValidTags rejects short tags', () => {
   assert.equal(isValidTags(['a']), false)
 })
 
+test('isValidTags rejects overly long tags', () => {
+  assert.equal(isValidTags(['x'.repeat(31)]), false)
+})
+
 test('buildIpfsUrl supports custom gateways', () => {
   assert.equal(buildIpfsUrl('cid', 'https://gateway.example/ipfs/'), 'https://gateway.example/ipfs/cid')
 })
