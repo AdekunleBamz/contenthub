@@ -280,6 +280,10 @@ test('uniqueBy keeps first matching items by key', () => {
   assert.deepEqual(uniqueBy([{ id: 1, name: 'a' }, { id: 1, name: 'b' }], (item) => item.id), [{ id: 1, name: 'a' }])
 })
 
+test('uniqueBy keeps already unique items', () => {
+  assert.deepEqual(uniqueBy([{ id: 1 }, { id: 2 }], (item) => item.id), [{ id: 1 }, { id: 2 }])
+})
+
 test('omit removes requested object keys', () => {
   assert.deepEqual(omit({ id: 1, secret: 'x' }, ['secret']), { id: 1 })
 })
