@@ -48,6 +48,10 @@ test('isZeroAddress detects the configured zero address', () => {
   assert.equal(isZeroAddress('0x0000000000000000000000000000000000000000'), true)
 })
 
+test('isZeroAddress normalizes zero address values', () => {
+  assert.equal(isZeroAddress('  0X0000000000000000000000000000000000000000  '), true)
+})
+
 test('isZeroAddress rejects non-zero addresses', () => {
   assert.equal(isZeroAddress('0x1234567890abcdef1234567890abcdef12345678'), false)
 })

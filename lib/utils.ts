@@ -25,7 +25,7 @@ export function shortAddress(addr: string): string {
  */
 export function isZeroAddress(addr: string): boolean {
   if (!addr) return false
-  return addr === ZERO_ADDRESS
+  return addr.trim().toLowerCase() === ZERO_ADDRESS
 }
 
 /**
