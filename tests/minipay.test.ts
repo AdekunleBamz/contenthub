@@ -64,3 +64,7 @@ test('normalizeAddress trims and lowercases values', () => {
 test('isValidAddress accepts MiniPay EVM addresses', () => {
   assert.equal(isValidAddress('0x1234567890abcdef1234567890abcdef12345678'), true)
 })
+
+test('isValidAddress rejects malformed MiniPay addresses', () => {
+  assert.equal(isValidAddress('0x1234'), false)
+})
