@@ -304,6 +304,10 @@ test('isValidAddress accepts non-zero EVM addresses', () => {
   assert.equal(isValidAddress('0x1234567890abcdef1234567890abcdef12345678'), true)
 })
 
+test('isValidAddress accepts trimmed EVM addresses', () => {
+  assert.equal(isValidAddress('  0x1234567890abcdef1234567890abcdef12345678  '), true)
+})
+
 test('isValidAddress rejects the zero address', () => {
   assert.equal(isValidAddress('0x0000000000000000000000000000000000000000'), false)
 })
