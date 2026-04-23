@@ -46,3 +46,7 @@ test('getDivviConsumerAddress returns a configured EVM address', () => {
 test('isValidTxHash accepts full transaction hashes', () => {
   assert.equal(isValidTxHash(`0x${'a'.repeat(64)}`), true)
 })
+
+test('isValidTxHash rejects short transaction hashes', () => {
+  assert.equal(isValidTxHash('0xabc'), false)
+})
