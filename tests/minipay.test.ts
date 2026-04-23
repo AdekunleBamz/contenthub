@@ -155,3 +155,7 @@ test('getUSDCAddress returns the configured USDC address', () => {
 test('getUSDTAddress returns the configured USDT address', () => {
   assert.equal(getUSDTAddress(), '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e')
 })
+
+test('getUSDmAddress returns the configured USDm address', () => {
+  assert.equal(getUSDmAddress(), '0x765DE816845861e75A25fCA122bb6898B8B1282a')
+})
