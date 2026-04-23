@@ -187,3 +187,7 @@ test('isValidAddress rejects the zero address', () => {
 test('pluralize returns singular labels for one item', () => {
   assert.equal(pluralize(1, 'upload'), 'upload')
 })
+
+test('pluralize returns plural labels for other counts', () => {
+  assert.equal(pluralize(2, 'upload'), 'uploads')
+})
