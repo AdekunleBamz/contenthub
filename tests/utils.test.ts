@@ -115,3 +115,7 @@ test('isValidTags rejects short tags', () => {
 test('buildIpfsUrl supports custom gateways', () => {
   assert.equal(buildIpfsUrl('cid', 'https://gateway.example/ipfs/'), 'https://gateway.example/ipfs/cid')
 })
+
+test('clamp raises values below the minimum', () => {
+  assert.equal(clamp(-5, 0, 10), 0)
+})
