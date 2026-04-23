@@ -47,3 +47,7 @@ test('isZeroAddress detects the configured zero address', () => {
 test('isZeroAddress rejects non-zero addresses', () => {
   assert.equal(isZeroAddress('0x1234567890abcdef1234567890abcdef12345678'), false)
 })
+
+test('isValidCid accepts CIDv0 strings', () => {
+  assert.equal(isValidCid(`Qm${'a'.repeat(44)}`), true)
+})
