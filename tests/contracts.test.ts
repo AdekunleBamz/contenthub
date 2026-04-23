@@ -86,3 +86,7 @@ test('isTreasuryConfigured detects configured Celo treasury', () => {
 test('getTreasuryAddress returns null for Base treasury', () => {
   assert.equal(getTreasuryAddress('base'), null)
 })
+
+test('isSupportedChainKey accepts deployed chain keys', () => {
+  assert.equal(isSupportedChainKey('celo'), true)
+})
