@@ -4,10 +4,13 @@ import {
   formatAddress,
   getChainName,
   getUSDCAddress,
+  getUSDTAddress,
+  getUSDmAddress,
   getWalletEnvLabel,
   isCeloMainnet,
   isCeloTestnet,
   isMiniPay,
+  isMiniPayAvailable,
   isSameAddress,
   isUsableAddress,
   isValidAddress,
@@ -147,4 +150,8 @@ test('parseTokenAmount truncates extra fractional digits', () => {
 
 test('getUSDCAddress returns the configured USDC address', () => {
   assert.equal(getUSDCAddress(), '0xcebA9300f2b948710d2653dD7B07f33A8B32118C')
+})
+
+test('getUSDTAddress returns the configured USDT address', () => {
+  assert.equal(getUSDTAddress(), '0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e')
 })
