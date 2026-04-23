@@ -171,3 +171,7 @@ test('uniqueBy keeps first matching items by key', () => {
 test('omit removes requested object keys', () => {
   assert.deepEqual(omit({ id: 1, secret: 'x' }, ['secret']), { id: 1 })
 })
+
+test('pick keeps requested object keys', () => {
+  assert.deepEqual(pick({ id: 1, title: 'post', secret: 'x' }, ['id', 'title']), { id: 1, title: 'post' })
+})
