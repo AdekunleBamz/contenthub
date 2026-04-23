@@ -372,6 +372,10 @@ test('toSlug normalizes titles for URLs', () => {
   assert.equal(toSlug(' Hello Content_Hub! '), 'hello-content-hub')
 })
 
+test('toSlug returns blank slugs for punctuation-only titles', () => {
+  assert.equal(toSlug('!!!'), '')
+})
+
 test('isNonEmptyString accepts trimmed visible text', () => {
   assert.equal(isNonEmptyString('  hub  '), true)
 })
