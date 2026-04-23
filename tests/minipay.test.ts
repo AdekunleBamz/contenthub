@@ -69,6 +69,10 @@ test('getChainName labels Celo mainnet', () => {
   assert.equal(getChainName(42220), 'Celo')
 })
 
+test('getChainName labels Celo Alfajores', () => {
+  assert.equal(getChainName(11142220), 'Celo Alfajores')
+})
+
 test('getChainName labels unknown chains', () => {
   assert.equal(getChainName(1), 'Unknown')
 })
