@@ -183,3 +183,7 @@ test('isValidAddress accepts non-zero EVM addresses', () => {
 test('isValidAddress rejects the zero address', () => {
   assert.equal(isValidAddress('0x0000000000000000000000000000000000000000'), false)
 })
+
+test('pluralize returns singular labels for one item', () => {
+  assert.equal(pluralize(1, 'upload'), 'upload')
+})
