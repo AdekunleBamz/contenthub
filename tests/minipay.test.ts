@@ -109,6 +109,10 @@ test('isUsableAddress rejects zero MiniPay addresses', () => {
   assert.equal(isUsableAddress('0x0000000000000000000000000000000000000000'), false)
 })
 
+test('isUsableAddress accepts non-zero MiniPay addresses', () => {
+  assert.equal(isUsableAddress('0x1234567890abcdef1234567890abcdef12345678'), true)
+})
+
 test('getWalletEnvLabel defaults to browser wallets', () => {
   assert.equal(getWalletEnvLabel(), 'Browser Wallet')
 })
