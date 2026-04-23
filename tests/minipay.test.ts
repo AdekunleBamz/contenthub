@@ -36,3 +36,7 @@ test('isSameAddress matches MiniPay addresses by value', () => {
 test('isSameAddress rejects blank MiniPay comparisons', () => {
   assert.equal(isSameAddress('', '0x1234567890abcdef1234567890abcdef12345678'), false)
 })
+
+test('isZeroAddress detects MiniPay zero addresses', () => {
+  assert.equal(isZeroAddress('0x0000000000000000000000000000000000000000'), true)
+})
