@@ -71,3 +71,7 @@ test('isValidFileSize rejects empty files', () => {
 test('formatFileSize formats raw byte counts', () => {
   assert.equal(formatFileSize(512), '512 B')
 })
+
+test('formatFileSize formats kilobytes', () => {
+  assert.equal(formatFileSize(2048), '2.0 KB')
+})
