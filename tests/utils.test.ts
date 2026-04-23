@@ -348,6 +348,10 @@ test('capitalize uppercases the first character', () => {
   assert.equal(capitalize('content'), 'Content')
 })
 
+test('capitalize leaves empty strings unchanged', () => {
+  assert.equal(capitalize(''), '')
+})
+
 test('getInitials returns one initial for single names', () => {
   assert.equal(getInitials('content'), 'C')
 })
