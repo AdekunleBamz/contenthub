@@ -26,3 +26,7 @@ test('getTreasuryPoolHash returns rewards pool hashes', () => {
 test('formatTreasuryBps formats whole percentages', () => {
   assert.equal(formatTreasuryBps(500), '5%')
 })
+
+test('formatTreasuryBps keeps fractional percentages', () => {
+  assert.equal(formatTreasuryBps(525), '5.25%')
+})
