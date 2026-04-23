@@ -38,3 +38,7 @@ test('isSupportedChain rejects testnets for uploads', () => {
 test('getContractsForChain returns Base contracts', () => {
   assert.equal(getContractsForChain(BASE_CHAIN_ID).communityContentHub.address.startsWith('0x'), true)
 })
+
+test('getContractsForChain rejects unsupported chains', () => {
+  assert.throws(() => getContractsForChain(1), /Unsupported chain ID: 1/)
+})
