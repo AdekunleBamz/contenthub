@@ -111,3 +111,7 @@ test('isValidTags accepts bounded tag lists', () => {
 test('isValidTags rejects short tags', () => {
   assert.equal(isValidTags(['a']), false)
 })
+
+test('buildIpfsUrl supports custom gateways', () => {
+  assert.equal(buildIpfsUrl('cid', 'https://gateway.example/ipfs/'), 'https://gateway.example/ipfs/cid')
+})
