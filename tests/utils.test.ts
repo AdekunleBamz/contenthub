@@ -207,3 +207,7 @@ test('capitalize uppercases the first character', () => {
 test('getInitials returns one initial for single names', () => {
   assert.equal(getInitials('content'), 'C')
 })
+
+test('getInitials returns first and last initials', () => {
+  assert.equal(getInitials('content hub'), 'CH')
+})
