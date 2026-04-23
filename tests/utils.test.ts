@@ -191,3 +191,7 @@ test('pluralize returns singular labels for one item', () => {
 test('pluralize returns plural labels for other counts', () => {
   assert.equal(pluralize(2, 'upload'), 'uploads')
 })
+
+test('formatWei returns fixed zero output', () => {
+  assert.equal(formatWei(0n), '0.0000')
+})
