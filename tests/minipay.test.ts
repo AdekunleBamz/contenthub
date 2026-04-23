@@ -28,3 +28,7 @@ test('formatAddress truncates long MiniPay addresses', () => {
 test('formatAddress leaves short MiniPay values unchanged', () => {
   assert.equal(formatAddress('0x1234'), '0x1234')
 })
+
+test('isSameAddress matches MiniPay addresses by value', () => {
+  assert.equal(isSameAddress('0x1234567890abcdef1234567890abcdef12345678', '0x1234567890ABCDEF1234567890ABCDEF12345678'), true)
+})
