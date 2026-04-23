@@ -135,3 +135,7 @@ test('truncate leaves short strings unchanged', () => {
 test('truncate adds an ellipsis for long strings', () => {
   assert.equal(truncate('contenthub', 6), `conte${String.fromCharCode(0x2026)}`)
 })
+
+test('formatDate returns blank output for invalid timestamps', () => {
+  assert.equal(formatDate(0), '')
+})
