@@ -203,3 +203,7 @@ test('formatWei formats whole token values', () => {
 test('capitalize uppercases the first character', () => {
   assert.equal(capitalize('content'), 'Content')
 })
+
+test('getInitials returns one initial for single names', () => {
+  assert.equal(getInitials('content'), 'C')
+})
