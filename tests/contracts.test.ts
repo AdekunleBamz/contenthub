@@ -42,3 +42,7 @@ test('getContractsForChain returns Base contracts', () => {
 test('getContractsForChain rejects unsupported chains', () => {
   assert.throws(() => getContractsForChain(1), /Unsupported chain ID: 1/)
 })
+
+test('getExplorerUrl returns Base explorer URLs', () => {
+  assert.equal(getExplorerUrl(BASE_CHAIN_ID), 'https://basescan.org')
+})
