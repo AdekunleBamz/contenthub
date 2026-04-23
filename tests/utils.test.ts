@@ -356,6 +356,10 @@ test('getInitials returns one initial for single names', () => {
   assert.equal(getInitials('content'), 'C')
 })
 
+test('getInitials returns blank output for blank names', () => {
+  assert.equal(getInitials('   '), '')
+})
+
 test('getInitials returns first and last initials', () => {
   assert.equal(getInitials('content hub'), 'CH')
 })
