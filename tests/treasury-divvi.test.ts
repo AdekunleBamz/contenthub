@@ -50,3 +50,7 @@ test('isValidTxHash accepts full transaction hashes', () => {
 test('isValidTxHash rejects short transaction hashes', () => {
   assert.equal(isValidTxHash('0xabc'), false)
 })
+
+test('getUploadFee returns configured upload fees', () => {
+  assert.equal(getUploadFee('celo'), BigInt(CONTENT_FEE_WEI))
+})
