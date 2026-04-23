@@ -30,3 +30,7 @@ test('formatTreasuryBps formats whole percentages', () => {
 test('formatTreasuryBps keeps fractional percentages', () => {
   assert.equal(formatTreasuryBps(525), '5.25%')
 })
+
+test('toTreasuryReferenceId defaults missing references to zero', () => {
+  assert.equal(toTreasuryReferenceId(null), 0n)
+})
