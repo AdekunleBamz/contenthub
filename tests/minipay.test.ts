@@ -72,3 +72,7 @@ test('isValidAddress rejects malformed MiniPay addresses', () => {
 test('isUsableAddress rejects zero MiniPay addresses', () => {
   assert.equal(isUsableAddress('0x0000000000000000000000000000000000000000'), false)
 })
+
+test('getWalletEnvLabel defaults to browser wallets', () => {
+  assert.equal(getWalletEnvLabel(), 'Browser Wallet')
+})
