@@ -143,3 +143,7 @@ test('formatDate returns blank output for invalid timestamps', () => {
 test('formatNumber falls back to zero for non-finite values', () => {
   assert.equal(formatNumber(Number.POSITIVE_INFINITY), '0')
 })
+
+test('formatNumber adds locale separators', () => {
+  assert.equal(formatNumber(1234567), '1,234,567')
+})
