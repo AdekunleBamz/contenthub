@@ -79,3 +79,7 @@ test('formatFileSize formats kilobytes', () => {
 test('formatFileSize formats megabytes', () => {
   assert.equal(formatFileSize(2 * 1024 * 1024), '2.0 MB')
 })
+
+test('isAllowedMimeType accepts configured image uploads', () => {
+  assert.equal(isAllowedMimeType('image/png'), true)
+})
