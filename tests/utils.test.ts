@@ -204,6 +204,10 @@ test('truncate returns blank output for zero limits', () => {
   assert.equal(truncate('hub', 0), '')
 })
 
+test('truncate uses an ellipsis for one-character limits', () => {
+  assert.equal(truncate('hub', 1), String.fromCharCode(0x2026))
+})
+
 test('truncate adds an ellipsis for long strings', () => {
   assert.equal(truncate('contenthub', 6), `conte${String.fromCharCode(0x2026)}`)
 })
