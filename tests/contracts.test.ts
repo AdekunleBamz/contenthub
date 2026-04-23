@@ -50,3 +50,7 @@ test('getExplorerUrl returns Base explorer URLs', () => {
 test('getTxExplorerUrl trims transaction hashes', () => {
   assert.equal(getTxExplorerUrl(CELO_CHAIN_ID, '  0xabc  '), 'https://celoscan.io/tx/0xabc')
 })
+
+test('getAddressExplorerUrl trims contract addresses', () => {
+  assert.equal(getAddressExplorerUrl(BASE_CHAIN_ID, '  0x123  '), 'https://basescan.org/address/0x123')
+})
