@@ -107,3 +107,7 @@ test('isValidTitle rejects blank titles', () => {
 test('isValidTags accepts bounded tag lists', () => {
   assert.equal(isValidTags(['art', 'music']), true)
 })
+
+test('isValidTags rejects short tags', () => {
+  assert.equal(isValidTags(['a']), false)
+})
