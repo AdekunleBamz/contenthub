@@ -38,3 +38,7 @@ test('toTreasuryReferenceId defaults missing references to zero', () => {
 test('toTreasuryReferenceId converts numeric references', () => {
   assert.equal(toTreasuryReferenceId(7), 7n)
 })
+
+test('getDivviConsumerAddress returns a configured EVM address', () => {
+  assert.match(getDivviConsumerAddress(), /^0x[a-fA-F0-9]{40}$/)
+})
