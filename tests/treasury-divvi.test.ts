@@ -18,3 +18,7 @@ import {
 test('getTreasuryActionHash returns upload action hashes', () => {
   assert.match(getTreasuryActionHash('upload'), /^0x[a-fA-F0-9]{64}$/)
 })
+
+test('getTreasuryPoolHash returns rewards pool hashes', () => {
+  assert.match(getTreasuryPoolHash('rewards'), /^0x[a-fA-F0-9]{64}$/)
+})
