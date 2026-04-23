@@ -46,3 +46,7 @@ test('getContractsForChain rejects unsupported chains', () => {
 test('getExplorerUrl returns Base explorer URLs', () => {
   assert.equal(getExplorerUrl(BASE_CHAIN_ID), 'https://basescan.org')
 })
+
+test('getTxExplorerUrl trims transaction hashes', () => {
+  assert.equal(getTxExplorerUrl(CELO_CHAIN_ID, '  0xabc  '), 'https://celoscan.io/tx/0xabc')
+})
