@@ -224,6 +224,10 @@ test('formatNumber falls back to zero for non-finite values', () => {
   assert.equal(formatNumber(Number.POSITIVE_INFINITY), '0')
 })
 
+test('formatNumber falls back to zero for NaN values', () => {
+  assert.equal(formatNumber(Number.NaN), '0')
+})
+
 test('formatNumber adds locale separators', () => {
   assert.equal(formatNumber(1234567), '1,234,567')
 })
