@@ -22,3 +22,7 @@ test('getTreasuryActionHash returns upload action hashes', () => {
 test('getTreasuryPoolHash returns rewards pool hashes', () => {
   assert.match(getTreasuryPoolHash('rewards'), /^0x[a-fA-F0-9]{64}$/)
 })
+
+test('formatTreasuryBps formats whole percentages', () => {
+  assert.equal(formatTreasuryBps(500), '5%')
+})
