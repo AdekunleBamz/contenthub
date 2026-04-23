@@ -87,3 +87,7 @@ test('isAllowedMimeType accepts configured image uploads', () => {
 test('isAllowedMimeType rejects unknown uploads', () => {
   assert.equal(isAllowedMimeType('application/x-msdownload'), false)
 })
+
+test('isValidDescription accepts short descriptions', () => {
+  assert.equal(isValidDescription('Short description'), true)
+})
