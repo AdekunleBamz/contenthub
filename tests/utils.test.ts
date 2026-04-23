@@ -324,6 +324,10 @@ test('pluralize returns plural labels for other counts', () => {
   assert.equal(pluralize(2, 'upload'), 'uploads')
 })
 
+test('pluralize uses plural labels for zero', () => {
+  assert.equal(pluralize(0, 'upload'), 'uploads')
+})
+
 test('pluralize supports custom plural labels', () => {
   assert.equal(pluralize(2, 'story', 'stories'), 'stories')
 })
