@@ -22,3 +22,7 @@ import {
 test('getNetworkName labels Base mainnet', () => {
   assert.equal(getNetworkName(BASE_CHAIN_ID), 'Base')
 })
+
+test('getNetworkName labels unknown chains', () => {
+  assert.equal(getNetworkName(1), 'Unknown')
+})
