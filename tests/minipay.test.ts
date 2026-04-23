@@ -80,3 +80,7 @@ test('getWalletEnvLabel defaults to browser wallets', () => {
 test('clampDecimals limits token fractions', () => {
   assert.equal(clampDecimals('1.123456789', 4), '1.1234')
 })
+
+test('clampDecimals leaves whole token amounts unchanged', () => {
+  assert.equal(clampDecimals('12'), '12')
+})
