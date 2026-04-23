@@ -296,6 +296,10 @@ test('pick keeps requested object keys', () => {
   assert.deepEqual(pick({ id: 1, title: 'post', secret: 'x' }, ['id', 'title']), { id: 1, title: 'post' })
 })
 
+test('pick returns empty objects for empty key selections', () => {
+  assert.deepEqual(pick({ id: 1, title: 'post' }, []), {})
+})
+
 test('isValidAddress accepts non-zero EVM addresses', () => {
   assert.equal(isValidAddress('0x1234567890abcdef1234567890abcdef12345678'), true)
 })
