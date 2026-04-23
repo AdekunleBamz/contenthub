@@ -324,6 +324,10 @@ test('pluralize returns plural labels for other counts', () => {
   assert.equal(pluralize(2, 'upload'), 'uploads')
 })
 
+test('pluralize supports custom plural labels', () => {
+  assert.equal(pluralize(2, 'story', 'stories'), 'stories')
+})
+
 test('formatWei returns fixed zero output', () => {
   assert.equal(formatWei(0n), '0.0000')
 })
