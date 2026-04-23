@@ -34,3 +34,7 @@ test('isSupportedChain accepts Base mainnet', () => {
 test('isSupportedChain rejects testnets for uploads', () => {
   assert.equal(isSupportedChain(CELO_SEPOLIA_CHAIN_ID), false)
 })
+
+test('getContractsForChain returns Base contracts', () => {
+  assert.equal(getContractsForChain(BASE_CHAIN_ID).communityContentHub.address.startsWith('0x'), true)
+})
