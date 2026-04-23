@@ -159,3 +159,7 @@ test('isPositiveInteger rejects decimals', () => {
 test('bytesToMb converts bytes to megabytes', () => {
   assert.equal(bytesToMb(1_572_864), 1.5)
 })
+
+test('range builds half-open integer ranges', () => {
+  assert.deepEqual(range(2, 5), [2, 3, 4])
+})
