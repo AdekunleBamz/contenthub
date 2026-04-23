@@ -26,3 +26,7 @@ test('getNetworkName labels Base mainnet', () => {
 test('getNetworkName labels unknown chains', () => {
   assert.equal(getNetworkName(1), 'Unknown')
 })
+
+test('isSupportedChain accepts Base mainnet', () => {
+  assert.equal(isSupportedChain(BASE_CHAIN_ID), true)
+})
