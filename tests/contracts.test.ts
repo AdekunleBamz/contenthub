@@ -110,3 +110,7 @@ test('getTreasuryAddress returns null for Base treasury', () => {
 test('isSupportedChainKey accepts deployed chain keys', () => {
   assert.equal(isSupportedChainKey('celo'), true)
 })
+
+test('isSupportedChainKey rejects unknown chain keys', () => {
+  assert.equal(isSupportedChainKey('ethereum'), false)
+})
