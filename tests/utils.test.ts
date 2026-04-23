@@ -127,3 +127,7 @@ test('clamp lowers values above the maximum', () => {
 test('clamp handles reversed bounds conservatively', () => {
   assert.equal(clamp(5, 10, 0), 10)
 })
+
+test('truncate leaves short strings unchanged', () => {
+  assert.equal(truncate('hub', 10), 'hub')
+})
