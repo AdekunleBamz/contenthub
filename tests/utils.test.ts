@@ -219,3 +219,7 @@ test('toSlug normalizes titles for URLs', () => {
 test('isNonEmptyString accepts trimmed visible text', () => {
   assert.equal(isNonEmptyString('  hub  '), true)
 })
+
+test('safeJsonParse returns parsed JSON values', () => {
+  assert.deepEqual(safeJsonParse('{"ok":true}', { ok: false }), { ok: true })
+})
