@@ -1,9 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { useState, useEffect, useRef } from 'react';
+import { useAccount, useConnect, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { injected } from 'wagmi/connectors';
 import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID } from '@/lib/contracts';
 import { GALLERY_FETCH_LIMIT } from '@/lib/constants';
+
+const MINIPAY_FEE_CURRENCY = '0x765DE816845861e75A25fCA122bb6898B8B1282a' as const;
+
+function detectMiniPay(): boolean {
+  return typeof window !== 'undefined' && Boolean((window.ethereum as any)?.isMiniPay);
+}
 
 interface Content {
   id: number;
@@ -17,8 +24,29 @@ interface Content {
 
 export default function GalleryPage() {
   const { address, chain } = useAccount();
+  const { connect } = useConnect();
   const { writeContract, data: hash } = useWriteContract();
   const { isSuccess } = useWaitForTransactionReceipt({ hash });
+  const [isMiniPay, setIsMiniPay] = useState(false);
+  const miniPayConnectAttempted = useRef(false);
+
+  useEffect(() => {
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      if (detectMiniPay()) {
+        clearInterval(timer);
+        setIsMiniPay(true);
+        if (!miniPayConnectAttempted.current) {
+          miniPayConnectAttempted.current = true;
+          connect({ connector: injected() });
+        }
+      } else if (attempts >= 20) {
+        clearInterval(timer);
+      }
+    }, 250);
+    return () => clearInterval(timer);
+  }, [connect]);
 
   const currentChain = chain?.id === BASE_CHAIN_ID ? 'base' : chain?.id === CELO_CHAIN_ID ? 'celo' : null;
   const contract = currentChain ? CONTRACTS[currentChain].communityContentHub : null;
@@ -70,6 +98,7 @@ export default function GalleryPage() {
         abi: contract.abi,
         functionName: 'voteContent',
         args: [BigInt(contentId)],
+        ...(isMiniPay ? { type: 'legacy', feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
       } as any);
     } catch (error) {
       console.error('Vote error:', error);

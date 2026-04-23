@@ -1,15 +1,46 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
+import { useState, useEffect, useRef } from 'react';
+import { useAccount, useConnect, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
+import { injected } from 'wagmi/connectors';
 import { CONTRACTS, BASE_CHAIN_ID, CELO_CHAIN_ID, CONTENT_FEE_DISPLAY } from '@/lib/contracts';
 import { MAX_TITLE_LENGTH, MAX_DESCRIPTION_LENGTH } from '@/lib/constants';
+
+/** USDm fee currency address on Celo mainnet (required by MiniPay for gas abstraction) */
+const MINIPAY_FEE_CURRENCY = '0x765DE816845861e75A25fCA122bb6898B8B1282a' as const;
+
+/** Returns true when running inside the MiniPay browser */
+function detectMiniPay(): boolean {
+  return typeof window !== 'undefined' && Boolean((window.ethereum as any)?.isMiniPay);
+}
 
 export default function MintPage() {
   const { chain, isConnected } = useAccount();
   const { switchChain } = useSwitchChain();
+  const { connect } = useConnect();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+  const [isMiniPay, setIsMiniPay] = useState(false);
+  const miniPayConnectAttempted = useRef(false);
+
+  // Poll for MiniPay provider (injected asynchronously) and auto-connect.
+  useEffect(() => {
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      if (detectMiniPay()) {
+        clearInterval(timer);
+        setIsMiniPay(true);
+        if (!isConnected && !miniPayConnectAttempted.current) {
+          miniPayConnectAttempted.current = true;
+          connect({ connector: injected() });
+        }
+      } else if (attempts >= 20) {
+        clearInterval(timer);
+      }
+    }, 250);
+    return () => clearInterval(timer);
+  }, [connect, isConnected]);
 
   const [file, setFile] = useState<File | null>(null);
   const [nftType, setNftType] = useState('achievement');
@@ -117,6 +148,8 @@ export default function MintPage() {
         functionName: 'mintNFT',
         args: [metadataURI, nftType],
         value: BigInt(mintFee),
+        // MiniPay requires legacy transactions and the USDm fee currency address
+        ...(isMiniPay ? { type: 'legacy', feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
       } as any);
     } catch (error) {
       console.error('Mint error:', error);

@@ -22,16 +22,21 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }));
 
   useEffect(() => {
-    const load = async () => {
-      // Detect MiniPay before any SDK calls
-      if (typeof window !== 'undefined' && window.ethereum && (window.ethereum as any).isMiniPay) {
+    // Poll every 250ms for up to 5s — MiniPay injects window.ethereum asynchronously.
+    let attempts = 0;
+    const pollTimer = setInterval(() => {
+      attempts++;
+      if (typeof window !== 'undefined' && (window.ethereum as any)?.isMiniPay) {
+        clearInterval(pollTimer);
         setIsMiniPay(true);
+      } else if (attempts >= 20) {
+        clearInterval(pollTimer);
       }
+    }, 250);
 
+    const load = async () => {
       try {
-        // Check if we're in a Farcaster Mini App environment
         const isInMiniApp = await sdk.isInMiniApp();
-
         if (isInMiniApp) {
           await sdk.actions.ready();
         }
@@ -42,6 +47,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
       }
     };
     load();
+
+    return () => clearInterval(pollTimer);
   }, []);
 
   if (!isSDKLoaded) {
@@ -55,13 +62,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        {/* When inside MiniPay, default to Celo chain; otherwise use Base */}
-        <RainbowKitProvider
-          theme={darkTheme()}
-          initialChain={isMiniPay ? celo : base}
-        >
-          {children}
-        </RainbowKitProvider>
+        {/* Skip RainbowKit inside MiniPay — it provides its own injected wallet */}
+        {isMiniPay ? (
+          children
+        ) : (
+          <RainbowKitProvider theme={darkTheme()} initialChain={base}>
+            {children}
+          </RainbowKitProvider>
+        )}
       </QueryClientProvider>
     </WagmiProvider>
   );
