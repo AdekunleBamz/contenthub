@@ -107,6 +107,10 @@ test('getTreasuryAddress returns null for Base treasury', () => {
   assert.equal(getTreasuryAddress('base'), null)
 })
 
+test('getTreasuryAddress returns the Celo treasury address', () => {
+  assert.equal(getTreasuryAddress('celo')?.startsWith('0x'), true)
+})
+
 test('isSupportedChainKey accepts deployed chain keys', () => {
   assert.equal(isSupportedChainKey('celo'), true)
 })
