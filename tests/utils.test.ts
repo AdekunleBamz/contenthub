@@ -195,3 +195,7 @@ test('pluralize returns plural labels for other counts', () => {
 test('formatWei returns fixed zero output', () => {
   assert.equal(formatWei(0n), '0.0000')
 })
+
+test('formatWei formats whole token values', () => {
+  assert.equal(formatWei(1_000_000_000_000_000_000n), '1.0000')
+})
