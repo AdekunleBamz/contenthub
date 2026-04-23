@@ -136,6 +136,10 @@ test('isValidTitle accepts trimmed titles', () => {
   assert.equal(isValidTitle('  Mint update  '), true)
 })
 
+test('isValidTitle accepts titles at the length limit', () => {
+  assert.equal(isValidTitle('x'.repeat(100)), true)
+})
+
 test('isValidTitle rejects blank titles', () => {
   assert.equal(isValidTitle('   '), false)
 })
