@@ -88,3 +88,7 @@ test('clampDecimals leaves whole token amounts unchanged', () => {
 test('parseTokenAmount parses whole token amounts', () => {
   assert.equal(parseTokenAmount('2', 6), 2_000_000n)
 })
+
+test('parseTokenAmount parses fractional token amounts', () => {
+  assert.equal(parseTokenAmount('1.25', 6), 1_250_000n)
+})
