@@ -62,3 +62,7 @@ test('isBaseChain detects Base mainnet ids', () => {
 test('isCeloChain detects Celo mainnet ids', () => {
   assert.equal(isCeloChain(CELO_CHAIN_ID), true)
 })
+
+test('isTestnet detects Celo Sepolia ids', () => {
+  assert.equal(isTestnet(CELO_SEPOLIA_CHAIN_ID), true)
+})
