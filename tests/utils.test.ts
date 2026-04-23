@@ -95,3 +95,7 @@ test('isValidDescription accepts short descriptions', () => {
 test('isValidDescription rejects overly long descriptions', () => {
   assert.equal(isValidDescription('x'.repeat(501)), false)
 })
+
+test('isValidTitle accepts trimmed titles', () => {
+  assert.equal(isValidTitle('  Mint update  '), true)
+})
