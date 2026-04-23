@@ -60,6 +60,10 @@ test('isValidCid accepts CIDv0 strings', () => {
   assert.equal(isValidCid(`Qm${'a'.repeat(44)}`), true)
 })
 
+test('isValidCid accepts trimmed CIDv0 strings', () => {
+  assert.equal(isValidCid(`  Qm${'a'.repeat(44)}  `), true)
+})
+
 test('isValidCid rejects blank values', () => {
   assert.equal(isValidCid(''), false)
 })
