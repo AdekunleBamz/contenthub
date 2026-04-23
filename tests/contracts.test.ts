@@ -55,6 +55,10 @@ test('getExplorerUrl returns Base explorer URLs', () => {
   assert.equal(getExplorerUrl(BASE_CHAIN_ID), 'https://basescan.org')
 })
 
+test('getExplorerUrl returns Celo explorer URLs', () => {
+  assert.equal(getExplorerUrl(CELO_CHAIN_ID), 'https://celoscan.io')
+})
+
 test('getTxExplorerUrl trims transaction hashes', () => {
   assert.equal(getTxExplorerUrl(CELO_CHAIN_ID, '  0xabc  '), 'https://celoscan.io/tx/0xabc')
 })
