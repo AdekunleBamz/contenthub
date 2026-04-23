@@ -56,3 +56,7 @@ test('getChainName labels Celo mainnet', () => {
 test('getChainName labels unknown chains', () => {
   assert.equal(getChainName(1), 'Unknown')
 })
+
+test('normalizeAddress trims and lowercases values', () => {
+  assert.equal(normalizeAddress('  0xABCDEFabcdefABCDEFabcdefABCDEFabcdefabcd  '), '0xabcdefabcdefabcdefabcdefabcdefabcdefabcd')
+})
