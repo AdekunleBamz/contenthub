@@ -35,6 +35,10 @@ test('isSupportedChain accepts Base mainnet', () => {
   assert.equal(isSupportedChain(BASE_CHAIN_ID), true)
 })
 
+test('isSupportedChain accepts Celo mainnet', () => {
+  assert.equal(isSupportedChain(CELO_CHAIN_ID), true)
+})
+
 test('isSupportedChain rejects testnets for uploads', () => {
   assert.equal(isSupportedChain(CELO_SEPOLIA_CHAIN_ID), false)
 })
