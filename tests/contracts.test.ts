@@ -74,3 +74,7 @@ test('getChainKey resolves Base chain keys', () => {
 test('getChainKey returns null for unknown chains', () => {
   assert.equal(getChainKey(1), null)
 })
+
+test('isTreasuryConfigured returns false before Base treasury deployment', () => {
+  assert.equal(isTreasuryConfigured('base'), false)
+})
