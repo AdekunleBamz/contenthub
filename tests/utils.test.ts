@@ -199,3 +199,7 @@ test('formatWei returns fixed zero output', () => {
 test('formatWei formats whole token values', () => {
   assert.equal(formatWei(1_000_000_000_000_000_000n), '1.0000')
 })
+
+test('capitalize uppercases the first character', () => {
+  assert.equal(capitalize('content'), 'Content')
+})
