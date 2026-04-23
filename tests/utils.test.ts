@@ -131,3 +131,7 @@ test('clamp handles reversed bounds conservatively', () => {
 test('truncate leaves short strings unchanged', () => {
   assert.equal(truncate('hub', 10), 'hub')
 })
+
+test('truncate adds an ellipsis for long strings', () => {
+  assert.equal(truncate('contenthub', 6), `conte${String.fromCharCode(0x2026)}`)
+})
