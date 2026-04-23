@@ -41,6 +41,10 @@ test('isSameAddress matches MiniPay addresses by value', () => {
   assert.equal(isSameAddress('0x1234567890abcdef1234567890abcdef12345678', '0x1234567890ABCDEF1234567890ABCDEF12345678'), true)
 })
 
+test('isSameAddress trims MiniPay address comparisons', () => {
+  assert.equal(isSameAddress('  0x1234567890abcdef1234567890abcdef12345678', '0x1234567890abcdef1234567890abcdef12345678  '), true)
+})
+
 test('isSameAddress rejects blank MiniPay comparisons', () => {
   assert.equal(isSameAddress('', '0x1234567890abcdef1234567890abcdef12345678'), false)
 })
