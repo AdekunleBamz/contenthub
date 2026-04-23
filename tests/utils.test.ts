@@ -155,3 +155,7 @@ test('isPositiveInteger accepts positive integers', () => {
 test('isPositiveInteger rejects decimals', () => {
   assert.equal(isPositiveInteger(3.5), false)
 })
+
+test('bytesToMb converts bytes to megabytes', () => {
+  assert.equal(bytesToMb(1_572_864), 1.5)
+})
