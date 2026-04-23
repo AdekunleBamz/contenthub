@@ -215,3 +215,7 @@ test('getInitials returns first and last initials', () => {
 test('toSlug normalizes titles for URLs', () => {
   assert.equal(toSlug(' Hello Content_Hub! '), 'hello-content-hub')
 })
+
+test('isNonEmptyString accepts trimmed visible text', () => {
+  assert.equal(isNonEmptyString('  hub  '), true)
+})
