@@ -83,3 +83,7 @@ test('formatFileSize formats megabytes', () => {
 test('isAllowedMimeType accepts configured image uploads', () => {
   assert.equal(isAllowedMimeType('image/png'), true)
 })
+
+test('isAllowedMimeType rejects unknown uploads', () => {
+  assert.equal(isAllowedMimeType('application/x-msdownload'), false)
+})
