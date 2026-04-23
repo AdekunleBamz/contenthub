@@ -71,8 +71,9 @@ export function getMiniPayChain() {
 
 /** Returns a shortened display version of an address, e.g. "0x1234...5678" */
 export function formatAddress(address: string, start = 6, end = 4): string {
-  if (!address || address.length < start + end) return address;
-  return `${address.slice(0, start)}...${address.slice(-end)}`;
+  const normalizedAddress = address.trim();
+  if (!normalizedAddress || normalizedAddress.length < start + end) return normalizedAddress;
+  return `${normalizedAddress.slice(0, start)}...${normalizedAddress.slice(-end)}`;
 }
 
 /** Returns true when two addresses are the same (case-insensitive). */
