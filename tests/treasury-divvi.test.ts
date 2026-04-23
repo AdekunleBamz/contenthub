@@ -42,3 +42,7 @@ test('toTreasuryReferenceId converts numeric references', () => {
 test('getDivviConsumerAddress returns a configured EVM address', () => {
   assert.match(getDivviConsumerAddress(), /^0x[a-fA-F0-9]{40}$/)
 })
+
+test('isValidTxHash accepts full transaction hashes', () => {
+  assert.equal(isValidTxHash(`0x${'a'.repeat(64)}`), true)
+})
