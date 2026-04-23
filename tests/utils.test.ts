@@ -172,6 +172,10 @@ test('buildIpfsUrl supports custom gateways', () => {
   assert.equal(buildIpfsUrl('cid', 'https://gateway.example/ipfs/'), 'https://gateway.example/ipfs/cid')
 })
 
+test('buildIpfsUrl uses the default IPFS gateway', () => {
+  assert.equal(buildIpfsUrl('cid'), 'https://ipfs.io/ipfs/cid')
+})
+
 test('clamp raises values below the minimum', () => {
   assert.equal(clamp(-5, 0, 10), 0)
 })
