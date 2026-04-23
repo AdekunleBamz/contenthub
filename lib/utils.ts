@@ -48,8 +48,9 @@ export function isValidCid(cid: string): boolean {
  * @returns A complete URL string pointing to the IPFS gateway.
  */
 export function ipfsToHttp(cid: string): string {
-  if (!cid) return ''
-  return `${IPFS_GATEWAY}${cid.trim()}`
+  const normalizedCid = cid.trim()
+  if (!normalizedCid) return ''
+  return `${IPFS_GATEWAY}${normalizedCid}`
 }
 
 /**

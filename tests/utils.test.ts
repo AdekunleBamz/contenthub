@@ -72,6 +72,10 @@ test('ipfsToHttp trims CIDs for gateway links', () => {
   assert.equal(ipfsToHttp('  bafytest  '), 'https://ipfs.io/ipfs/bafytest')
 })
 
+test('ipfsToHttp returns blank output for whitespace CIDs', () => {
+  assert.equal(ipfsToHttp('   '), '')
+})
+
 test('isValidFileSize accepts files at the size limit', () => {
   assert.equal(isValidFileSize(50 * 1024 * 1024), true)
 })
