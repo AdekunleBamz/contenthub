@@ -80,6 +80,10 @@ test('isValidFileSize accepts files at the size limit', () => {
   assert.equal(isValidFileSize(50 * 1024 * 1024), true)
 })
 
+test('isValidFileSize rejects files above the size limit', () => {
+  assert.equal(isValidFileSize(51 * 1024 * 1024), false)
+})
+
 test('isValidFileSize rejects empty files', () => {
   assert.equal(isValidFileSize(0), false)
 })
