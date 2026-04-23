@@ -40,3 +40,7 @@ test('isSameAddress rejects blank MiniPay comparisons', () => {
 test('isZeroAddress detects MiniPay zero addresses', () => {
   assert.equal(isZeroAddress('0x0000000000000000000000000000000000000000'), true)
 })
+
+test('isCeloMainnet detects Celo mainnet ids', () => {
+  assert.equal(isCeloMainnet(42220), true)
+})
