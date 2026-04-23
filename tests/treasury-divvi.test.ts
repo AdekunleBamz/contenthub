@@ -34,3 +34,7 @@ test('formatTreasuryBps keeps fractional percentages', () => {
 test('toTreasuryReferenceId defaults missing references to zero', () => {
   assert.equal(toTreasuryReferenceId(null), 0n)
 })
+
+test('toTreasuryReferenceId converts numeric references', () => {
+  assert.equal(toTreasuryReferenceId(7), 7n)
+})
