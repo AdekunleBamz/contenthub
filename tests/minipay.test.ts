@@ -76,3 +76,7 @@ test('isUsableAddress rejects zero MiniPay addresses', () => {
 test('getWalletEnvLabel defaults to browser wallets', () => {
   assert.equal(getWalletEnvLabel(), 'Browser Wallet')
 })
+
+test('clampDecimals limits token fractions', () => {
+  assert.equal(clampDecimals('1.123456789', 4), '1.1234')
+})
