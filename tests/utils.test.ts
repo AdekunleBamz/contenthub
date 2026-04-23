@@ -124,6 +124,10 @@ test('isValidDescription accepts short descriptions', () => {
   assert.equal(isValidDescription('Short description'), true)
 })
 
+test('isValidDescription accepts descriptions at the limit', () => {
+  assert.equal(isValidDescription('x'.repeat(500)), true)
+})
+
 test('isValidDescription rejects overly long descriptions', () => {
   assert.equal(isValidDescription('x'.repeat(501)), false)
 })
