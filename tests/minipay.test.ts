@@ -44,3 +44,7 @@ test('isZeroAddress detects MiniPay zero addresses', () => {
 test('isCeloMainnet detects Celo mainnet ids', () => {
   assert.equal(isCeloMainnet(42220), true)
 })
+
+test('isCeloTestnet detects Alfajores ids', () => {
+  assert.equal(isCeloTestnet(44787), true)
+})
