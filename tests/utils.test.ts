@@ -232,6 +232,10 @@ test('formatNumber adds locale separators', () => {
   assert.equal(formatNumber(1234567), '1,234,567')
 })
 
+test('formatNumber preserves negative values', () => {
+  assert.equal(formatNumber(-1200), '-1,200')
+})
+
 test('isPositiveInteger accepts positive integers', () => {
   assert.equal(isPositiveInteger(3), true)
 })
