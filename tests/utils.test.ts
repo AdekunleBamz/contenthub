@@ -55,3 +55,7 @@ test('isValidCid accepts CIDv0 strings', () => {
 test('isValidCid rejects blank values', () => {
   assert.equal(isValidCid(''), false)
 })
+
+test('ipfsToHttp trims CIDs for gateway links', () => {
+  assert.equal(ipfsToHttp('  bafytest  '), 'https://ipfs.io/ipfs/bafytest')
+})
