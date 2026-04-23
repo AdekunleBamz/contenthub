@@ -92,3 +92,7 @@ test('parseTokenAmount parses whole token amounts', () => {
 test('parseTokenAmount parses fractional token amounts', () => {
   assert.equal(parseTokenAmount('1.25', 6), 1_250_000n)
 })
+
+test('getUSDCAddress returns the configured USDC address', () => {
+  assert.equal(getUSDCAddress(), '0xcebA9300f2b948710d2653dD7B07f33A8B32118C')
+})
