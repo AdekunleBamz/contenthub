@@ -156,6 +156,10 @@ test('isValidTags accepts the maximum tag count', () => {
   assert.equal(isValidTags(Array.from({ length: 10 }, (_, i) => `tag${i}`)), true)
 })
 
+test('isValidTags rejects too many tags', () => {
+  assert.equal(isValidTags(Array.from({ length: 11 }, (_, i) => `tag${i}`)), false)
+})
+
 test('isValidTags rejects short tags', () => {
   assert.equal(isValidTags(['a']), false)
 })
