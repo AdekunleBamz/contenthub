@@ -364,6 +364,10 @@ test('getInitials returns first and last initials', () => {
   assert.equal(getInitials('content hub'), 'CH')
 })
 
+test('getInitials handles extra name spacing', () => {
+  assert.equal(getInitials('  content   creator hub  '), 'CH')
+})
+
 test('toSlug normalizes titles for URLs', () => {
   assert.equal(toSlug(' Hello Content_Hub! '), 'hello-content-hub')
 })
