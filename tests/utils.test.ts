@@ -216,6 +216,10 @@ test('formatDate returns blank output for invalid timestamps', () => {
   assert.equal(formatDate(0), '')
 })
 
+test('formatDate returns text for positive timestamps', () => {
+  assert.equal(formatDate(1).length > 0, true)
+})
+
 test('formatNumber falls back to zero for non-finite values', () => {
   assert.equal(formatNumber(Number.POSITIVE_INFINITY), '0')
 })
