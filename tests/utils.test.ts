@@ -51,3 +51,7 @@ test('isZeroAddress rejects non-zero addresses', () => {
 test('isValidCid accepts CIDv0 strings', () => {
   assert.equal(isValidCid(`Qm${'a'.repeat(44)}`), true)
 })
+
+test('isValidCid rejects blank values', () => {
+  assert.equal(isValidCid(''), false)
+})
