@@ -78,3 +78,7 @@ test('getChainKey returns null for unknown chains', () => {
 test('isTreasuryConfigured returns false before Base treasury deployment', () => {
   assert.equal(isTreasuryConfigured('base'), false)
 })
+
+test('isTreasuryConfigured detects configured Celo treasury', () => {
+  assert.equal(isTreasuryConfigured('celo'), true)
+})
