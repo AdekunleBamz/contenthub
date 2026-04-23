@@ -272,6 +272,10 @@ test('range returns empty arrays for equal bounds', () => {
   assert.deepEqual(range(3, 3), [])
 })
 
+test('range returns empty arrays for descending bounds', () => {
+  assert.deepEqual(range(5, 2), [])
+})
+
 test('uniqueBy keeps first matching items by key', () => {
   assert.deepEqual(uniqueBy([{ id: 1, name: 'a' }, { id: 1, name: 'b' }], (item) => item.id), [{ id: 1, name: 'a' }])
 })
