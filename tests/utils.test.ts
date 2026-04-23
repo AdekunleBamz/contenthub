@@ -123,3 +123,7 @@ test('clamp raises values below the minimum', () => {
 test('clamp lowers values above the maximum', () => {
   assert.equal(clamp(15, 0, 10), 10)
 })
+
+test('clamp handles reversed bounds conservatively', () => {
+  assert.equal(clamp(5, 10, 0), 10)
+})
