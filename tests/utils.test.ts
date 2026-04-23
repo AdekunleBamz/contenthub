@@ -96,6 +96,10 @@ test('formatFileSize formats zero byte counts', () => {
   assert.equal(formatFileSize(0), '0 B')
 })
 
+test('formatFileSize formats negative byte counts as zero', () => {
+  assert.equal(formatFileSize(-10), '0 B')
+})
+
 test('formatFileSize formats kilobytes', () => {
   assert.equal(formatFileSize(2048), '2.0 KB')
 })
