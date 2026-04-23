@@ -69,6 +69,10 @@ test('isCeloTestnet detects Celo Sepolia ids', () => {
   assert.equal(isCeloTestnet(11142220), true)
 })
 
+test('isCeloTestnet rejects Celo mainnet ids', () => {
+  assert.equal(isCeloTestnet(42220), false)
+})
+
 test('getChainName labels Celo mainnet', () => {
   assert.equal(getChainName(42220), 'Celo')
 })
