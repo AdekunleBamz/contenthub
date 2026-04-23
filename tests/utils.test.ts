@@ -223,3 +223,7 @@ test('isNonEmptyString accepts trimmed visible text', () => {
 test('safeJsonParse returns parsed JSON values', () => {
   assert.deepEqual(safeJsonParse('{"ok":true}', { ok: false }), { ok: true })
 })
+
+test('safeJsonParse returns fallbacks for invalid JSON', () => {
+  assert.deepEqual(safeJsonParse('nope', { ok: false }), { ok: false })
+})
