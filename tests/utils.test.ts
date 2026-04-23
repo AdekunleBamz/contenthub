@@ -119,3 +119,7 @@ test('buildIpfsUrl supports custom gateways', () => {
 test('clamp raises values below the minimum', () => {
   assert.equal(clamp(-5, 0, 10), 0)
 })
+
+test('clamp lowers values above the maximum', () => {
+  assert.equal(clamp(15, 0, 10), 10)
+})
