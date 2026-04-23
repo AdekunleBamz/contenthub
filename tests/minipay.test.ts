@@ -24,3 +24,7 @@ test('isMiniPay returns false outside browser wallets', () => {
 test('formatAddress truncates long MiniPay addresses', () => {
   assert.equal(formatAddress('0x1234567890abcdef1234567890abcdef12345678'), '0x1234...5678')
 })
+
+test('formatAddress leaves short MiniPay values unchanged', () => {
+  assert.equal(formatAddress('0x1234'), '0x1234')
+})
