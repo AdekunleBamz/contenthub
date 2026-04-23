@@ -240,6 +240,10 @@ test('isPositiveInteger accepts positive integers', () => {
   assert.equal(isPositiveInteger(3), true)
 })
 
+test('isPositiveInteger rejects zero', () => {
+  assert.equal(isPositiveInteger(0), false)
+})
+
 test('isPositiveInteger rejects decimals', () => {
   assert.equal(isPositiveInteger(3.5), false)
 })
