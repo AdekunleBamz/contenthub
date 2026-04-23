@@ -58,3 +58,7 @@ test('getAddressExplorerUrl trims contract addresses', () => {
 test('isBaseChain detects Base mainnet ids', () => {
   assert.equal(isBaseChain(BASE_CHAIN_ID), true)
 })
+
+test('isCeloChain detects Celo mainnet ids', () => {
+  assert.equal(isCeloChain(CELO_CHAIN_ID), true)
+})
