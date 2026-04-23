@@ -82,3 +82,7 @@ test('isTreasuryConfigured returns false before Base treasury deployment', () =>
 test('isTreasuryConfigured detects configured Celo treasury', () => {
   assert.equal(isTreasuryConfigured('celo'), true)
 })
+
+test('getTreasuryAddress returns null for Base treasury', () => {
+  assert.equal(getTreasuryAddress('base'), null)
+})
