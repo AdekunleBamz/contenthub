@@ -129,7 +129,9 @@ export function isValidTags(tags: string[]): boolean {
  * @returns A fully qualified IPFS URL string.
  */
 export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): string {
-  return `${gateway}${cid.trim()}`
+  const normalizedCid = cid.trim()
+  if (!normalizedCid) return ''
+  return `${gateway}${normalizedCid}`
 }
 
 /**

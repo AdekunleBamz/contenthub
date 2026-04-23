@@ -176,6 +176,10 @@ test('buildIpfsUrl uses the default IPFS gateway', () => {
   assert.equal(buildIpfsUrl('cid'), 'https://ipfs.io/ipfs/cid')
 })
 
+test('buildIpfsUrl returns blank output for blank CIDs', () => {
+  assert.equal(buildIpfsUrl('   '), '')
+})
+
 test('clamp raises values below the minimum', () => {
   assert.equal(clamp(-5, 0, 10), 0)
 })
