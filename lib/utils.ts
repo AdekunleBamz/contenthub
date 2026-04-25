@@ -430,3 +430,8 @@ export function safeParseFloat(value: string, fallback = 0): number {
 export function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
 }
+
+/** Filters out null, undefined, and false values from an array. */
+export function compact<T>(arr: (T | null | undefined | false)[]): T[] {
+  return arr.filter((item): item is T => item !== null && item !== undefined && item !== false)
+}
