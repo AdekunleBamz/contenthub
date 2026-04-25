@@ -126,3 +126,6 @@ export const CONTENT_TYPES = Object.freeze({
 
 /** Accept attribute string for file inputs that allow content uploads. */
 export const ACCEPTED_FILE_TYPES = ALLOWED_MIME_TYPES.join(',')
+
+/** Number of items shown per row in the gallery grid on desktop. */
+export const GALLERY_GRID_COLS_DESKTOP = 4
