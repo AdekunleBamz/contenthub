@@ -145,8 +145,9 @@ export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): st
  * @returns The clamped value.
  */
 export function clamp(value: number, min: number, max: number): number {
-  if (min > max) return min
-  return Math.min(max, Math.max(min, value))
+  const lower = Math.min(min, max)
+  const upper = Math.max(min, max)
+  return Math.min(upper, Math.max(lower, value))
 }
 
 /**
