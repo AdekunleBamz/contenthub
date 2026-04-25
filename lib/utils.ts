@@ -435,3 +435,11 @@ export function isValidEmail(email: string): boolean {
 export function compact<T>(arr: (T | null | undefined | false)[]): T[] {
   return arr.filter((item): item is T => item !== null && item !== undefined && item !== false)
 }
+
+/**
+ * Strips an `ipfs://` scheme prefix from a CID or URL string.
+ * Returns the value unchanged if the prefix is not present.
+ */
+export function stripIpfsPrefix(value: string): string {
+  return value.startsWith('ipfs://') ? value.slice(7) : value
+}
