@@ -109,6 +109,11 @@ export function isCeloChain(chainId: number): boolean {
   return chainId === CELO_CHAIN_ID;
 }
 
+/** Returns true when chainId is Celo Alfajores testnet. */
+export function isCeloTestnet(chainId: number): boolean {
+  return chainId === CELO_SEPOLIA_CHAIN_ID;
+}
+
 /** Returns true when chainId is a supported testnet. */
 export function isTestnet(chainId: number): boolean {
   return chainId === CELO_SEPOLIA_CHAIN_ID;
