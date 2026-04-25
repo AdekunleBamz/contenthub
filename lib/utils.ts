@@ -203,6 +203,11 @@ export function isPositiveInteger(n: unknown): n is number {
   return typeof n === 'number' && Number.isFinite(n) && Number.isInteger(n) && n > 0
 }
 
+/** Returns true when n is a non-negative finite integer (zero or greater). */
+export function isNonNegativeInteger(n: unknown): n is number {
+  return typeof n === 'number' && Number.isFinite(n) && Number.isInteger(n) && n >= 0
+}
+
 /**
  * Converts a size in bytes to its Megabyte (MB) equivalent, rounded to two decimal places.
  * Ensures a consistent format for file size display across different components.
