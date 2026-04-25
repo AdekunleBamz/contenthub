@@ -40,6 +40,12 @@ export const GALLERY_PAGE_SIZE = 20
 /** How many content IDs to fetch in a single gallery request. */
 export const GALLERY_FETCH_LIMIT = 10
 
+/** Alias for gallery fetch limit used by newer API helpers. */
+export const GALLERY_MAX_FETCH = GALLERY_FETCH_LIMIT
+
+/** Stable token symbol used in Celo treasury displays. */
+export const STABLE_TOKEN_SYMBOL = 'USDT'
+
 /** IPFS gateway URL used for resolving CIDs. */
 export const IPFS_GATEWAY = 'https://ipfs.io/ipfs/'
 
