@@ -425,3 +425,8 @@ export function safeParseFloat(value: string, fallback = 0): number {
   const n = parseFloat(value)
   return Number.isFinite(n) ? n : fallback
 }
+
+/** Returns true when the given string looks like a valid email address. */
+export function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+}
