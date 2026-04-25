@@ -10,7 +10,7 @@ Community-driven content platform built on Base and Celo chains.
 - 🏆 Mint achievement NFTs
 - 💰 Micro-payments (0.00002 ETH on Base, 0.00002 CELO on Celo)
 - 🌐 Cross-chain support (Base + Celo)
-- 📱 Farcaster Frame integration
+- 📱 Farcaster Mini App integration
 - 🎯 Divvi referral tracking - earn rewards for driving on-chain activity!
 - 🔄 Unified content browsing across Base and Celo deployments
 
