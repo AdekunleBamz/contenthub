@@ -11,6 +11,7 @@ const DIVVI_CONSUMER = '0x7C98ab80D060cA57DD067712d0eD084A58f69c49';
  * @returns A referral tag string, or '0x' if generation fails.
  */
 export function getDivviReferralTag(userAddress: string): string {
+  if (!userAddress || !userAddress.trim()) return '0x';
   try {
     return getReferralTag({
       user: userAddress as `0x${string}`,
