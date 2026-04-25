@@ -405,3 +405,13 @@ export function safeJsonParse<T>(json: string, fallback: T): T {
     return fallback
   }
 }
+
+/**
+ * Formats a percentage value (0–100) for display.
+ * @param value - A number in the 0–100 range.
+ * @param decimals - Number of decimal places. Defaults to 1.
+ */
+export function formatPercent(value: number, decimals = 1): string {
+  if (!Number.isFinite(value)) return '0%'
+  return `${Math.max(0, Math.min(100, value)).toFixed(decimals)}%`
+}
