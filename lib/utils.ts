@@ -1,7 +1,7 @@
 /**
  * Utility helpers for ContentHub UI formatting and validation.
  */
-import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB, ZERO_ADDRESS } from './constants'
+import { MAX_TAGS, MAX_TAG_LENGTH, MIN_TAG_LENGTH, ALLOWED_MIME_TYPES, IPFS_GATEWAY, MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, MAX_FILE_SIZE_MB, ZERO_ADDRESS, MIN_TITLE_LENGTH } from './constants'
 
 /**
  * Truncates an EVM address to a readable short form.
@@ -106,7 +106,8 @@ export function isValidDescription(desc: string): boolean {
  * @returns True if the title is valid and within length constraints.
  */
 export function isValidTitle(title: string): boolean {
-  return title.trim().length > 0 && title.trim().length <= MAX_TITLE_LENGTH
+  const normalizedTitle = title.trim()
+  return normalizedTitle.length >= MIN_TITLE_LENGTH && normalizedTitle.length <= MAX_TITLE_LENGTH
 }
 
 /**
