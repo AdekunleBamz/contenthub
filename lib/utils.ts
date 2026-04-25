@@ -415,3 +415,13 @@ export function formatPercent(value: number, decimals = 1): string {
   if (!Number.isFinite(value)) return '0%'
   return `${Math.max(0, Math.min(100, value)).toFixed(decimals)}%`
 }
+
+/**
+ * Safely parses a string to a floating-point number.
+ * @param value - String to parse.
+ * @param fallback - Value to return on failure. Defaults to 0.
+ */
+export function safeParseFloat(value: string, fallback = 0): number {
+  const n = parseFloat(value)
+  return Number.isFinite(n) ? n : fallback
+}
