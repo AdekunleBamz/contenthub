@@ -109,6 +109,11 @@ export function isTestnet(chainId: number): boolean {
   return chainId === CELO_SEPOLIA_CHAIN_ID;
 }
 
+/** Returns an array of all supported mainnet chain IDs. */
+export function getSupportedChainIds(): number[] {
+  return [BASE_CHAIN_ID, CELO_CHAIN_ID];
+}
+
 /** Returns the CONTRACTS key for a supported chain ID, or null for unknown chains. */
 export function getChainKey(chainId: number): keyof typeof CONTRACTS | null {
   if (chainId === BASE_CHAIN_ID) return 'base';
