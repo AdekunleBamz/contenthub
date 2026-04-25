@@ -443,3 +443,17 @@ export function compact<T>(arr: (T | null | undefined | false)[]): T[] {
 export function stripIpfsPrefix(value: string): string {
   return value.startsWith('ipfs://') ? value.slice(7) : value
 }
+
+/**
+ * Groups an array of items by a derived key.
+ * @param arr - The array to group.
+ * @param key - Function that returns the group key for each item.
+ */
+export function groupBy<T>(arr: T[], key: (item: T) => string): Record<string, T[]> {
+  return arr.reduce<Record<string, T[]>>((acc, item) => {
+    const k = key(item)
+    if (!acc[k]) acc[k] = []
+    acc[k].push(item)
+    return acc
+  }, {})
+}
