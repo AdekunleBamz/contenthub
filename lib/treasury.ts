@@ -42,3 +42,8 @@ export function toTreasuryReferenceId(referenceId?: number | bigint | null): big
   if (referenceId === null || referenceId === undefined) return 0n;
   return BigInt(referenceId);
 }
+
+/** Returns true when action is a recognised treasury action key. */
+export function isSupportedTreasuryAction(action: string): action is TreasuryAction {
+  return Object.keys(TREASURY_ACTIONS).includes(action);
+}
