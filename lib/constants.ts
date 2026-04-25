@@ -107,6 +107,9 @@ export const INPUT_DEBOUNCE_MS = 300
 /** Draft content key used to persist incomplete upload forms in localStorage. */
 export const CONTENT_DRAFT_STORAGE_KEY = 'contenthub_draft'
 
+/** Minimum number of milliseconds a user must wait between votes on the same item. */
+export const VOTE_COOLDOWN_MS = 30_000
+
 /** Supported blockchain networks for content uploads. */
 export const SUPPORTED_CHAINS = Object.freeze(['base', 'celo'] as const)
 
