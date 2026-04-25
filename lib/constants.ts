@@ -5,6 +5,9 @@
 /** Maximum allowed upload file size in megabytes. */
 export const MAX_FILE_SIZE_MB = 50
 
+/** Maximum allowed upload file size in bytes. */
+export const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
+
 /** Allowed MIME types for content uploads. */
 export const ALLOWED_MIME_TYPES = Object.freeze([
   'image/jpeg',
