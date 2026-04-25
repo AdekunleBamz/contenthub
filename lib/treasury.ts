@@ -47,3 +47,8 @@ export function toTreasuryReferenceId(referenceId?: number | bigint | null): big
 export function isSupportedTreasuryAction(action: string): action is TreasuryAction {
   return Object.keys(TREASURY_ACTIONS).includes(action);
 }
+
+/** Returns the sum of all configured split basis points (should equal 10 000). */
+export function getTotalSplitBps(): number {
+  return Object.values(DEFAULT_TREASURY_SPLIT_BPS).reduce((sum, v) => sum + v, 0);
+}
