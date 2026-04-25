@@ -139,6 +139,11 @@ export function getTreasuryAddress(chain: keyof typeof CONTRACTS): `0x${string}`
 /** Upload and mint fee in ETH/CELO units (human-readable). */
 export const CONTENT_FEE_DISPLAY = '0.00002';
 
+/** Returns the upload fee as a bigint in wei. */
+export function getUploadFeeWei(): bigint {
+  return BigInt(CONTENT_FEE_WEI);
+}
+
 /**
  * Returns true if the given chain key is supported by CONTRACTS.
  * @param key - Chain key to check.
