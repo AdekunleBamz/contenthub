@@ -180,6 +180,12 @@ export function formatDate(ts: number): string {
   return new Date(ts * 1000).toLocaleDateString()
 }
 
+/** Formats a Unix timestamp (seconds) as a locale date + time string. */
+export function formatDateTime(ts: number): string {
+  if (!Number.isFinite(ts) || ts <= 0) return ''
+  return new Date(ts * 1000).toLocaleString()
+}
+
 /**
  * Formats a number with locale-specific thousands separators (e.g., 1,000,000).
  * Used for displaying vote counts and other large integers in the UI.
