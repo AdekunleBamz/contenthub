@@ -11,7 +11,7 @@ import { sdk } from '@farcaster/miniapp-sdk';
  */
 export function useFarcasterContext() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
-  const [context, setContext] = useState<any>(null);
+  const [context, setContext] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const load = async () => {
