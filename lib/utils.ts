@@ -135,7 +135,8 @@ export function isValidTags(tags: string[]): boolean {
 export function buildIpfsUrl(cid: string, gateway = 'https://ipfs.io/ipfs/'): string {
   const normalizedCid = cid.trim()
   if (!normalizedCid) return ''
-  return `${gateway}${normalizedCid}`
+  const normalizedGateway = gateway.endsWith('/') ? gateway : `${gateway}/`
+  return `${normalizedGateway}${normalizedCid}`
 }
 
 /**
