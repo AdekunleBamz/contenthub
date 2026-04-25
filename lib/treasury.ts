@@ -52,3 +52,11 @@ export function isSupportedTreasuryAction(action: string): action is TreasuryAct
 export function getTotalSplitBps(): number {
   return Object.values(DEFAULT_TREASURY_SPLIT_BPS).reduce((sum, v) => sum + v, 0);
 }
+
+/**
+ * Calculates the creator's share of a given amount based on the configured BPS split.
+ * @param amount - The total amount in wei.
+ */
+export function getCreatorCut(amount: bigint): bigint {
+  return (amount * BigInt(DEFAULT_TREASURY_SPLIT_BPS.creator)) / 10_000n;
+}
