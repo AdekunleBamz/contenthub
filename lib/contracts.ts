@@ -84,6 +84,11 @@ export function getExplorerUrl(chainId: number): string {
   return '';
 }
 
+/** Returns a link to a token contract on the appropriate block explorer. */
+export function getTokenExplorerUrl(chainId: number, tokenAddress: string): string {
+  return `${getExplorerUrl(chainId)}/token/${tokenAddress.trim()}`;
+}
+
 /** Returns a link to a transaction on the appropriate block explorer. */
 export function getTxExplorerUrl(chainId: number, txHash: string): string {
   return `${getExplorerUrl(chainId)}/tx/${txHash.trim()}`;
