@@ -110,6 +110,9 @@ export const CONTENT_DRAFT_STORAGE_KEY = 'contenthub_draft'
 /** Minimum number of milliseconds a user must wait between votes on the same item. */
 export const VOTE_COOLDOWN_MS = 30_000
 
+/** Maximum number of IPFS upload attempts before giving up. */
+export const MAX_UPLOAD_RETRIES = 3
+
 /** Supported blockchain networks for content uploads. */
 export const SUPPORTED_CHAINS = Object.freeze(['base', 'celo'] as const)
 
