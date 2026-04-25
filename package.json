@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Community-driven content platform on Base and Celo",
   "private": true,
+  "repository": {"type": "git", "url": "https://github.com/AdekunleBamz/contenthub.git"},
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
