@@ -72,7 +72,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 
 ## Tech Stack
 
-- Next.js 14
+- Next.js 16
 - TypeScript
 - Tailwind CSS
 - RainbowKit
