@@ -104,6 +104,9 @@ export const UPLOAD_STATUS = Object.freeze({
 /** Debounce delay in ms applied to search and input handlers. */
 export const INPUT_DEBOUNCE_MS = 300
 
+/** Draft content key used to persist incomplete upload forms in localStorage. */
+export const CONTENT_DRAFT_STORAGE_KEY = 'contenthub_draft'
+
 /** Supported blockchain networks for content uploads. */
 export const SUPPORTED_CHAINS = Object.freeze(['base', 'celo'] as const)
 
