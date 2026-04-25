@@ -311,6 +311,12 @@ export function formatWei(wei: bigint): string {
   return (Number(wei) / 1e18).toFixed(4)
 }
 
+/** Converts a wei bigint to a number. Returns 0 for non-positive values. */
+export function weiToEther(wei: bigint): number {
+  if (wei <= 0n) return 0
+  return Number(wei) / 1e18
+}
+
 /**
  * Returns a debounced version of the provided function.
  * Ensures the function only executes after 'delay' milliseconds have elapsed since the last call.
