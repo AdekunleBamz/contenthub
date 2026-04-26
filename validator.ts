@@ -19,3 +19,8 @@ export function isPositiveInt(value: number): boolean {
 export function isWithinLength(str: string, min: number, max: number): boolean {
   return str.length >= min && str.length <= max
 }
+
+/** Returns true if value is a non-null object. */
+export function isObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value)
+}
