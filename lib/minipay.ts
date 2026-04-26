@@ -334,3 +334,9 @@ export function isMiniPayAvailable(): boolean {
 export function isMiniPay(): boolean {
   return typeof window !== "undefined" && (window as any).ethereum?.isMiniPay === true
 }
+
+/** Returns MiniPay version string or null. */
+export function getMiniPayVersion(): string | null {
+  if (typeof window === "undefined") return null
+  return (window as any).ethereum?.miniPayVersion ?? null
+}
