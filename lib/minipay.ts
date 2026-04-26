@@ -355,3 +355,8 @@ export function miniPayAddressLabel(addr: string): string {
 export function isMiniPayAvailable(): boolean {
   return typeof window !== "undefined" && !!(window as any).ethereum
 }
+
+/** Returns the chain ID MiniPay operates on. */
+export function getMiniPayChainId(): number {
+  return 42220
+}
