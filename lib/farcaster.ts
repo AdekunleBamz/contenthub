@@ -56,3 +56,8 @@ export function shortCastHash(hash: string): string {
 export function isValidFarcasterUsername(name: string): boolean {
   return /^[a-zA-Z0-9_-]{1,16}$/.test(name)
 }
+
+/** Returns a Farcaster cast URL for a given cast hash. */
+export function farcasterCastUrl(username: string, hash: string): string {
+  return "https://warpcast.com/" + username + "/" + hash
+}
