@@ -147,3 +147,6 @@ export const CELO_CHAIN_ID = 42220
 
 /** Network chain ID for Celo Alfajores Testnet. */
 export const ALFAJORES_CHAIN_ID = 44787
+
+/** Maximum number of tags per content item. */
+export const MAX_TAGS = 10
