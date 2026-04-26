@@ -46,3 +46,8 @@ export function farcasterProfileUrl(username: string): string {
 export function isValidFid(fid: number): boolean {
   return Number.isInteger(fid) && fid > 0
 }
+
+/** Formats a Farcaster cast hash to a short display string. */
+export function shortCastHash(hash: string): string {
+  return hash.slice(0, 10) + "..."
+}
