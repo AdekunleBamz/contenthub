@@ -9,3 +9,8 @@ export function isString(value: unknown): value is string {
 export function isNumber(value: unknown): value is number {
   return typeof value === "number"
 }
+
+/** Type guard: returns true if value is a boolean. */
+export function isBoolean(value: unknown): value is boolean {
+  return typeof value === "boolean"
+}
