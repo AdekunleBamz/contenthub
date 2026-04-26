@@ -44,3 +44,9 @@ export function isBigInt(value: unknown): value is bigint {
 export function withDefault<T>(value: T | null | undefined, fallback: T): T {
   return value ?? fallback
 }
+
+/** Asserts that a value is defined and throws if not. */
+export function assertDefined<T>(value: T | null | undefined, msg = "Expected a value"): T {
+  if (value === null || value === undefined) throw new Error(msg)
+  return value
+}
