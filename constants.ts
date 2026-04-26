@@ -26,3 +26,6 @@ export const SEARCH_DEBOUNCE_MS = 300
 
 /** Local storage key for user preferences. */
 export const LS_PREFS_KEY = "contenthub:prefs"
+
+/** Environment identifier for conditional feature flags. */
+export const IS_PRODUCTION = process.env.NODE_ENV === "production"
