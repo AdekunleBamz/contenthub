@@ -153,3 +153,6 @@ export const MAX_TAGS = 10
 
 /** IPFS gateway base URL. */
 export const IPFS_GATEWAY = "https://ipfs.io/ipfs/"
+
+/** Content refresh interval in milliseconds. */
+export const REFRESH_INTERVAL_MS = 30_000
