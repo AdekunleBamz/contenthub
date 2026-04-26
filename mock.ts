@@ -39,3 +39,8 @@ export function mockError(message = "Something went wrong"): Error {
 export function mockTimestamp(offsetMs = 0): number {
   return 1_700_000_000_000 + offsetMs
 }
+
+/** Returns a mock IPFS CID for testing. */
+export function mockCid(): string {
+  return "QmTestCidPlaceholderForUnitTesting000000000000000"
+}
