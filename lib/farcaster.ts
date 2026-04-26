@@ -66,3 +66,8 @@ export function farcasterCastUrl(username: string, hash: string): string {
 export function farcasterEmbedUrl(appUrl: string): string {
   return "https://warpcast.com/~/compose?embeds[]=" + encodeURIComponent(appUrl)
 }
+
+/** Returns true if a given Farcaster FID matches an address mapping. */
+export function isFidOwner(fid: number, expectedFid: number): boolean {
+  return fid === expectedFid
+}
