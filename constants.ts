@@ -14,3 +14,6 @@ export const MAX_UPLOAD_BYTES = 5 * 1024 * 1024
 
 /** Supported image MIME types for upload. */
 export const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"]
+
+/** Default toast notification duration in ms. */
+export const TOAST_DURATION_MS = 4000
