@@ -19,3 +19,8 @@ export function mockContent(id = "1"): object {
 export function mockUser(fid = 1): object {
   return { fid, username: "testuser" + fid, address: mockAddress(fid) }
 }
+
+/** Returns a mock transaction hash for testing. */
+export function mockTxHash(): string {
+  return "0x" + "a".repeat(64)
+}
