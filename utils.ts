@@ -19,3 +19,13 @@ export function capitalize(str: string): string {
 export function formatNumber(n: number): string {
   return n.toLocaleString()
 }
+
+/** Returns true if the value is a non-empty string. */
+export function isNonEmpty(value: unknown): value is string {
+  return typeof value === "string" && value.trim().length > 0
+}
+
+/** Formats a number with comma separators. */
+export function formatNumber(n: number): string {
+  return n.toLocaleString()
+}
