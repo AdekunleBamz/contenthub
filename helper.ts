@@ -24,3 +24,8 @@ export function shortAddress(addr: string, chars = 4): string {
 export function connectionStateLabel(connected: boolean): string {
   return connected ? "Connected" : "Disconnected"
 }
+
+/** Returns a CSS color for connection status. */
+export function connectionStatusColor(connected: boolean): string {
+  return connected ? "#22c55e" : "#ef4444"
+}
