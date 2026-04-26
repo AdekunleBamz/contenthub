@@ -14,3 +14,8 @@ export function isValidEmail(email: string): boolean {
 export function isPositiveInt(value: number): boolean {
   return Number.isInteger(value) && value > 0
 }
+
+/** Returns true if string length is within bounds. */
+export function isWithinLength(str: string, min: number, max: number): boolean {
+  return str.length >= min && str.length <= max
+}
