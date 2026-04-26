@@ -34,3 +34,8 @@ export function isUndefined(value: unknown): value is undefined {
 export function isFunction(value: unknown): value is (...args: unknown[]) => unknown {
   return typeof value === "function"
 }
+
+/** Type guard: returns true if value is a bigint. */
+export function isBigInt(value: unknown): value is bigint {
+  return typeof value === "bigint"
+}
