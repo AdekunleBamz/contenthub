@@ -29,3 +29,8 @@ export function isNull(value: unknown): value is null {
 export function isUndefined(value: unknown): value is undefined {
   return typeof value === "undefined"
 }
+
+/** Type guard: returns true if value is a function. */
+export function isFunction(value: unknown): value is (...args: unknown[]) => unknown {
+  return typeof value === "function"
+}
