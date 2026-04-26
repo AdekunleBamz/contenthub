@@ -14,3 +14,8 @@ export function isNumber(value: unknown): value is number {
 export function isBoolean(value: unknown): value is boolean {
   return typeof value === "boolean"
 }
+
+/** Type guard: returns true if value is an array. */
+export function isArray(value: unknown): value is unknown[] {
+  return Array.isArray(value)
+}
