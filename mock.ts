@@ -44,3 +44,8 @@ export function mockTimestamp(offsetMs = 0): number {
 export function mockCid(): string {
   return "QmTestCidPlaceholderForUnitTesting000000000000000"
 }
+
+/** Returns a mock tag array for testing. */
+export function mockTags(count = 3): string[] {
+  return Array.from({ length: count }, (_, i) => "tag" + (i + 1))
+}
