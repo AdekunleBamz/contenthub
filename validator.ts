@@ -29,3 +29,8 @@ export function isObject(value: unknown): value is Record<string, unknown> {
 export function isFiniteNumber(value: unknown): value is number {
   return typeof value === "number" && isFinite(value)
 }
+
+/** Returns true if string contains only alphanumeric characters. */
+export function isAlphanumeric(str: string): boolean {
+  return /^[a-zA-Z0-9]+$/.test(str)
+}
