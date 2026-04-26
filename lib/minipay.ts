@@ -350,3 +350,8 @@ export function formatMiniPayBalance(amount: number): string {
 export function miniPayAddressLabel(addr: string): string {
   return addr.slice(0, 6) + "..." + addr.slice(-4)
 }
+
+/** Returns true if the MiniPay provider is available. */
+export function isMiniPayAvailable(): boolean {
+  return typeof window !== "undefined" && !!(window as any).ethereum
+}
