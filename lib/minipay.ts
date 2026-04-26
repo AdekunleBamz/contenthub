@@ -365,3 +365,8 @@ export function getMiniPayChainId(): number {
 export function isOnMiniPayChain(chainId: number): boolean {
   return chainId === 42220
 }
+
+/** Builds a MiniPay deep link URL. */
+export function miniPayDeepLink(path: string): string {
+  return "minipay://dapp/" + encodeURIComponent(path)
+}
