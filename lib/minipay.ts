@@ -329,3 +329,54 @@ export function isMiniPayAvailable(): boolean {
     !!(window.ethereum as { isMiniPay?: boolean }).isMiniPay
   )
 }
+
+/** Returns true if window.ethereum is MiniPay. */
+export function isMiniPay(): boolean {
+  return typeof window !== "undefined" && (window as any).ethereum?.isMiniPay === true
+}
+
+/** Returns MiniPay version string or null. */
+export function getMiniPayVersion(): string | null {
+  if (typeof window === "undefined") return null
+  return (window as any).ethereum?.miniPayVersion ?? null
+}
+
+/** Formats a MiniPay balance amount for display. */
+export function formatMiniPayBalance(amount: number): string {
+  return amount.toFixed(2) + " cUSD"
+}
+
+/** Returns a MiniPay-friendly short address label. */
+export function miniPayAddressLabel(addr: string): string {
+  return addr.slice(0, 6) + "..." + addr.slice(-4)
+}
+
+/** Returns true if the MiniPay provider is available. */
+export function isMiniPayAvailable(): boolean {
+  return typeof window !== "undefined" && !!(window as any).ethereum
+}
+
+/** Returns the chain ID MiniPay operates on. */
+export function getMiniPayChainId(): number {
+  return 42220
+}
+
+/** Returns true if user is on the correct MiniPay chain. */
+export function isOnMiniPayChain(chainId: number): boolean {
+  return chainId === 42220
+}
+
+/** Builds a MiniPay deep link URL. */
+export function miniPayDeepLink(path: string): string {
+  return "minipay://dapp/" + encodeURIComponent(path)
+}
+
+/** Returns a greeting string for MiniPay users. */
+export function miniPayWelcome(addr: string): string {
+  return "Welcome to MiniPay, " + addr.slice(0, 6) + "..."
+}
+
+/** Returns true if a given URL is safe for MiniPay dApp browser. */
+export function isSafeMiniPayUrl(url: string): boolean {
+  try { const u = new URL(url); return u.protocol === "https:" } catch { return false }
+}
