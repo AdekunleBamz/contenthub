@@ -36,3 +36,8 @@ export function useFarcasterContext() {
 
   return { isSDKLoaded, context, sdk };
 }
+
+/** Returns a Farcaster profile URL for a given username. */
+export function farcasterProfileUrl(username: string): string {
+  return "https://warpcast.com/" + username
+}
