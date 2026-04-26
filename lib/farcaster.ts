@@ -51,3 +51,8 @@ export function isValidFid(fid: number): boolean {
 export function shortCastHash(hash: string): string {
   return hash.slice(0, 10) + "..."
 }
+
+/** Returns true if a Farcaster username is valid format. */
+export function isValidFarcasterUsername(name: string): boolean {
+  return /^[a-zA-Z0-9_-]{1,16}$/.test(name)
+}
