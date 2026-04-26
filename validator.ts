@@ -39,3 +39,8 @@ export function isAlphanumeric(str: string): boolean {
 export function isDefined<T>(value: T | null | undefined): value is T {
   return value !== null && value !== undefined
 }
+
+/** Returns true if array is non-empty. */
+export function isNonEmptyArray<T>(arr: T[]): arr is [T, ...T[]] {
+  return Array.isArray(arr) && arr.length > 0
+}
