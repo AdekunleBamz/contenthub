@@ -522,3 +522,9 @@ export function percentage(part: number, total: number): number {
 export function round(value: number, decimals: number): number {
   return Number(value.toFixed(decimals))
 }
+
+/** Returns the average of a numeric array. */
+export function average(nums: number[]): number {
+  if (nums.length === 0) return 0
+  return nums.reduce((a, b) => a + b, 0) / nums.length
+}
