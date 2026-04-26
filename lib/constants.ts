@@ -156,3 +156,7 @@ export const IPFS_GATEWAY = "https://ipfs.io/ipfs/"
 
 /** Content refresh interval in milliseconds. */
 export const REFRESH_INTERVAL_MS = 30_000
+
+/** Default slippage tolerance in basis points (0.5
+/** Default slippage tolerance in basis points (0.5 percent). */
+export const DEFAULT_SLIPPAGE_BPS = 50
