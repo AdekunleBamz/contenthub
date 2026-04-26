@@ -476,3 +476,60 @@ export function groupBy<T>(arr: T[], key: (item: T) => string): Record<string, T
     return acc
   }, {})
 }
+
+/** Formats a CELO amount with symbol. */
+export function formatCelo(amount: number): string {
+  return amount.toFixed(4) + " CELO"
+}
+
+/** Formats a cUSD amount with symbol. */
+export function formatCusd(amount: number): string {
+  return "$" + amount.toFixed(2)
+}
+
+/** Returns a short display of a large number (1K, 1M etc). */
+export function shortNumber(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M"
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "K"
+  return String(n)
+}
+
+/** Returns time elapsed since a timestamp as a human string. */
+export function timeAgo(timestamp: number): string {
+  const secs = Math.floor((Date.now() - timestamp) / 1000)
+  if (secs < 60) return secs + "s ago"
+  if (secs < 3600) return Math.floor(secs / 60) + "m ago"
+  if (secs < 86400) return Math.floor(secs / 3600) + "h ago"
+  return Math.floor(secs / 86400) + "d ago"
+}
+
+/** Converts wei to ether (18 decimals). */
+export function weiToEther(wei: bigint): number {
+  return Number(wei) / 1e18
+}
+
+/** Converts ether to wei (18 decimals). */
+export function etherToWei(ether: number): bigint {
+  return BigInt(Math.round(ether * 1e18))
+}
+
+/** Returns the percentage of part relative to total. */
+export function percentage(part: number, total: number): number {
+  return total === 0 ? 0 : (part / total) * 100
+}
+
+/** Rounds a number to specified decimal places. */
+export function round(value: number, decimals: number): number {
+  return Number(value.toFixed(decimals))
+}
+
+/** Returns the average of a numeric array. */
+export function average(nums: number[]): number {
+  if (nums.length === 0) return 0
+  return nums.reduce((a, b) => a + b, 0) / nums.length
+}
+
+/** Returns the sum of a numeric array. */
+export function sum(nums: number[]): number {
+  return nums.reduce((a, b) => a + b, 0)
+}
