@@ -24,3 +24,8 @@ export function isArray(value: unknown): value is unknown[] {
 export function isNull(value: unknown): value is null {
   return value === null
 }
+
+/** Type guard: returns true if value is undefined. */
+export function isUndefined(value: unknown): value is undefined {
+  return typeof value === "undefined"
+}
