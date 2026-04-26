@@ -61,3 +61,8 @@ export function isValidFarcasterUsername(name: string): boolean {
 export function farcasterCastUrl(username: string, hash: string): string {
   return "https://warpcast.com/" + username + "/" + hash
 }
+
+/** Returns a Farcaster embed URL for use in frames. */
+export function farcasterEmbedUrl(appUrl: string): string {
+  return "https://warpcast.com/~/compose?embeds[]=" + encodeURIComponent(appUrl)
+}
