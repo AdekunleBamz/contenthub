@@ -345,3 +345,8 @@ export function getMiniPayVersion(): string | null {
 export function formatMiniPayBalance(amount: number): string {
   return amount.toFixed(2) + " cUSD"
 }
+
+/** Returns a MiniPay-friendly short address label. */
+export function miniPayAddressLabel(addr: string): string {
+  return addr.slice(0, 6) + "..." + addr.slice(-4)
+}
