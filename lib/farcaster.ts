@@ -71,3 +71,8 @@ export function farcasterEmbedUrl(appUrl: string): string {
 export function isFidOwner(fid: number, expectedFid: number): boolean {
   return fid === expectedFid
 }
+
+/** Returns a display name for a Farcaster user or falls back to address. */
+export function farcasterDisplayName(name: string | null, addr: string): string {
+  return name ?? addr.slice(0, 8)
+}
