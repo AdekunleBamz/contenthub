@@ -24,3 +24,8 @@ export function mockUser(fid = 1): object {
 export function mockTxHash(): string {
   return "0x" + "a".repeat(64)
 }
+
+/** Returns a mock paginated response object for testing. */
+export function mockPaginatedResponse<T>(items: T[]): object {
+  return { items, total: items.length, page: 1, pageSize: 20 }
+}
