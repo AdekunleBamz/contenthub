@@ -9,3 +9,8 @@ export function isSameAddress(a: string, b: string): boolean {
 export function normaliseAddress(addr: string): string {
   return addr.toLowerCase()
 }
+
+/** Returns true if value is a valid Ethereum address. */
+export function isValidAddress(addr: string): boolean {
+  return /^0x[0-9a-fA-F]{40}$/.test(addr)
+}
