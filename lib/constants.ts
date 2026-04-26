@@ -144,3 +144,6 @@ export const MIN_CELO_TO_CREATE = 0.01
 
 /** Network chain ID for Celo Mainnet. */
 export const CELO_CHAIN_ID = 42220
+
+/** Network chain ID for Celo Alfajores Testnet. */
+export const ALFAJORES_CHAIN_ID = 44787
