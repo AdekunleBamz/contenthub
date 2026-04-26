@@ -34,3 +34,8 @@ export function formatNumber(n: number): string {
 export function isNonEmpty(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0
 }
+
+/** Clamps a number between min and max. */
+export function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max)
+}
