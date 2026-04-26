@@ -14,3 +14,8 @@ export function mockCeloBalance(amount = 100): string {
 export function mockContent(id = "1"): object {
   return { id, title: "Test Content " + id, body: "Lorem ipsum", author: mockAddress() }
 }
+
+/** Returns a mock user profile object for testing. */
+export function mockUser(fid = 1): object {
+  return { fid, username: "testuser" + fid, address: mockAddress(fid) }
+}
