@@ -141,3 +141,6 @@ export const DEFAULT_PAGE_SIZE = 20
 
 /** Minimum CELO required for content creation. */
 export const MIN_CELO_TO_CREATE = 0.01
+
+/** Network chain ID for Celo Mainnet. */
+export const CELO_CHAIN_ID = 42220
