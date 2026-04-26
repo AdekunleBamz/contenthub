@@ -507,3 +507,8 @@ export function timeAgo(timestamp: number): string {
 export function weiToEther(wei: bigint): number {
   return Number(wei) / 1e18
 }
+
+/** Converts ether to wei (18 decimals). */
+export function etherToWei(ether: number): bigint {
+  return BigInt(Math.round(ether * 1e18))
+}
