@@ -39,3 +39,8 @@ export function isFunction(value: unknown): value is (...args: unknown[]) => unk
 export function isBigInt(value: unknown): value is bigint {
   return typeof value === "bigint"
 }
+
+/** Returns a value or a fallback if the value is null or undefined. */
+export function withDefault<T>(value: T | null | undefined, fallback: T): T {
+  return value ?? fallback
+}
