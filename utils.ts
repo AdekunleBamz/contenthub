@@ -9,3 +9,8 @@ export function truncate(str: string, maxLen: number): string {
 export function slugify(str: string): string {
   return str.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
 }
+
+/** Capitalizes the first letter of a string. */
+export function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
