@@ -34,3 +34,8 @@ export function mockPaginatedResponse<T>(items: T[]): object {
 export function mockError(message = "Something went wrong"): Error {
   return new Error(message)
 }
+
+/** Returns a mock timestamp (Unix ms) for testing. */
+export function mockTimestamp(offsetMs = 0): number {
+  return 1_700_000_000_000 + offsetMs
+}
