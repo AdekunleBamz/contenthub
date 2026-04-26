@@ -135,3 +135,6 @@ export const MAX_TITLE_LENGTH = 120
 
 /** Maximum characters for a content description. */
 export const MAX_DESCRIPTION_LENGTH = 500
+
+/** Default pagination page size. */
+export const DEFAULT_PAGE_SIZE = 20
