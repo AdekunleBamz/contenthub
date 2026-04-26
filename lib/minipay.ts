@@ -370,3 +370,8 @@ export function isOnMiniPayChain(chainId: number): boolean {
 export function miniPayDeepLink(path: string): string {
   return "minipay://dapp/" + encodeURIComponent(path)
 }
+
+/** Returns a greeting string for MiniPay users. */
+export function miniPayWelcome(addr: string): string {
+  return "Welcome to MiniPay, " + addr.slice(0, 6) + "..."
+}
