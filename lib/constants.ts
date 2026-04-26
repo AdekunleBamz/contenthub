@@ -150,3 +150,6 @@ export const ALFAJORES_CHAIN_ID = 44787
 
 /** Maximum number of tags per content item. */
 export const MAX_TAGS = 10
+
+/** IPFS gateway base URL. */
+export const IPFS_GATEWAY = "https://ipfs.io/ipfs/"
