@@ -14,3 +14,8 @@ export function slugify(str: string): string {
 export function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+/** Formats a number with comma separators. */
+export function formatNumber(n: number): string {
+  return n.toLocaleString()
+}
