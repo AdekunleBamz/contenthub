@@ -29,3 +29,8 @@ export function mockTxHash(): string {
 export function mockPaginatedResponse<T>(items: T[]): object {
   return { items, total: items.length, page: 1, pageSize: 20 }
 }
+
+/** Returns a mock error object for testing. */
+export function mockError(message = "Something went wrong"): Error {
+  return new Error(message)
+}
