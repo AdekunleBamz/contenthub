@@ -29,3 +29,8 @@ export function connectionStateLabel(connected: boolean): string {
 export function connectionStatusColor(connected: boolean): string {
   return connected ? "#22c55e" : "#ef4444"
 }
+
+/** Returns true if address is considered busy (pending tx). */
+export function isWalletBusy(pendingCount: number): boolean {
+  return pendingCount > 0
+}
