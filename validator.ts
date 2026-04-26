@@ -44,3 +44,8 @@ export function isDefined<T>(value: T | null | undefined): value is T {
 export function isNonEmptyArray<T>(arr: T[]): arr is [T, ...T[]] {
   return Array.isArray(arr) && arr.length > 0
 }
+
+/** Returns true if a number is in range [min, max]. */
+export function isInRange(value: number, min: number, max: number): boolean {
+  return value >= min && value <= max
+}
