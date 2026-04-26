@@ -19,3 +19,8 @@ export function isValidAddress(addr: string): boolean {
 export function shortAddress(addr: string, chars = 4): string {
   return addr.slice(0, chars + 2) + "..." + addr.slice(-chars)
 }
+
+/** Returns a display label for the connection state. */
+export function connectionStateLabel(connected: boolean): string {
+  return connected ? "Connected" : "Disconnected"
+}
