@@ -360,3 +360,8 @@ export function isMiniPayAvailable(): boolean {
 export function getMiniPayChainId(): number {
   return 42220
 }
+
+/** Returns true if user is on the correct MiniPay chain. */
+export function isOnMiniPayChain(chainId: number): boolean {
+  return chainId === 42220
+}
