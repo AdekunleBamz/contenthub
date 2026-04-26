@@ -53,3 +53,12 @@ export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
     return acc
   }, {} as Record<string, T[]>)
 }
+
+/** Debounces a function call by the specified delay. */
+export function debounce<T extends (...args: unknown[]) => void>(fn: T, delay: number): T {
+  let timer: ReturnType<typeof setTimeout>
+  return ((...args: unknown[]) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => fn(...args), delay)
+  }) as T
+}
