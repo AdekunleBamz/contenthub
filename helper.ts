@@ -34,3 +34,8 @@ export function connectionStatusColor(connected: boolean): string {
 export function isWalletBusy(pendingCount: number): boolean {
   return pendingCount > 0
 }
+
+/** Returns an emoji for connection status. */
+export function connectionStatusEmoji(connected: boolean): string {
+  return connected ? "🟢" : "🔴"
+}
