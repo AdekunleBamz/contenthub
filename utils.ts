@@ -39,3 +39,8 @@ export function isNonEmpty(value: unknown): value is string {
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max)
 }
+
+/** Returns unique values from an array. */
+export function unique<T>(arr: T[]): T[] {
+  return [...new Set(arr)]
+}
