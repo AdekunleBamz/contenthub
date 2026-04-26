@@ -20,3 +20,6 @@ export const TOAST_DURATION_MS = 4000
 
 /** Number of confirmations to wait for a transaction. */
 export const TX_CONFIRMATIONS = 2
+
+/** Default debounce delay for search inputs in ms. */
+export const SEARCH_DEBOUNCE_MS = 300
