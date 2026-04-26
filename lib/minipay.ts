@@ -329,3 +329,8 @@ export function isMiniPayAvailable(): boolean {
     !!(window.ethereum as { isMiniPay?: boolean }).isMiniPay
   )
 }
+
+/** Returns true if window.ethereum is MiniPay. */
+export function isMiniPay(): boolean {
+  return typeof window !== "undefined" && (window as any).ethereum?.isMiniPay === true
+}
