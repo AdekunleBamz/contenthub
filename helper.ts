@@ -39,3 +39,8 @@ export function isWalletBusy(pendingCount: number): boolean {
 export function connectionStatusEmoji(connected: boolean): string {
   return connected ? "🟢" : "🔴"
 }
+
+/** Checks if two user addresses refer to the same account. */
+export function isCurrentUser(userAddr: string, otherAddr: string): boolean {
+  return userAddr.toLowerCase() === otherAddr.toLowerCase()
+}
