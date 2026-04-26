@@ -375,3 +375,8 @@ export function miniPayDeepLink(path: string): string {
 export function miniPayWelcome(addr: string): string {
   return "Welcome to MiniPay, " + addr.slice(0, 6) + "..."
 }
+
+/** Returns true if a given URL is safe for MiniPay dApp browser. */
+export function isSafeMiniPayUrl(url: string): boolean {
+  try { const u = new URL(url); return u.protocol === "https:" } catch { return false }
+}
