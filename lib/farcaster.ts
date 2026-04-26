@@ -81,3 +81,8 @@ export function farcasterDisplayName(name: string | null, addr: string): string 
 export function isCastTooLong(text: string, limit = 320): boolean {
   return text.length > limit
 }
+
+/** Returns a mention string for a Farcaster username. */
+export function farcasterMention(username: string): string {
+  return "@" + username
+}
