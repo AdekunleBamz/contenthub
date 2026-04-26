@@ -517,3 +517,8 @@ export function etherToWei(ether: number): bigint {
 export function percentage(part: number, total: number): number {
   return total === 0 ? 0 : (part / total) * 100
 }
+
+/** Rounds a number to specified decimal places. */
+export function round(value: number, decimals: number): number {
+  return Number(value.toFixed(decimals))
+}
