@@ -14,3 +14,8 @@ export function normaliseAddress(addr: string): string {
 export function isValidAddress(addr: string): boolean {
   return /^0x[0-9a-fA-F]{40}$/.test(addr)
 }
+
+/** Shortens an address to 0x1234...5678 format. */
+export function shortAddress(addr: string, chars = 4): string {
+  return addr.slice(0, chars + 2) + "..." + addr.slice(-chars)
+}
