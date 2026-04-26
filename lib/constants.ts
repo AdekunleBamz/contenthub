@@ -132,3 +132,6 @@ export const GALLERY_GRID_COLS_DESKTOP = 4
 
 /** Maximum characters for a content title. */
 export const MAX_TITLE_LENGTH = 120
+
+/** Maximum characters for a content description. */
+export const MAX_DESCRIPTION_LENGTH = 500
