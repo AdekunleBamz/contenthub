@@ -340,3 +340,8 @@ export function getMiniPayVersion(): string | null {
   if (typeof window === "undefined") return null
   return (window as any).ethereum?.miniPayVersion ?? null
 }
+
+/** Formats a MiniPay balance amount for display. */
+export function formatMiniPayBalance(amount: number): string {
+  return amount.toFixed(2) + " cUSD"
+}
