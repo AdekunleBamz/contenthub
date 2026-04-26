@@ -512,3 +512,8 @@ export function weiToEther(wei: bigint): number {
 export function etherToWei(ether: number): bigint {
   return BigInt(Math.round(ether * 1e18))
 }
+
+/** Returns the percentage of part relative to total. */
+export function percentage(part: number, total: number): number {
+  return total === 0 ? 0 : (part / total) * 100
+}
