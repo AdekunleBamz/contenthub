@@ -44,3 +44,12 @@ export function clamp(value: number, min: number, max: number): number {
 export function unique<T>(arr: T[]): T[] {
   return [...new Set(arr)]
 }
+
+/** Groups an array of objects by a key. */
+export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
+  return arr.reduce((acc, item) => {
+    const k = String(item[key])
+    ;(acc[k] = acc[k] || []).push(item)
+    return acc
+  }, {} as Record<string, T[]>)
+}
