@@ -8,3 +8,6 @@ export const APP_VERSION = "1.0.0"
 
 /** Base URL for the application in production. */
 export const APP_BASE_URL = "https://contenthub.xyz"
+
+/** Maximum file upload size in bytes (5 MB). */
+export const MAX_UPLOAD_BYTES = 5 * 1024 * 1024
