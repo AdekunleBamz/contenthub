@@ -44,3 +44,8 @@ export function connectionStatusEmoji(connected: boolean): string {
 export function isCurrentUser(userAddr: string, otherAddr: string): boolean {
   return userAddr.toLowerCase() === otherAddr.toLowerCase()
 }
+
+/** Returns an accessibility label for an address. */
+export function addressAccessibilityLabel(addr: string): string {
+  return "Wallet address: " + addr
+}
