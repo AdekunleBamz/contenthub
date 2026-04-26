@@ -528,3 +528,8 @@ export function average(nums: number[]): number {
   if (nums.length === 0) return 0
   return nums.reduce((a, b) => a + b, 0) / nums.length
 }
+
+/** Returns the sum of a numeric array. */
+export function sum(nums: number[]): number {
+  return nums.reduce((a, b) => a + b, 0)
+}
