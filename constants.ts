@@ -23,3 +23,6 @@ export const TX_CONFIRMATIONS = 2
 
 /** Default debounce delay for search inputs in ms. */
 export const SEARCH_DEBOUNCE_MS = 300
+
+/** Local storage key for user preferences. */
+export const LS_PREFS_KEY = "contenthub:prefs"
