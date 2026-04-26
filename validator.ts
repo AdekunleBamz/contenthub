@@ -24,3 +24,8 @@ export function isWithinLength(str: string, min: number, max: number): boolean {
 export function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value)
 }
+
+/** Returns true if value is a finite number. */
+export function isFiniteNumber(value: unknown): value is number {
+  return typeof value === "number" && isFinite(value)
+}
