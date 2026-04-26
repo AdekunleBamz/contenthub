@@ -17,3 +17,6 @@ export const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "im
 
 /** Default toast notification duration in ms. */
 export const TOAST_DURATION_MS = 4000
+
+/** Number of confirmations to wait for a transaction. */
+export const TX_CONFIRMATIONS = 2
