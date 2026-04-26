@@ -11,3 +11,6 @@ export const APP_BASE_URL = "https://contenthub.xyz"
 
 /** Maximum file upload size in bytes (5 MB). */
 export const MAX_UPLOAD_BYTES = 5 * 1024 * 1024
+
+/** Supported image MIME types for upload. */
+export const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"]
