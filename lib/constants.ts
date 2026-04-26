@@ -129,3 +129,6 @@ export const ACCEPTED_FILE_TYPES = ALLOWED_MIME_TYPES.join(',')
 
 /** Number of items shown per row in the gallery grid on desktop. */
 export const GALLERY_GRID_COLS_DESKTOP = 4
+
+/** Maximum characters for a content title. */
+export const MAX_TITLE_LENGTH = 120
