@@ -34,3 +34,8 @@ export function isFiniteNumber(value: unknown): value is number {
 export function isAlphanumeric(str: string): boolean {
   return /^[a-zA-Z0-9]+$/.test(str)
 }
+
+/** Returns true if a value is defined (not null or undefined). */
+export function isDefined<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined
+}
