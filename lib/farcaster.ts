@@ -41,3 +41,8 @@ export function useFarcasterContext() {
 export function farcasterProfileUrl(username: string): string {
   return "https://warpcast.com/" + username
 }
+
+/** Returns true if a Farcaster FID is valid. */
+export function isValidFid(fid: number): boolean {
+  return Number.isInteger(fid) && fid > 0
+}
