@@ -19,3 +19,8 @@ export function isBoolean(value: unknown): value is boolean {
 export function isArray(value: unknown): value is unknown[] {
   return Array.isArray(value)
 }
+
+/** Type guard: returns true if value is null. */
+export function isNull(value: unknown): value is null {
+  return value === null
+}
