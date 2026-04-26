@@ -76,3 +76,8 @@ export function isFidOwner(fid: number, expectedFid: number): boolean {
 export function farcasterDisplayName(name: string | null, addr: string): string {
   return name ?? addr.slice(0, 8)
 }
+
+/** Returns true if a Farcaster cast text exceeds the limit. */
+export function isCastTooLong(text: string, limit = 320): boolean {
+  return text.length > limit
+}
