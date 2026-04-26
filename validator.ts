@@ -9,3 +9,8 @@ export function isValidUrl(url: string): boolean {
 export function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
+
+/** Returns true if value is a positive integer. */
+export function isPositiveInt(value: number): boolean {
+  return Number.isInteger(value) && value > 0
+}
