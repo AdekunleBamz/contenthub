@@ -486,3 +486,10 @@ export function formatCelo(amount: number): string {
 export function formatCusd(amount: number): string {
   return "$" + amount.toFixed(2)
 }
+
+/** Returns a short display of a large number (1K, 1M etc). */
+export function shortNumber(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M"
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "K"
+  return String(n)
+}
