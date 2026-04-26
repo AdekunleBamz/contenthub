@@ -138,3 +138,6 @@ export const MAX_DESCRIPTION_LENGTH = 500
 
 /** Default pagination page size. */
 export const DEFAULT_PAGE_SIZE = 20
+
+/** Minimum CELO required for content creation. */
+export const MIN_CELO_TO_CREATE = 0.01
