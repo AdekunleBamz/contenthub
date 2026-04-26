@@ -476,3 +476,8 @@ export function groupBy<T>(arr: T[], key: (item: T) => string): Record<string, T
     return acc
   }, {})
 }
+
+/** Formats a CELO amount with symbol. */
+export function formatCelo(amount: number): string {
+  return amount.toFixed(4) + " CELO"
+}
