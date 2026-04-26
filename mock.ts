@@ -9,3 +9,8 @@ export function mockAddress(index = 0): string {
 export function mockCeloBalance(amount = 100): string {
   return amount.toFixed(4) + " CELO"
 }
+
+/** Returns a mock content item object for testing. */
+export function mockContent(id = "1"): object {
+  return { id, title: "Test Content " + id, body: "Lorem ipsum", author: mockAddress() }
+}
