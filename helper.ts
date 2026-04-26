@@ -4,3 +4,8 @@ export function helper(): void {}
 export function isSameAddress(a: string, b: string): boolean {
   return a.toLowerCase() === b.toLowerCase()
 }
+
+/** Normalises a blockchain address to checksummed lowercase form. */
+export function normaliseAddress(addr: string): string {
+  return addr.toLowerCase()
+}
