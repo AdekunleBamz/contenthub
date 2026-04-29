@@ -503,10 +503,6 @@ export function timeAgo(timestamp: number): string {
   return Math.floor(secs / 86400) + "d ago"
 }
 
-/** Converts wei to ether (18 decimals). */
-export function weiToEther(wei: bigint): number {
-  return Number(wei) / 1e18
-}
 
 /** Converts ether to wei (18 decimals). */
 export function etherToWei(ether: number): bigint {

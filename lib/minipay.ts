@@ -330,10 +330,6 @@ export function isMiniPayAvailable(): boolean {
   )
 }
 
-/** Returns true if window.ethereum is MiniPay. */
-export function isMiniPay(): boolean {
-  return typeof window !== "undefined" && (window as any).ethereum?.isMiniPay === true
-}
 
 /** Returns MiniPay version string or null. */
 export function getMiniPayVersion(): string | null {
@@ -351,10 +347,6 @@ export function miniPayAddressLabel(addr: string): string {
   return addr.slice(0, 6) + "..." + addr.slice(-4)
 }
 
-/** Returns true if the MiniPay provider is available. */
-export function isMiniPayAvailable(): boolean {
-  return typeof window !== "undefined" && !!(window as any).ethereum
-}
 
 /** Returns the chain ID MiniPay operates on. */
 export function getMiniPayChainId(): number {
