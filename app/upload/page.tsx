@@ -46,6 +46,7 @@ export default function UploadPage() {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState('');
   const [previewUrl, setPreviewUrl] = useState('');
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   const currentChain = chain?.id === BASE_CHAIN_ID ? 'base' : chain?.id === CELO_CHAIN_ID ? 'celo' : null;
   const contract = currentChain ? CONTRACTS[currentChain].communityContentHub : null;
@@ -59,6 +60,7 @@ export default function UploadPage() {
       setDescription('');
       setContentType('image');
       setPreviewUrl('');
+      setUploadError(null);
       // Clear file input
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
       if (fileInput) fileInput.value = '';
@@ -103,9 +105,11 @@ export default function UploadPage() {
   const handleUpload = async () => {
     if (!isConnected || !contract || !currentChain) return;
     if (!file || !title) {
-      alert('Please select a file and enter a title');
+      setUploadError('Please select a file and enter a title.');
       return;
     }
+
+    setUploadError(null);
 
     try {
       setIsUploading(true);
@@ -121,7 +125,12 @@ export default function UploadPage() {
       });
 
       if (!uploadRes.ok) {
-        throw new Error('IPFS upload failed');
+        let reason = 'IPFS upload failed.';
+        try {
+          const body = await uploadRes.json();
+          if (body?.error) reason = body.error;
+        } catch {}
+        throw new Error(reason);
       }
 
       const { ipfsHash } = await uploadRes.json();
@@ -146,7 +155,9 @@ export default function UploadPage() {
       } as any);
     } catch (error) {
       console.error('Upload error:', error);
-      alert('Upload failed. Please try again.');
+      setUploadError(
+        error instanceof Error ? error.message : 'Upload failed. Please try again.'
+      );
     } finally {
       setIsUploading(false);
       setUploadProgress('');
@@ -211,6 +222,12 @@ export default function UploadPage() {
           {uploadProgress && (
             <div className="mb-6 p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
               <p className="text-blue-400">⏳ {uploadProgress}</p>
+            </div>
+          )}
+
+          {uploadError && (
+            <div className="mb-6 p-4 bg-red-900/30 border border-red-500/50 rounded-lg">
+              <p className="text-red-400">⚠️ {uploadError}</p>
             </div>
           )}
 

@@ -48,6 +48,7 @@ export async function POST(request: NextRequest) {
         'Authorization': `Bearer ${process.env.PINATA_JWT}`,
       },
       body: pinataFormData,
+      signal: AbortSignal.timeout(55_000), // stay under Vercel's 60s function limit
     });
 
     if (!res.ok) {
