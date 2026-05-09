@@ -60,6 +60,18 @@ Open [http://localhost:3000](http://localhost:3000)
 
 For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operations-checklist.md).
+For environment setup notes, see [CONFIG.md](./CONFIG.md).
+
+## Release Checks
+
+Before promoting a Vercel deployment, run:
+
+```bash
+npm run lint
+npm run build
+```
+
+After deployment, verify one upload route, one gallery load, and one wallet-connected page on the target production domain.
 
 ## Security Notes
 
