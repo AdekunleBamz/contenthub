@@ -62,6 +62,7 @@ For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
 For API route behavior, see [API.md](./API.md).
 For local and production build notes, see [BUILD.md](./BUILD.md).
 For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operations-checklist.md).
+For focused manual checks, use [docs/qa-notes.md](./docs/qa-notes.md).
 For environment setup notes, see [CONFIG.md](./CONFIG.md).
 
 ## Release Checks
