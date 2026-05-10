@@ -17,3 +17,11 @@ ContentHub API routes support uploads, content listing, and NFT metadata creatio
 - Returns content records used by the gallery.
 - Should respond with JSON for healthy production checks.
 - Invalid query parameters should return controlled errors.
+
+## NFT Metadata
+
+`POST /api/create-nft-metadata`
+
+- Builds metadata for minted achievement NFTs.
+- Should reference the canonical app URL in generated links.
+- Should only include public content fields.
