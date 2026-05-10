@@ -66,6 +66,7 @@ For focused manual checks, use [docs/qa-notes.md](./docs/qa-notes.md).
 For MiniPay validation, use [docs/minipay-checks.md](./docs/minipay-checks.md).
 For Farcaster launch review, use [docs/farcaster-review.md](./docs/farcaster-review.md).
 For referral attribution validation, use [docs/divvi-checks.md](./docs/divvi-checks.md).
+For NFT mint sequence notes, use [docs/mint-flow.md](./docs/mint-flow.md).
 For environment setup notes, see [CONFIG.md](./CONFIG.md).
 
 ## Release Checks
