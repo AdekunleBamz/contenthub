@@ -23,6 +23,7 @@
 - [ ] Open `/minipay` route and verify wallet bootstrap succeeds inside MiniPay webview.
 - [ ] Confirm Divvi referral attribution still fires on at least one write transaction.
 - [ ] Confirm `/profile` reflects latest uploads and minted achievements after refresh.
+- [ ] Confirm minted metadata opens from an external browser without wallet context.
 - [ ] Confirm Base and Celo contract addresses in the UI match the intended deployment chain.
 - [ ] Confirm failed IPFS uploads return a user-readable error and do not expose Pinata credentials.
 
