@@ -13,3 +13,8 @@ Use these checks after deployment or after changing API route configuration.
 - Confirm `/api/content` returns a valid JSON response.
 - Confirm uploaded content appears in gallery responses after refresh.
 - Confirm invalid query parameters return a controlled error response.
+
+## Metadata API
+
+- Confirm `/api/create-nft-metadata` returns valid JSON for public content fields.
+- Confirm generated metadata links use the configured app URL.
