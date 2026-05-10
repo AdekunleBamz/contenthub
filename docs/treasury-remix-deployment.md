@@ -38,6 +38,8 @@ USDC:        0xcebA9300f2b948710d2653dD7B07f33A8B32118C
 USDT:        0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e
 ```
 
+Confirm token addresses in Remix before enabling them as supported assets.
+
 ## Default Split
 
 The default split for every recorded payment is:
