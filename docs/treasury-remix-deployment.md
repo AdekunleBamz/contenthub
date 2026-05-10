@@ -100,3 +100,4 @@ For treasury deposits that are not user payments, index `TreasuryFunded`.
 - The owner or `rewardOperator` can distribute rewards with `distributePool`.
 - The owner or protocol recipient can withdraw protocol revenue with `withdrawProtocolBalance`.
 - Direct native sends are automatically credited to the community pool.
+- Record the deployed treasury address beside the matching chain and content contract addresses.
