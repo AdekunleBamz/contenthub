@@ -4,6 +4,7 @@
 
 - [ ] Confirm both Base and Celo contract addresses match the intended release.
 - [ ] Validate RPC/network selection for Base and Celo in the active environment.
+- [ ] Confirm `NEXT_PUBLIC_APP_URL` matches the Vercel production domain.
 - [ ] Confirm `PINATA_JWT` is present and not using placeholder values.
 - [ ] Run `npm ci` on a clean tree before lint/build checks.
 - [ ] Run `npm run lint` and resolve all build-time lint failures.
