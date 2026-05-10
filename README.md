@@ -64,6 +64,7 @@ For local and production build notes, see [BUILD.md](./BUILD.md).
 For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operations-checklist.md).
 For focused manual checks, use [docs/qa-notes.md](./docs/qa-notes.md).
 For MiniPay validation, use [docs/minipay-checks.md](./docs/minipay-checks.md).
+For Farcaster launch review, use [docs/farcaster-review.md](./docs/farcaster-review.md).
 For environment setup notes, see [CONFIG.md](./CONFIG.md).
 
 ## Release Checks
