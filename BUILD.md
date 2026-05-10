@@ -8,3 +8,7 @@ npm run build
 ```
 
 The app targets Node 20 or newer, matching the `engines` field in `package.json`.
+
+## Vercel Notes
+
+Set `PINATA_JWT`, `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_CHAIN_ID`, and wallet configuration before building a production deployment.
