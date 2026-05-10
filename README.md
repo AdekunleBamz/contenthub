@@ -59,6 +59,7 @@ npm run start
 Open [http://localhost:3000](http://localhost:3000)
 
 For detailed IPFS setup instructions, see [PINATA_SETUP.md](./PINATA_SETUP.md)
+For API route behavior, see [API.md](./API.md).
 For pre/post-deploy validation, use [docs/operations-checklist.md](./docs/operations-checklist.md).
 For environment setup notes, see [CONFIG.md](./CONFIG.md).
 
