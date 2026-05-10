@@ -80,6 +80,7 @@ After deployment, verify one upload route, one gallery load, and one wallet-conn
 
 - Keep `.env.local` private and never commit Pinata JWTs.
 - Revoke and rotate the Pinata key immediately if a JWT is exposed.
+- See [docs/security-notes.md](./docs/security-notes.md) for the broader production checklist.
 
 ## Troubleshooting
 
