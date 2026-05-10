@@ -9,6 +9,11 @@ ContentHub reads public chain and contract settings from `NEXT_PUBLIC_*` variabl
 - `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID`: WalletConnect project id for browser wallet flows.
 - `NEXT_PUBLIC_APP_URL`: canonical URL used by metadata, Farcaster, and shared links.
 
+## Chain IDs
+
+- Base mainnet: `8453`
+- Celo mainnet: `42220`
+
 ## Safety Notes
 
 - Keep `PINATA_JWT` out of client-side code and screenshots.
