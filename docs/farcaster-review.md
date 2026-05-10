@@ -5,3 +5,4 @@
 - Confirm shared content links use `NEXT_PUBLIC_APP_URL`.
 - Confirm wallet prompts stay inside the mini app session when possible.
 - Confirm fallback browser behavior still works outside Farcaster.
+- Confirm production images use absolute URLs when required by Farcaster clients.
