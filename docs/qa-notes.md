@@ -12,3 +12,4 @@
 - Connect on Celo mainnet.
 - Confirm chain-specific contract addresses match the selected network.
 - Confirm profile data refreshes after a wallet reconnect.
+- Save the chain, wallet type, and content id used for each smoke test.
