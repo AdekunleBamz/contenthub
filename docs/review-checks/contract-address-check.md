@@ -1,0 +1,5 @@
+# Contract Address Check
+
+- Compare content hub and NFT contract addresses with the environment guide.
+- Open each address in the explorer before release.
+- Store the address set with release evidence.
