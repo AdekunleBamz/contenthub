@@ -1,0 +1,5 @@
+# Pinata Gateway Check
+
+- Open uploaded content and metadata through the configured gateway.
+- Confirm links resolve from a separate browser session.
+- Record gateway timeouts in the Pinata setup notes.
