@@ -6,3 +6,4 @@
 - Confirm treasury recipient addresses before contract deployment.
 - Review API error payloads before sharing production logs.
 - Keep WalletConnect project ids in project settings rather than screenshots or public tickets.
+- Confirm treasury and content contract addresses before each production release.
