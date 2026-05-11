@@ -18,3 +18,4 @@ Use these checks after deployment or after changing API route configuration.
 
 - Confirm `/api/create-nft-metadata` returns valid JSON for public content fields.
 - Confirm generated metadata links use the configured app URL.
+- Save the request URL and response status with the smoke evidence.
