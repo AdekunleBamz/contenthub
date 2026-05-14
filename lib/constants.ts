@@ -130,7 +130,6 @@ export const ACCEPTED_FILE_TYPES = ALLOWED_MIME_TYPES.join(',')
 /** Number of items shown per row in the gallery grid on desktop. */
 export const GALLERY_GRID_COLS_DESKTOP = 4
 
-
 /** Default pagination page size. */
 export const DEFAULT_PAGE_SIZE = 20
 
@@ -142,7 +141,6 @@ export const CELO_CHAIN_ID = 42220
 
 /** Network chain ID for Celo Alfajores Testnet. */
 export const ALFAJORES_CHAIN_ID = 44787
-
 
 /** Content refresh interval in milliseconds. */
 export const REFRESH_INTERVAL_MS = 30_000
