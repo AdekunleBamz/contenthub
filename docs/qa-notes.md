@@ -6,6 +6,11 @@
 - Confirm upload errors never show raw Pinata credentials.
 - Refresh `/gallery` and confirm the new content is visible.
 
+## Vote Flow
+
+- Vote on an existing content item and confirm the vote count increments.
+- Confirm the vote cooldown prevents a second vote within the configured window.
+
 ## Wallet Flow
 
 - Connect on Base mainnet.
