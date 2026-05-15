@@ -1,5 +1,10 @@
 # QA Notes
 
+## Pre-Smoke-Test
+
+- Run `npm run typecheck` before smoke testing a new build.
+- Confirm Pinata JWT is set in `.env.local` before testing any upload flow.
+
 ## Upload Flow
 
 - Upload a small image and confirm an IPFS CID is returned.
