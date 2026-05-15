@@ -15,7 +15,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@bamzzstudio/contenthub-sdk": "^1.0.0",
