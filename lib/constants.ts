@@ -142,6 +142,9 @@ export const CELO_CHAIN_ID = 42220
 /** Network chain ID for Celo Alfajores Testnet. */
 export const ALFAJORES_CHAIN_ID = 44787
 
+/** Network chain ID for Base Mainnet. */
+export const BASE_CHAIN_ID = 8453
+
 /** Content refresh interval in milliseconds. */
 export const REFRESH_INTERVAL_MS = 30_000
 
