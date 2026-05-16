@@ -20,8 +20,8 @@ export function useFarcasterContext() {
         const isMiniApp = await sdk.isInMiniApp();
         
         if (isMiniApp) {
-          const ctx = sdk.context;
-          setContext(ctx);
+          const ctx = await sdk.context;
+          setContext(ctx as unknown as Record<string, unknown>);
           await sdk.actions.ready();
         }
       } catch (error) {
