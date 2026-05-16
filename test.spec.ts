@@ -1,1 +1,6 @@
-describe('test', () => { it('pass', () => { expect(true).toBe(true); }); });
+import assert from 'node:assert/strict';
+import test from 'node:test';
+
+test('passes smoke assertion', () => {
+  assert.equal(true, true);
+});

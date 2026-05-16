@@ -3,6 +3,16 @@ import { createPublicClient, http } from 'viem';
 import { base, celo } from 'viem/chains';
 import { CONTRACTS } from '@/lib/contracts';
 
+type ContentRecord = readonly [
+  id: bigint,
+  uploader: string,
+  contentHash: string,
+  contentType: string,
+  metadata: string,
+  timestamp: bigint,
+  votes: bigint,
+];
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const chain = searchParams.get('chain') as 'base' | 'celo' | null;
@@ -38,7 +48,7 @@ export async function GET(request: Request) {
       abi: contract.abi,
       functionName: 'getContent',
       args: [BigInt(numericId)],
-    } as any);
+    } as any) as ContentRecord;
 
     return NextResponse.json({
       id: Number(content[0]),
