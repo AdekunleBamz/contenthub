@@ -4,3 +4,4 @@
 - Confirm date labels are understandable in release evidence.
 - Record the review time zone with QA notes.
 - Compare one displayed date against the raw timestamp source.
+- Confirm date labels remain readable on mobile profile views.
