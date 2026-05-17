@@ -4,3 +4,4 @@
 - Confirm routes remain reachable on mobile width.
 - Record broken routes before release handoff.
 - Check the privacy route from browser and Farcaster shells.
+- Confirm privacy links do not require a connected wallet.
