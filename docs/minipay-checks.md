@@ -7,3 +7,4 @@
 - Confirm transaction errors are short and user-readable.
 - Confirm the MiniPay route still has a usable fallback in a normal mobile browser.
 - Record the MiniPay app version used for wallet and fee checks.
+- Confirm MiniPay checks use the same Celo contract addresses as release notes.
