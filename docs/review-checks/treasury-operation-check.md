@@ -4,3 +4,4 @@
 - Confirm the expected admin wallet and network are documented.
 - Keep private signer details out of handoff notes.
 - Include the public explorer link for each treasury operation.
+- Include the treasury action type in operation handoff notes.
