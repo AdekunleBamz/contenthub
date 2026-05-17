@@ -8,3 +8,4 @@
 - Confirm production images use absolute URLs when required by Farcaster clients.
 - Confirm the `fc:frame` embed in `<head>` contains the correct production image and button URL.
 - Capture the Farcaster client and preview URL used for shell review.
+- Record the app version or build identifier shown during Farcaster review.
