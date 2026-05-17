@@ -4,3 +4,4 @@
 - Confirm wallet and creator labels remain clear in both contexts.
 - Record context-specific issues in the Farcaster review notes.
 - Include the Farcaster client name with each context finding.
+- Confirm support and privacy links work inside and outside Farcaster.
