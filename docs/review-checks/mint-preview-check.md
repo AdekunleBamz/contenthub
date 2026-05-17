@@ -4,3 +4,4 @@
 - Confirm the preview matches the uploaded content and metadata.
 - Record missing media or stale copy before release.
 - Compare the preview values against the final metadata payload.
+- Confirm the preview resets after changing the uploaded file.
