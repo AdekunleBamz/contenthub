@@ -19,6 +19,7 @@
 ## Wallet Flow
 
 - Connect on Base mainnet.
+- Refresh once after connecting and confirm wallet context remains understandable.
 - Connect on Celo mainnet.
 - Confirm chain-specific contract addresses match the selected network.
 - Confirm profile data refreshes after a wallet reconnect.
