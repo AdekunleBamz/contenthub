@@ -9,3 +9,5 @@
 Confirm the metadata URL resolves in a normal browser before using it for a production mint.
 
 Keep the content CID, metadata URL, and mint hash together in release evidence.
+
+Record whether the mint used Base or Celo beside the metadata evidence.
