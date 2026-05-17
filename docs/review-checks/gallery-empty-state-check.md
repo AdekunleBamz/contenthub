@@ -4,3 +4,4 @@
 - Confirm the empty state gives a clear next action.
 - Review the state on mobile width before release.
 - Save a screenshot if the gallery empty copy changes.
+- Confirm empty gallery copy does not show stale content counts.
