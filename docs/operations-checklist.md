@@ -8,6 +8,7 @@
 - [ ] Confirm `PINATA_JWT` is present and not using placeholder values.
 - [ ] Run `npm ci` on a clean tree before lint/build checks.
 - [ ] Run `npm run lint` and resolve all build-time lint failures.
+- [ ] Run `npm run typecheck` and resolve TypeScript failures.
 - [ ] Run `npm run build` locally once before production deployment.
 
 ## Security
