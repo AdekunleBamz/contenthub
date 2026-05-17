@@ -91,7 +91,7 @@ After deployment, verify one upload route, one gallery load, and one wallet-conn
 
 - If uploads fail, verify `PINATA_JWT` is set and restart the dev server.
 - If transactions fail, confirm your wallet network matches the selected contract chain.
-- Use NEXT_PUBLIC_CHAIN_ID 8453 for Base or 42220 for Celo in local config.
+- Use `NEXT_PUBLIC_CHAIN_ID=8453` for Base or `NEXT_PUBLIC_CHAIN_ID=42220` for Celo in local config.
 - If the Farcaster Mini App context is missing, make sure you are opening the app inside a compatible Farcaster client.
 - If wallet connection fails at startup, verify NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID is configured.
 
