@@ -6,6 +6,18 @@
     "type": "git",
     "url": "git+https://github.com/AdekunleBamz/contenthub.git"
   },
+  "bugs": {
+    "url": "https://github.com/AdekunleBamz/contenthub/issues"
+  },
+  "homepage": "https://github.com/AdekunleBamz/contenthub#readme",
+  "keywords": [
+    "contenthub",
+    "base",
+    "celo",
+    "ipfs",
+    "farcaster"
+  ],
+  "license": "MIT",
   "private": true,
   "engines": {
     "node": ">=20"
